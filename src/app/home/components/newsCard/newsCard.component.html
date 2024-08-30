@@ -1,0 +1,39 @@
+<div class="max-w-sm w-full lg:max-w-full lg:flex">
+  <div
+    class="border-r border-b border-l border-red-300 lg:border-l-0 lg:border-t lg:border-red-300 bg-white rounded-b lg:rounded-b-none lg:rounded-r p-4 flex flex-col justify-between leading-normal"
+  >
+    <a href="#">
+      <img
+        class="w-full h-48 object-cover rounded-t-lg"
+        [src]="news().urlToImage ?? '/assets/news.jpg'"
+        [alt]="news().title"
+      />
+    </a>
+    <div class="p-5 flex flex-col flex-grow">
+      <a href="#">
+        <h5
+          class="mb-2 text-2xl font-bold tracking-tight text-gray-900 flex-grow line-clamp-2 w-full h-24"
+        >
+          {{ news().title }}
+        </h5>
+      </a>
+      <div
+        class="text-xs font-bold uppercase text-teal-700 mt-1 mb-2 w-full h-10"
+      >
+        {{ news().author }}
+      </div>
+      <p class="mb-3 font-normal text-gray-700 flex-grow line-clamp-2 w-full h-12">
+        {{ news().description }}
+      </p>
+      <div class="flex items-center">
+        <div class="text-sm">
+          <a
+            href="#"
+            class="text-gray-50 bg-blue-400 hover:bg-blue-700 hover:text-white transition duration-500 ease-in-out transform hover:-translate-x hover:scale-105 px-4 py-2 rounded"
+            >Read more</a
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
