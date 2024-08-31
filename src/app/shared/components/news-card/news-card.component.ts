@@ -8,7 +8,7 @@ import { Article } from '../../../domain/interfaces/api-news-response.interface'
   imports: [
     CommonModule,
   ],
-  templateUrl: './newsCard.component.html',
+  templateUrl: './news-card.component.html',
 })
 export class NewsCardComponent {
   public news: InputSignal<Article> = input.required<Article>();

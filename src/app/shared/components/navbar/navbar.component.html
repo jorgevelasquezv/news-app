@@ -5,7 +5,7 @@
   <div
     class="flex justify-between lg:w-auto w-full lg:border-b-0 pl-6 pr-2 border-solid border-b-2 border-gray-300 pb-5 lg:pb-0"
   >
-    <div class="flex items-center flex-shrink-0 text-gray-800 mr-16">
+    <div class="flex items-center flex-shrink-0 text-gray-50 mr-16">
       <span class="font-semibold text-xl tracking-tight">World up to date</span>
     </div>
     <div class="block lg:hidden">
@@ -26,38 +26,51 @@
   </div>
 
   <div
-    class="menu w-full lg:block flex-grow lg:flex lg:items-center lg:w-auto lg:px-3 px-8"
+    class="menu w-full flex-grow lg:flex lg:items-center lg:w-auto lg:px-3 px-8"
   >
     <div class="text-md font-bold text-gray-100 lg:flex-grow">
       <a
         routerLink="/"
+        [routerLinkActiveOptions]="{exact: true}"
+        routerLinkActive="text-white font-bold underline"
         class="block mt-4 lg:inline-block lg:mt-0 hover:text-white px-4 py-2 rounded hover:bg-blue-600 mr-2"
       >
         Home
       </a>
       <a
-        routerLink="/highlights"
+        routerLink="/news/news"
+        routerLinkActive="text-white font-bold underline"
         class="block mt-4 lg:inline-block lg:mt-0 hover:text-white px-4 py-2 rounded hover:bg-blue-600 mr-2"
       >
-        Highlights
+        News
       </a>
       <a
-        routerLink="/economy"
+        routerLink="/news/sports"
+        routerLinkActive="text-white font-bold underline"
         class="block mt-4 lg:inline-block lg:mt-0 hover:text-white px-4 py-2 rounded hover:bg-blue-600 mr-2"
       >
-        Economy
+        Sports
       </a>
       <a
-        routerLink="/technology"
+        routerLink="/news/bussiness"
+        routerLinkActive="text-white font-bold underline"
         class="block mt-4 lg:inline-block lg:mt-0 hover:text-white px-4 py-2 rounded hover:bg-blue-600 mr-2"
       >
-        Technology
+        Bussiness
+      </a>
+      <a
+        routerLink="/news/opinion"
+        routerLinkActive="text-white font-bold underline"
+        class="block mt-4 lg:inline-block lg:mt-0 hover:text-white px-4 py-2 rounded hover:bg-blue-600 mr-2"
+      >
+        Opinion
       </a>
       <a
         routerLink="/Contact"
+        routerLinkActive="text-white font-bold underline"
         class="block mt-4 lg:inline-block lg:mt-0 hover:text-white px-4 py-2 rounded hover:bg-blue-600 mr-2"
       >
-        Contact
+        Contact us
       </a>
     </div>
     <!-- This is an example component -->

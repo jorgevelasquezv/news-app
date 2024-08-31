@@ -13,4 +13,8 @@ export const routes: Routes = [
     path: 'register',
     loadComponent: () => import('./auth/pages/register/register.component'),
   },
+  {
+    path: 'news/:category',
+    loadComponent: () => import('./news/news.component'),
+  }
 ];

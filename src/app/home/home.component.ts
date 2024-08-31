@@ -1,16 +1,18 @@
 import { CommonModule } from '@angular/common';
 import { Component, inject, OnInit, signal } from '@angular/core';
-import { NewsCardComponent } from "./components/newsCard/newsCard.component";
+import { NewsCardComponent } from "../shared/components/news-card/news-card.component";
 import { NewsService } from '../services/news.service';
 import { Article } from '../domain/interfaces/api-news-response.interface';
 import { responseApiNewsTest } from '../data/api-response';
+import { SidebarComponent } from '../shared/components/sidebar/sidebar.component';
 
 @Component({
   selector: 'app-home',
   standalone: true,
   imports: [
     CommonModule,
-    NewsCardComponent
+    NewsCardComponent,
+    SidebarComponent,
 ],
   templateUrl: './home.component.html',
 })
