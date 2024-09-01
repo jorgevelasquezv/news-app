@@ -5,6 +5,7 @@ export interface APINewsResponse {
 }
 
 export interface Article {
+  id?:         string;
   source:      Source;
   author:      null | string;
   title:       string;

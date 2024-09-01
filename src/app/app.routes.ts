@@ -16,5 +16,9 @@ export const routes: Routes = [
   {
     path: 'news/:category',
     loadComponent: () => import('./news/news.component'),
-  }
+  },
+  {
+    path: 'news/news-detail/:id',
+    loadComponent: () => import('./home/news-detail/news-detail.component'),
+  },
 ];

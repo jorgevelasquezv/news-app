@@ -22,14 +22,17 @@
       >
         {{ news().author }}
       </div>
-      <p class="mb-3 font-normal text-gray-700 flex-grow line-clamp-2 w-full h-12">
+      <p
+        class="mb-3 font-normal text-gray-700 flex-grow line-clamp-2 w-full h-12"
+      >
         {{ news().description }}
       </p>
       <div class="flex items-center">
         <div class="text-sm">
           <a
-            href="#"
+            routerLink="/news/news-detail/{{ news().id }}"
             class="text-gray-50 bg-blue-400 hover:bg-blue-700 hover:text-white transition duration-500 ease-in-out transform hover:-translate-x hover:scale-105 px-4 py-2 rounded"
+            (click)="openNewsDetail()"
             >Read more</a
           >
         </div>
