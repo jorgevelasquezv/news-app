@@ -21,4 +21,8 @@ export const routes: Routes = [
     path: 'news/news-detail/:id',
     loadComponent: () => import('./home/news-detail/news-detail.component'),
   },
+  {
+    path: 'contact-us',
+    loadComponent: () => import('./contact-us/contact-us.component'),
+  }
 ];

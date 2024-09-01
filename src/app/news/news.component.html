@@ -5,11 +5,65 @@
       <div
         class="mt-6 grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-auto xl:gap-x-8"
       >
-        @for (news of newsList(); track $index) {
+        @for (news of paginatedNewsList(); track $index) {
         <news-card [news]="news" />
         }
       </div>
     </div>
+
+<div class="flex justify-center my-5">
+
+  <nav>
+    <ul class="flex">
+      <li>
+        <button
+          class="mx-1 flex h-9 w-9 items-center justify-center rounded-full border border-blue-gray-100 bg-transparent p-0 text-sm text-blue-gray-500 transition duration-150 ease-in-out hover:bg-light-300"
+          aria-label="Previous"
+          (click)="changePage(currentPage - 1)"
+        >
+          <span class="material-icons text-sm"><</span>
+        </button>
+      </li>
+      <li>
+        <button
+          class="mx-1 flex h-9 w-9 items-center justify-center rounded-full bg-gradient-to-tr from-red-500 to-red-400 p-0 text-sm text-white shadow-md shadow-red-500/20 transition duration-150 ease-in-out"
+          (click)="changePage(1)"
+        >
+          1
+        </button>
+      </li>
+      <li>
+        <button
+          class="mx-1 flex h-9 w-9 items-center justify-center rounded-full border border-blue-gray-100 bg-transparent p-0 text-sm text-blue-gray-500 transition duration-150 ease-in-out hover:bg-light-300"
+          href="#"
+          (click)="changePage(2)"
+        >
+          2
+        </button>
+      </li>
+      <li>
+        <button
+          class="mx-1 flex h-9 w-9 items-center justify-center rounded-full border border-blue-gray-100 bg-transparent p-0 text-sm text-blue-gray-500 transition duration-150 ease-in-out hover:bg-light-300"
+          href="#"
+          (click)="changePage(3)"
+        >
+          3
+        </button>
+      </li>
+      <li>
+        <button
+          class="mx-1 flex h-9 w-9 items-center justify-center rounded-full border border-blue-gray-100 bg-transparent p-0 text-sm text-blue-gray-500 transition duration-150 ease-in-out hover:bg-light-300"
+          aria-label="Next"
+          (click)="changePage(currentPage + 1)"
+        >
+          <span class="material-icons text-sm">></span>
+        </button>
+      </li>
+    </ul>
+  </nav>
+</div>
   </section>
   <shared-sidebar class="w-full lg:w-1/4 mt-9" />
+
+
 </main>
