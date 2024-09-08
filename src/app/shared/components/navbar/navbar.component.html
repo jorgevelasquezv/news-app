@@ -31,12 +31,13 @@
     <div class="text-md font-bold text-gray-100 lg:flex-grow">
       <a
         routerLink="/"
-        [routerLinkActiveOptions]="{exact: true}"
+        [routerLinkActiveOptions]="{ exact: true }"
         routerLinkActive="text-white font-bold underline"
         class="block mt-4 lg:inline-block lg:mt-0 hover:text-white px-4 py-2 rounded hover:bg-blue-600 mr-2"
       >
         Home
       </a>
+      @if (user()) {
       <a
         routerLink="/news/news"
         routerLinkActive="text-white font-bold underline"
@@ -65,6 +66,7 @@
       >
         Opinion
       </a>
+      }
       <a
         routerLink="/contact-us"
         routerLinkActive="text-white font-bold underline"
@@ -72,6 +74,15 @@
       >
         Contact us
       </a>
+      @if (isAdmin) {
+      <a
+        routerLink="/admin"
+        routerLinkActive="text-white font-bold underline"
+        class="block mt-4 lg:inline-block lg:mt-0 hover:text-white px-4 py-2 rounded hover:bg-blue-600 mr-2"
+      >
+        Admin
+      </a>
+      }
     </div>
     <!-- This is an example component -->
     <div class="relative mx-auto text-gray-600 lg:block hidden">
@@ -102,6 +113,13 @@
       </button>
     </div>
     <div class="flex">
+      @if (user()) {
+      <a
+        class="block text-md px-4 ml-2 py-2 rounded text-gray-100 font-bold hover:text-white mt-4 hover:bg-blue-600 lg:mt-0"
+        (click)="logout()"
+        >Logout</a
+      >
+      }@else {
       <a
         routerLink="/register"
         class="block text-md px-4 py-2 rounded text-gray-100 ml-2 font-bold hover:text-white mt-4 hover:bg-blue-600 lg:mt-0"
@@ -113,6 +131,7 @@
         class="block text-md px-4 ml-2 py-2 rounded text-gray-100 font-bold hover:text-white mt-4 hover:bg-blue-600 lg:mt-0"
         >Login</a
       >
+      }
     </div>
   </div>
 </nav>

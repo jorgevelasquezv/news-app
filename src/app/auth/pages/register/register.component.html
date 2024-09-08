@@ -17,41 +17,63 @@
         >
           Register
         </label>
-        <form method="#" action="#" class="mt-10">
+        <form class="mt-10" [formGroup]="formRegister" (ngSubmit)="register()">
           <div>
             <input
               type="text"
               placeholder="Full Name"
+              formControlName="fullName"
               class="mt-1 block w-full border-none bg-gray-100 h-11 rounded-xl shadow-lg hover:bg-blue-100 focus:bg-blue-100 focus:ring-0"
             />
+            @if (fullNameInvalid) {
+            <span class="text-red-500"
+              >Nombre debe tener minimo 3 caracteres</span
+            >
+            }
           </div>
 
           <div class="mt-7">
             <input
               type="email"
               placeholder="Email"
+              formControlName="email"
               class="mt-1 block w-full border-none bg-gray-100 h-11 rounded-xl shadow-lg hover:bg-blue-100 focus:bg-blue-100 focus:ring-0"
             />
+            @if (emailInvalid) {
+            <span class="text-red-500">No es un correo valido</span>
+            }
           </div>
 
           <div class="mt-7">
             <input
               type="password"
               placeholder="Password"
+              formControlName="password"
               class="mt-1 block w-full border-none bg-gray-100 h-11 rounded-xl shadow-lg hover:bg-blue-100 focus:bg-blue-100 focus:ring-0"
             />
+            @if (passwordInvalid) {
+            <span class="text-red-500"
+              >Password debe tener minimo 6 caracteres</span
+            >
+            }
           </div>
 
           <div class="mt-7">
             <input
               type="password"
               placeholder="Confirm Password"
+              formControlName="confirmPassword"
               class="mt-1 block w-full border-none bg-gray-100 h-11 rounded-xl shadow-lg hover:bg-blue-100 focus:bg-blue-100 focus:ring-0"
             />
+             @if (confirmPasswordInvalid) {
+            <span class="text-red-500">Las contraseñas deben ser iguales</span>
+            }
           </div>
 
           <div class="mt-7">
             <button
+              type="submit"
+              [disabled]="!formRegister.valid"
               class="bg-blue-500 w-full py-3 rounded-xl text-white shadow-xl hover:shadow-inner focus:outline-none transition duration-500 ease-in-out transform hover:-translate-x hover:scale-105"
             >
               Register

@@ -7812,6 +7812,14 @@
       "password": "123456789",
       "role": "user",
       "isActive": "true"
+    },
+    {
+      "id": "f06f5555-548a-4d9f-be52-971c73d3a04c",
+      "fullName": "Philip Cong",
+      "email": "pcong@mail.co",
+      "password": "123456789",
+      "role": "user",
+      "isActive": true
     }
   ]
 }

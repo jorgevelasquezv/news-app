@@ -1,12 +1,7 @@
 import { AuthService } from './../../services/auth.service';
 import { CommonModule } from '@angular/common';
 import { Component, inject, OnDestroy } from '@angular/core';
-import {
-  FormBuilder,
-  FormGroup,
-  ReactiveFormsModule,
-  Validators,
-} from '@angular/forms';
+import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import Swal from 'sweetalert2';
