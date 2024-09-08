@@ -24,5 +24,9 @@ export const routes: Routes = [
   {
     path: 'contact-us',
     loadComponent: () => import('./contact-us/contact-us.component'),
+  },
+  {
+    path: 'admin',
+    loadComponent: () => import('./auth/pages/admin/admin.component'),
   }
 ];
