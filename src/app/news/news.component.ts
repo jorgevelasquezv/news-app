@@ -16,11 +16,12 @@ import { map, Observable, Subscription, switchMap } from 'rxjs';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { NewsService } from '../services/news.service';
 import { NewsCategory } from '../domain/enums/news-category.enum';
+import { PaginationComponent } from "./pagination/pagination.component";
 
 @Component({
   selector: 'news',
   standalone: true,
-  imports: [CommonModule, NewsCardComponent, SidebarComponent],
+  imports: [CommonModule, NewsCardComponent, SidebarComponent, PaginationComponent],
   templateUrl: './news.component.html',
 })
 export default class NewsComponent implements OnInit, OnDestroy {

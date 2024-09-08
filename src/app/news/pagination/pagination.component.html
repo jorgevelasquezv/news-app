@@ -1,0 +1,54 @@
+<nav>
+  <ul class="flex">
+    @if (currentPage() > 1) {
+    <li>
+      <button
+        class="mx-1 flex h-9 w-9 items-center justify-center rounded-full border border-blue-gray-100 bg-transparent p-0 text-sm text-blue-gray-500 transition duration-150 ease-in-out hover:bg-light-300"
+        aria-label="Previous"
+        (click)="changePage(currentPage() - 1)"
+      >
+        <span class="material-icons text-sm"><</span>
+      </button>
+    </li>
+    }
+    <li>
+      <button
+        class="mx-1 flex h-9 w-9 items-center justify-center rounded-full bg-gradient-to-tr from-red-500 to-red-400 p-0 text-sm text-white shadow-md shadow-red-500/20 transition duration-150 ease-in-out"
+        (click)="changePage(currentPage())"
+      >
+        {{ currentPage() }}
+      </button>
+    </li>
+    @if (currentPage() +1 < totalPages()) {
+    <li>
+      <button
+        class="mx-1 flex h-9 w-9 items-center justify-center rounded-full border border-blue-gray-100 bg-transparent p-0 text-sm text-blue-gray-500 transition duration-150 ease-in-out hover:bg-light-300"
+        href="#"
+        (click)="changePage(currentPage() + 1)"
+      >
+        {{ currentPage() + 1 }}
+      </button>
+    </li>
+    } @if (currentPage() + 2 < totalPages()) {
+    <li>
+      <button
+        class="mx-1 flex h-9 w-9 items-center justify-center rounded-full border border-blue-gray-100 bg-transparent p-0 text-sm text-blue-gray-500 transition duration-150 ease-in-out hover:bg-light-300"
+        href="#"
+        (click)="changePage(currentPage() + 2)"
+      >
+        {{ currentPage() + 2 }}
+      </button>
+    </li>
+    } @if (currentPage() < totalPages()) {
+    <li>
+      <button
+        class="mx-1 flex h-9 w-9 items-center justify-center rounded-full border border-blue-gray-100 bg-transparent p-0 text-sm text-blue-gray-500 transition duration-150 ease-in-out hover:bg-light-300"
+        aria-label="Next"
+        (click)="changePage(currentPage() + 1)"
+      >
+        <span class="material-icons text-sm">></span>
+      </button>
+    </li>
+    }
+  </ul>
+</nav>

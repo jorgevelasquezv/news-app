@@ -7820,6 +7820,14 @@
       "password": "123456789",
       "role": "user",
       "isActive": true
+    },
+    {
+      "id": "7a02c7ed-2c8b-478f-a5ff-23cb8df0ee2d",
+      "fullName": "Isaac Velásquez",
+      "email": "isaac@mail.co",
+      "password": "123456789",
+      "role": "user",
+      "isActive": true
     }
   ]
 }
