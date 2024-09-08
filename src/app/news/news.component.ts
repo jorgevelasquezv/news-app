@@ -1,7 +1,6 @@
 import { CommonModule } from '@angular/common';
 import {
   Component,
-  computed,
   inject,
   OnDestroy,
   OnInit,
@@ -13,7 +12,7 @@ import { NewsCardComponent } from '../shared/components/news-card/news-card.comp
 import { SidebarComponent } from '../shared/components/sidebar/sidebar.component';
 import { Article } from '../domain/interfaces/api-news-response.interface';
 import { ActivatedRoute } from '@angular/router';
-import { map, Observable, of, Subscription, switchMap } from 'rxjs';
+import { map, Observable, Subscription, switchMap } from 'rxjs';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { NewsService } from '../services/news.service';
 import { NewsCategory } from '../domain/enums/news-category.enum';
