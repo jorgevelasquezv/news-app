@@ -2,7 +2,7 @@ import { NewsService } from './../../../services/news.service';
 import { CommonModule } from '@angular/common';
 import { Component, inject, input, InputSignal, Signal } from '@angular/core';
 import { Article } from '../../../domain/interfaces/api-news-response.interface';
-import { Router, RouterModule } from '@angular/router';
+import { Router } from '@angular/router';
 import { UserService } from '../../../services/user.service';
 import { User } from '../../../domain/models/user.model';
 import Swal from 'sweetalert2';
