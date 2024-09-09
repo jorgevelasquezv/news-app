@@ -7828,6 +7828,14 @@
       "password": "123456789",
       "role": "user",
       "isActive": true
+    },
+    {
+      "id": "6054dba0-c276-4af3-bc44-4e7e126fd227",
+      "fullName": "Michael Jazz",
+      "email": "mjazz@jazz.com",
+      "password": "123456789",
+      "role": "user",
+      "isActive": true
     }
   ]
 }

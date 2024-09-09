@@ -21,7 +21,12 @@ import { PaginationComponent } from "./pagination/pagination.component";
 @Component({
   selector: 'news',
   standalone: true,
-  imports: [CommonModule, NewsCardComponent, SidebarComponent, PaginationComponent],
+  imports: [
+    CommonModule,
+    NewsCardComponent,
+    SidebarComponent,
+    PaginationComponent,
+  ],
   templateUrl: './news.component.html',
 })
 export default class NewsComponent implements OnInit, OnDestroy {
@@ -51,7 +56,12 @@ export default class NewsComponent implements OnInit, OnDestroy {
     this.newsListSuscription = this.route.paramMap
       .pipe(
         map((params) => (params.get('category') ?? 'news') as NewsCategory),
-        switchMap((category) => this.newsServices.getNewsByCategory(category))
+        switchMap((category) => {
+          if (!this.isValidCategory(category)) {
+            return this.newsServices.getNewsBySearch(category);
+          }
+          return this.newsServices.getNewsByCategory(category);
+        })
       )
       .subscribe((data) => {
         this.newsList = data;
@@ -61,6 +71,10 @@ export default class NewsComponent implements OnInit, OnDestroy {
 
   ngOnDestroy(): void {
     this.newsListSuscription.unsubscribe();
+  }
+
+  private isValidCategory(category: string): boolean {
+    return Object.values(NewsCategory).includes(category as NewsCategory);
   }
 
   private paginateNewsList() {

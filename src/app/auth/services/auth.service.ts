@@ -1,5 +1,13 @@
 import { HttpClient } from '@angular/common/http';
-import { computed, inject, Injectable, OnDestroy, signal } from '@angular/core';
+import {
+  computed,
+  inject,
+  Injectable,
+  OnDestroy,
+  Signal,
+  signal,
+  WritableSignal,
+} from '@angular/core';
 import { catchError, map, Observable, of, Subscription, switchMap } from 'rxjs';
 import { v4 as uuidv4 } from 'uuid';
 import { User } from '../../domain/models/user.model';
@@ -16,13 +24,18 @@ export class AuthService implements OnDestroy {
   private http: HttpClient = inject(HttpClient);
   private userService: UserService = inject(UserService);
   private verifiUserLocalStorageSubscription: Subscription = new Subscription();
-  private _authStatus = signal<AuthStatus>(AuthStatus.checking);
-  public authStatus = computed(() => this._authStatus());
+  private _authStatus: WritableSignal<AuthStatus> = signal<AuthStatus>(
+    AuthStatus.checking
+  );
+  public authStatus: Signal<AuthStatus> = computed(() => this._authStatus());
+  private _users: WritableSignal<User[] | undefined> = signal<
+    User[] | undefined
+  >(undefined);
+  // public users: Signal<User[] | undefined> = computed(() => this._users());
 
   constructor() {
-    this.verifiUserLocalStorageSubscription = this.checkAuthStatus().subscribe(
-      (data) => console.log('Verificando usuario en local storage', { data })
-    );
+    this.verifiUserLocalStorageSubscription =
+      this.checkAuthStatus().subscribe();
   }
 
   ngOnDestroy(): void {
@@ -112,6 +125,16 @@ export class AuthService implements OnDestroy {
           return user;
         })
       );
+  }
+
+  public updtaeUser(user: User): Observable<User> {
+    if (!user.id) throw new Error('Usuario no encontrado');
+    return this.http.put<User>(`${this.URL}/users/${user.id}`, user);
+  }
+
+  public deleteUser(user: User): Observable<User> {
+    if (!user.id) throw new Error('Usuario no encontrado');
+    return this.http.delete<User>(`${this.URL}/users/${user.id}`);
   }
 
   public logout(): void {

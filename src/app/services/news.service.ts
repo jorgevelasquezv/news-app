@@ -25,6 +25,10 @@ export class NewsService implements OnDestroy {
 
   private URL: string = environment.apiUrl;
 
+  private URL_NEWS = environment.apiNewsUrl;
+
+  private API_KEY = environment.apiKey;
+
   private newsList: Observable<Article[]> = new Observable<Article[]>();
 
   private newsSuscriptions: Subscription;
@@ -93,5 +97,20 @@ export class NewsService implements OnDestroy {
         });
       })
     );
+  }
+
+  getNewsBySearch(search: string): Observable<Article[]> {
+    return this.http
+      .get<APINewsResponse>(`${this.URL_NEWS}`, {
+        params: { q: search, apiKey: this.API_KEY },
+      })
+      .pipe(
+        map((response) => {
+          return response.articles.map((article) => {
+            article.id = uuidv4();
+            return article;
+          });
+        })
+      );
   }
 }

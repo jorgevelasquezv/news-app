@@ -6,6 +6,7 @@ import { User } from '../../../domain/models/user.model';
 import { Role } from '../../../domain/enums/role.enum';
 import { AuthService } from '../../../auth/services/auth.service';
 import Swal from 'sweetalert2';
+import { SearchComponent } from "../search/search.component";
 
 @Component({
   selector: 'shared-navbar',
@@ -13,7 +14,8 @@ import Swal from 'sweetalert2';
   imports: [
     CommonModule,
     RouterModule,
-  ],
+    SearchComponent
+],
   templateUrl: './navbar.component.html',
 })
 export class NavbarComponent {

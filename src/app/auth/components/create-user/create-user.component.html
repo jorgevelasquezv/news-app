@@ -1,6 +1,8 @@
-<div
+<form
   class="rounded-lg border bg-card text-card-foreground shadow-sm"
   data-v0-t="card"
+  [formGroup]="formCreateUser"
+  (ngSubmit)="createUser()"
 >
   <div class="flex flex-col space-y-1.5 p-6">
     <h3
@@ -22,7 +24,11 @@
         class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
         id="name"
         placeholder="Enter user's name"
+        formControlName="fullName"
       />
+      @if (fullNameInvalid) {
+      <span class="text-red-500">Nombre debe tener minimo 3 caracteres</span>
+      }
     </div>
     <div class="space-y-2">
       <label
@@ -36,7 +42,11 @@
         id="email"
         placeholder="Enter user's email"
         type="email"
+        formControlName="email"
       />
+      @if (emailInvalid) {
+      <span class="text-red-500">No es un correo valido</span>
+      }
     </div>
     <div class="space-y-2">
       <label
@@ -50,7 +60,11 @@
         id="password"
         placeholder="Enter password"
         type="password"
+        formControlName="password"
       />
+      @if (passwordInvalid) {
+      <span class="text-red-500">Password debe tener minimo 6 caracteres</span>
+      }
     </div>
     <div class="space-y-2">
       <label
@@ -69,18 +83,24 @@
         data-state="closed"
         data-placeholder=""
         class="flex h-10 w-full items-center justify-between rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+        formControlName="role"
       >
         <option selected>Choose a role</option>
         <option value="user">User</option>
         <option value="admin">Admin</option>
       </select>
+      @if (rolInvalid) {
+      <span class="text-red-500">El rol es requerido</span>
+      }
     </div>
   </div>
   <div class="flex items-center p-6">
     <button
+      type="submit"
+      [disabled]="!formCreateUser.valid"
       class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-10 px-4 py-2 ml-auto"
     >
       Create User
     </button>
   </div>
-</div>
+</form>

@@ -9,6 +9,7 @@ export const environment = {
   production: '${process.env.PRODUCTION}',
   apiKey: '${process.env.API_KEY}',
   apiUrl: '${process.env.API_URL}',
+  apiNewsUrl: '${process.env.API_NEWS_URL}',
 };
 `;
 
