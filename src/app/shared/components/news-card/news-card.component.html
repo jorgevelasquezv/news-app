@@ -1,6 +1,6 @@
-<div class="max-w-sm w-full lg:max-w-full lg:flex">
+<div class="max-w-sm w-full lg:max-w-full lg:flex bg-gray-100">
   <div
-    class="border-r border-b border-l border-red-300 lg:border-l-0 lg:border-t lg:border-red-300 bg-white rounded-b lg:rounded-b-none lg:rounded-r p-4 flex flex-col justify-between leading-normal"
+    class="border-r border-b border-l border-red-300 lg:border-l-0 lg:border-t lg:border-red-300 bg-gray-100 rounded-b lg:rounded-b-none lg:rounded-r p-4 flex flex-col justify-between leading-normal"
   >
     <a href="#">
       <img
@@ -22,16 +22,19 @@
       >
         {{ news().author }}
       </div>
-      <p class="mb-3 font-normal text-gray-700 flex-grow line-clamp-2 w-full h-12">
+      <p
+        class="mb-3 font-normal text-gray-700 flex-grow line-clamp-2 w-full h-12"
+      >
         {{ news().description }}
       </p>
       <div class="flex items-center">
         <div class="text-sm">
-          <a
-            href="#"
+          <button
             class="text-gray-50 bg-blue-400 hover:bg-blue-700 hover:text-white transition duration-500 ease-in-out transform hover:-translate-x hover:scale-105 px-4 py-2 rounded"
-            >Read more</a
+            (click)="openNewsDetail()"
           >
+            Read more
+          </button>
         </div>
       </div>
     </div>

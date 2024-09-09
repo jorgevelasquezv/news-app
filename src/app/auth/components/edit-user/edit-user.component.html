@@ -1,0 +1,98 @@
+<div
+  class="fixed inset-0 flex items-center justify-center bg-gray-300 bg-opacity-75"
+>
+  <div class="bg-white rounded-lg shadow-xl w-full max-w-lg">
+    <div
+      class="bg-blue-500 text-white px-4 py-2 border-b border-gray-200 flex justify-between items-center"
+    >
+      <h4 class="text-lg font-medium">Editar Usuario</h4>
+      <button
+        type="button"
+        class="text-gray-300 hover:text-gray-50"
+        (click)="close()"
+      >
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="p-4">
+      <form>
+
+
+        <div class="p-6 space-y-4">
+          <div class="space-y-2">
+            <label
+              class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+              for="name"
+            >
+              Name
+            </label>
+            <input
+              class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+              id="name"
+              [(ngModel)]="user().fullName"
+              name="name"
+              placeholder="Enter user's name"
+            />
+          </div>
+          <div class="space-y-2">
+            <label
+              class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+              for="email"
+            >
+              Email
+            </label>
+            <input
+              class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+              id="email"
+              [(ngModel)]="user().email"
+              name="email"
+              placeholder="Enter user's email"
+              type="email"
+            />
+          </div>
+
+          <div class="space-y-2">
+            <label
+              class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+              for="role"
+            >
+              Role
+            </label>
+            <select
+              type="button"
+              role="combobox"
+              aria-controls="radix-:r1:"
+              aria-expanded="false"
+              aria-autocomplete="none"
+              dir="ltr"
+              data-state="closed"
+              data-placeholder=""
+              class="flex h-10 w-full items-center justify-between rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+              name="role"
+              [(ngModel)]="user().role"
+            >
+              <option value="user">User</option>
+              <option value="admin">Admin</option>
+            </select>
+          </div>
+        </div>
+      </form>
+    </div>
+    <div class="px-4 py-3 border-t border-gray-200 flex justify-end">
+      <button
+        type="button"
+        class="bg-gray-500 text-white px-4 py-2 rounded-md mr-2"
+        (click)="close()"
+      >
+        Cancelar
+      </button>
+      <button
+        type="button"
+        class="bg-indigo-600 text-white px-4 py-2 rounded-md"
+        (click)="save()"
+      >
+        Guardar
+      </button>
+    </div>
+  </div>
+</div>

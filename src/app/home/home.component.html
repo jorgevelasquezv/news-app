@@ -1,11 +1,15 @@
-<section class="mx-auto lg:max-w-7xl mt-3">
-  <div class="max-w-7xl mx-auto px-5 mb-3">
-    <div
-      class="mt-6 grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-3 xl:gap-x-8"
-    >
-      @for (news of newsList; track $index) {
-      <news-card [news]="news" />
-      }
+<!-- Home Component -->
+<main class="flex flex-col lg:flex-row mx-auto lg:max-w-7xl mt-3">
+  <section class="mx-auto lg:max-w-7xl mt-3 w-full lg:w-3/4">
+    <div class="max-w-7xl mx-auto px-5 mb-3">
+      <div
+        class="mt-6 grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-auto xl:gap-x-8"
+      >
+        @for (news of newsList(); track $index) {
+        <news-card [news]="news" />
+        }
+      </div>
     </div>
-  </div>
-</section>
+  </section>
+  <shared-sidebar class="w-full lg:w-1/4 mt-9" />
+</main>

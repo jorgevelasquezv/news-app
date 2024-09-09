@@ -22,7 +22,9 @@
     "dotenv": "^16.4.5",
     "news-app": "file:",
     "rxjs": "~7.8.0",
+    "sweetalert2": "^11.13.3",
     "tslib": "^2.3.0",
+    "uuid": "^10.0.0",
     "zone.js": "~0.14.10"
   },
   "devDependencies": {
@@ -30,6 +32,7 @@
     "@angular/cli": "^18.2.1",
     "@angular/compiler-cli": "^18.2.0",
     "@types/jasmine": "~5.1.0",
+    "@types/uuid": "^10.0.0",
     "autoprefixer": "^10.4.20",
     "jasmine-core": "~5.2.0",
     "karma": "~6.4.0",
