@@ -1,11 +1,5 @@
 import { CommonModule } from '@angular/common';
-import {
-  Component,
-  inject,
-  OnDestroy,
-  signal,
-  WritableSignal,
-} from '@angular/core';
+import { Component, computed, inject, OnDestroy, signal } from '@angular/core';
 import { AuthService } from '../../services/auth.service';
 import { User } from '../../../domain/models/user.model';
 import { Subscription } from 'rxjs';
@@ -23,18 +17,20 @@ export class TableUsersComponent implements OnDestroy {
   private usersSubscription: Subscription = new Subscription();
   private userUpdateSubscription: Subscription = new Subscription();
   private userDeleteSubscription: Subscription = new Subscription();
-  public users: WritableSignal<User[]> = signal([]);
+  public users = computed(() => this.authService.users() ?? []);
   public selectedUser: User | null = null;
   public isModalOpen = signal<boolean>(false);
 
   constructor() {
     this.usersSubscription = this.authService.findUsers().subscribe((users) => {
-      this.users.set(users);
+      this.authService.setUsers(users);
     });
   }
 
   ngOnDestroy(): void {
     this.usersSubscription.unsubscribe();
+    this.userDeleteSubscription.unsubscribe();
+    this.userUpdateSubscription.unsubscribe();
   }
 
   toggleActive(user: User): void {
@@ -57,8 +53,7 @@ export class TableUsersComponent implements OnDestroy {
         this.userDeleteSubscription = this.authService
           .deleteUser(user)
           .subscribe();
-        this.userDeleteSubscription.unsubscribe();
-        this.users.set(this.users().filter((u) => u.id !== user.id));
+        this.authService.setUsers(this.users().filter((u) => u.id !== user.id));
         Swal.fire('Eliminado', 'El usuario ha sido eliminado', 'success');
       }
     });
@@ -66,7 +61,6 @@ export class TableUsersComponent implements OnDestroy {
 
   updateUser(user: User): void {
     this.userUpdateSubscription = this.authService.updtaeUser(user).subscribe();
-    this.userUpdateSubscription.unsubscribe();
   }
 
   openEditModal(user: User) {

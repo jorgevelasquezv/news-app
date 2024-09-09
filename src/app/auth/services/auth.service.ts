@@ -31,7 +31,7 @@ export class AuthService implements OnDestroy {
   private _users: WritableSignal<User[] | undefined> = signal<
     User[] | undefined
   >(undefined);
-  // public users: Signal<User[] | undefined> = computed(() => this._users());
+  public users: Signal<User[]> = computed(() => this._users() ?? []);
 
   constructor() {
     this.verifiUserLocalStorageSubscription =
@@ -112,7 +112,16 @@ export class AuthService implements OnDestroy {
   }
 
   public findUsers(): Observable<User[]> {
-    return this.http.get<User[]>(`${this.URL}/users`);
+    return this.http.get<User[]>(`${this.URL}/users`).pipe(
+      map((users) => {
+        this._users.set(users);
+        return users;
+      })
+    );
+  }
+
+  public setUsers(users: User[]) {
+    this._users.set(users);
   }
 
   public findUserById(id: string): Observable<User> {

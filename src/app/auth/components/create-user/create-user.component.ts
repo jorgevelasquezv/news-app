@@ -1,10 +1,9 @@
 import { CommonModule } from '@angular/common';
-import { Component, inject, OnDestroy, output } from '@angular/core';
+import { Component, inject, OnDestroy } from '@angular/core';
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Subscription } from 'rxjs';
 import Swal from 'sweetalert2';
 import { AuthService } from '../../services/auth.service';
-import { User } from '../../../domain/models/user.model';
 
 @Component({
   selector: 'admin-create-user',
@@ -47,6 +46,7 @@ export class CreateUserComponent implements OnDestroy {
           timer: 1500,
         });
         this.formCreateUser.reset();
+        this.AuthService.setUsers([...this.AuthService.users(), user]);
       },
       error: (error) => {
         Swal.fire({
