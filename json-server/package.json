@@ -4,12 +4,13 @@
     "description": "json server ",
     "main": "index.js",
     "scripts": {
-        "start": "json-server --watch db.json --port 8080",
+        "start": "json-server db.json --port 8080",
+        "dev": "json-server --watch db.json --port 8080",
         "test": "echo \"Error: no test specified\" && exit 1"
     },
     "author": "",
     "license": "MIT",
     "dependencies": {
-        "json-server": "file:"
+        "json-server": "^1.0.0-beta.2"
     }
 }
