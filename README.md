@@ -14,15 +14,16 @@ Aplicacion web que permite consultar noticias haciendo uso de la API [newsapi.or
    ```
 3. Ubicarse en la raiz del proyecto y clonar el .env.template y renombrarlo a .env
 4. Llenar las variables de entorno acorde
-5. Crear Angular Envs (opcional)
+5. En una consola diferente realizar todos los pasos siguientes
+6. Crear Angular Envs (opcional)
     ```
       npm run envs
     ```
-6. Para development ejecutar:
+7. Para development ejecutar:
     ```
       npm run start
     ```
-7. Para producción ejecutar:
+8. Para producción ejecutar:
    ```
    npm run build
    ```
