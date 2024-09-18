@@ -1,30 +1,118 @@
+<!--
+  Etiqueta <div>: Contenedor principal que permite el desplazamiento automático y aplica un borde y esquinas redondeadas.
+  class="overflow-auto border rounded-lg": Aplica varias clases de Tailwind CSS.
+  overflow-auto: Permite el desplazamiento automático si el contenido desborda.
+  border: Aplica un borde alrededor del contenedor.
+  rounded-lg: Aplica esquinas redondeadas grandes.
+  -->
 <div class="overflow-auto border rounded-lg">
+  <!--
+    Etiqueta <div>: Contenedor secundario que permite el desplazamiento automático y ocupa todo el ancho disponible.
+    class="relative w-full overflow-auto": Aplica varias clases de Tailwind CSS.
+    relative: Posiciona el contenedor de forma relativa.
+    w-full: Ocupa todo el ancho disponible.
+    overflow-auto: Permite el desplazamiento automático si el contenido desborda.
+    -->
   <div class="relative w-full overflow-auto">
+    <!--
+      Etiqueta <table>: Define una tabla que ocupa todo el ancho disponible y aplica un tamaño de texto pequeño.
+      class="w-full caption-bottom text-sm": Aplica varias clases de Tailwind CSS.
+      w-full: Ocupa todo el ancho disponible.
+      caption-bottom: Coloca el título de la tabla en la parte inferior.
+      text-sm: Aplica un tamaño de texto pequeño.
+      -->
     <table class="w-full caption-bottom text-sm">
+      <!--
+        Etiqueta <thead>: Define el encabezado de la tabla.
+        class="[&amp;_tr]:border-b": Aplica un borde inferior a todas las filas dentro del <thead>.
+        -->
       <thead class="[&amp;_tr]:border-b">
+        <!--
+          Etiqueta <tr>: Define una fila en el encabezado de la tabla.
+          class="border-b transition-colors hover:bg-muted/50 data-[state=selected]:bg-muted": Aplica varias clases de Tailwind CSS.
+          border-b: Aplica un borde inferior a la fila.
+          transition-colors: Aplica una transición suave a los cambios de color.
+          hover:bg-muted/50: Cambia el fondo a un color tenue al pasar el cursor sobre la fila.
+          data-[state=selected]:bg-muted: Cambia el fondo a un color tenue cuando la fila está seleccionada.
+          -->
         <tr
           class="border-b transition-colors hover:bg-muted/50 data-[state=selected]:bg-muted"
         >
+          <!--
+            Etiqueta <th>: Define una celda de encabezado en la tabla.
+            class="h-12 px-4 text-left align-middle font-medium text-muted-foreground [&amp;:has([role=checkbox])]:pr-0": Aplica varias clases de Tailwind CSS.
+            h-12: Aplica una altura de 3rem (48px).
+            px-4: Aplica un padding horizontal de 1rem (16px).
+            text-left: Alinea el texto a la izquierda.
+            align-middle: Alinea el contenido verticalmente en el medio.
+            font-medium: Aplica un peso de fuente medio.
+            text-muted-foreground: Aplica un color de texto tenue.
+            [&amp;:has([role=checkbox])]:pr-0: Elimina el padding derecho si la celda contiene un elemento con el rol de checkbox.
+            -->
           <th
             class="h-12 px-4 text-left align-middle font-medium text-muted-foreground [&amp;:has([role=checkbox])]:pr-0"
           >
             Name
           </th>
+          <!--
+            Etiqueta <th>: Define una celda de encabezado en la tabla.
+            class="h-12 px-4 text-left align-middle font-medium text-muted-foreground [&amp;:has([role=checkbox])]:pr-0": Aplica varias clases de Tailwind CSS.
+            h-12: Aplica una altura de 3rem (48px).
+            px-4: Aplica un padding horizontal de 1rem (16px).
+            text-left: Alinea el texto a la izquierda.
+            align-middle: Alinea el contenido verticalmente en el medio.
+            font-medium: Aplica un peso de fuente medio.
+            text-muted-foreground: Aplica un color de texto tenue.
+            [&amp;:has([role=checkbox])]:pr-0: Elimina el padding derecho si la celda contiene un elemento con el rol de checkbox.
+            -->
           <th
             class="h-12 px-4 text-left align-middle font-medium text-muted-foreground [&amp;:has([role=checkbox])]:pr-0"
           >
             Email
           </th>
+          <!--
+            Etiqueta <th>: Define una celda de encabezado en la tabla.
+            class="h-12 px-4 text-left align-middle font-medium text-muted-foreground [&amp;:has([role=checkbox])]:pr-0": Aplica varias clases de Tailwind CSS.
+            h-12: Aplica una altura de 3rem (48px).
+            px-4: Aplica un padding horizontal de 1rem (16px).
+            text-left: Alinea el texto a la izquierda.
+            align-middle: Alinea el contenido verticalmente en el medio.
+            font-medium: Aplica un peso de fuente medio.
+            text-muted-foreground: Aplica un color de texto tenue.
+            [&amp;:has([role=checkbox])]:pr-0: Elimina el padding derecho si la celda contiene un elemento con el rol de checkbox.
+            -->
           <th
             class="h-12 px-4 text-left align-middle font-medium text-muted-foreground [&amp;:has([role=checkbox])]:pr-0"
           >
             Role
           </th>
+          <!--
+            Etiqueta <th>: Define una celda de encabezado en la tabla.
+            class="h-12 px-4 text-left align-middle font-medium text-muted-foreground [&amp;:has([role=checkbox])]:pr-0": Aplica varias clases de Tailwind CSS.
+            h-12: Aplica una altura de 3rem (48px).
+            px-4: Aplica un padding horizontal de 1rem (16px).
+            text-left: Alinea el texto a la izquierda.
+            align-middle: Alinea el contenido verticalmente en el medio.
+            font-medium: Aplica un peso de fuente medio.
+            text-muted-foreground: Aplica un color de texto tenue.
+            [&amp;:has([role=checkbox])]:pr-0: Elimina el padding derecho si la celda contiene un elemento con el rol de checkbox.
+            -->
           <th
             class="h-12 px-4 text-left align-middle font-medium text-muted-foreground [&amp;:has([role=checkbox])]:pr-0"
           >
             Status
           </th>
+          <!--
+            Etiqueta <th>: Define una celda de encabezado en la tabla.
+            class="h-12 px-4 text-left align-middle font-medium text-muted-foreground [&amp;:has([role=checkbox])]:pr-0": Aplica varias clases de Tailwind CSS.
+            h-12: Aplica una altura de 3rem (48px).
+            px-4: Aplica un padding horizontal de 1rem (16px).
+            text-left: Alinea el texto a la izquierda.
+            align-middle: Alinea el contenido verticalmente en el medio.
+            font-medium: Aplica un peso de fuente medio.
+            text-muted-foreground: Aplica un color de texto tenue.
+            [&amp;:has([role=checkbox])]:pr-0: Elimina el padding derecho si la celda contiene un elemento con el rol de checkbox.
+            -->
           <th
             class="h-12 px-4 align-middle font-medium text-muted-foreground [&amp;:has([role=checkbox])]:pr-0 text-right"
           >
@@ -32,16 +120,47 @@
           </th>
         </tr>
       </thead>
+      <!--
+        Etiqueta <tbody>: Define el cuerpo de la tabla.
+        class="[&amp;_tr:last-child]:border-0": Aplica varias clases de Tailwind CSS.
+        [&amp;_tr:last-child]:border-0: Elimina el borde inferior de la última fila del cuerpo de la tabla.
+        -->
       <tbody class="[&amp;_tr:last-child]:border-0">
+        <!--
+        Ciclo for para renderizar los n elementos del arreglo contenido en la señal  (users())
+        -->
         @for (user of users(); track $index) {
+        <!--
+          Etiqueta <tr>: Define una fila en el cuerpo de la tabla.
+          class="border-b transition-colors hover:bg-muted/50 data-[state=selected]:bg-muted": Aplica varias clases de Tailwind CSS.
+          border-b: Aplica un borde inferior a la fila.
+          transition-colors: Aplica una transición suave a los cambios de color.
+          hover:bg-muted/50: Cambia el fondo a un color tenue al pasar el cursor sobre la fila.
+          data-[state=selected]:bg-muted: Cambia el fondo a un color tenue cuando la fila está seleccionada.
+          -->
         <tr
           class="border-b transition-colors hover:bg-muted/50 data-[state=selected]:bg-muted"
         >
+          <!--
+            Etiqueta <td>: Define una celda en la fila del cuerpo de la tabla.
+            class="p-4 align-middle [&amp;:has([role=checkbox])]:pr-0 font-medium": Aplica varias clases de Tailwind CSS.
+            p-4: Aplica un padding de 1rem (16px) en todos los lados.
+            align-middle: Alinea el contenido verticalmente en el medio.
+            [&amp;:has([role=checkbox])]:pr-0: Elimina el padding derecho si la celda contiene un elemento con el rol de checkbox.
+            font-medium: Aplica un peso de fuente medio.
+            -->
           <td
             class="p-4 align-middle [&amp;:has([role=checkbox])]:pr-0 font-medium"
           >
             {{ user.fullName }}
           </td>
+          <!--
+            Etiqueta <td>: Define una celda en la fila del cuerpo de la tabla.
+            class="p-4 align-middle [&amp;:has([role=checkbox])]:pr-0": Aplica varias clases de Tailwind CSS.
+            p-4: Aplica un padding de 1rem (16px) en todos los lados.
+            align-middle: Alinea el contenido verticalmente en el medio.
+            [&amp;:has([role=checkbox])]:pr-0: Elimina el padding derecho si la celda contiene un elemento con el rol de checkbox.
+            -->
           <td class="p-4 align-middle [&amp;:has([role=checkbox])]:pr-0">
             {{ user.email }}
           </td>
@@ -49,6 +168,26 @@
             {{ user.role | uppercase }}
           </td>
           <td class="p-4 align-middle [&amp;:has([role=checkbox])]:pr-0">
+            <!--
+              Etiqueta <div>: Define un contenedor para el estado del usuario (Activo/Inactivo).
+              class="inline-flex w-fit items-center whitespace-nowrap rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2": Aplica varias clases de Tailwind CSS.
+              inline-flex: Aplica un diseño flexbox en línea.
+              w-fit: Ajusta el ancho al contenido.
+              items-center: Alinea los elementos hijos verticalmente en el centro.
+              whitespace-nowrap: Evita que el texto se divida en varias líneas.
+              rounded-full: Aplica bordes completamente redondeados.
+              border: Aplica un borde alrededor del contenedor.
+              px-2.5: Aplica un padding horizontal de 0.625rem (10px).
+              py-0.5: Aplica un padding vertical de 0.125rem (2px).
+              text-xs: Aplica un tamaño de texto extra pequeño.
+              font-semibold: Aplica un peso de fuente seminegrita.
+              transition-colors: Aplica una transición suave a los cambios de color.
+              focus:outline-none: Elimina el contorno predeterminado al enfocar.
+              focus:ring-2: Aplica un anillo de enfoque de 2px.
+              focus:ring-ring: Aplica un color específico al anillo de enfoque.
+              focus:ring-offset-2: Aplica un desplazamiento de 2px al anillo de enfoque.
+              data-v0-t="badge": Atributo de datos personalizado para identificar el elemento como una insignia.
+              -->
             <div
               class="inline-flex w-fit items-center whitespace-nowrap rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2"
               data-v0-t="badge"
@@ -56,14 +195,62 @@
               {{ user.isActive ? "Active" : "Inactive" }}
             </div>
           </td>
+          <!--
+          Etiqueta <td>: Define una celda en la fila del cuerpo de la tabla.
+          class="p-4 align-middle [&amp;:has([role=checkbox])]:pr-0 text-right": Aplica varias clases de Tailwind CSS.
+          p-4: Aplica un padding de 1rem (16px) en todos los lados.
+          align-middle: Alinea el contenido verticalmente en el medio.
+          [&amp;:has([role=checkbox])]:pr-0: Elimina el padding derecho si la celda contiene un elemento con el rol de checkbox.
+          text-right: Alinea el texto a la derecha.
+          -->
           <td
             class="p-4 align-middle [&amp;:has([role=checkbox])]:pr-0 text-right"
           >
+            <!--
+              Etiqueta <div>: Define un contenedor para los botones de acción.
+              class="flex items-center justify-end gap-2": Aplica varias clases de Tailwind CSS.
+              flex: Aplica un diseño flexbox.
+              items-center: Alinea los elementos hijos verticalmente en el centro.
+              justify-end: Alinea los elementos hijos horizontalmente al final del contenedor.
+              gap-2: Aplica un espacio de 0.5rem (8px) entre los elementos hijos.
+              -->
             <div class="flex items-center justify-end gap-2">
+              <!--
+              Etiqueta <button>: Define un botón para abrir el modal de edición.
+              class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-accent hover:text-accent-foreground h-10 w-10": Aplica varias clases de Tailwind CSS.
+              inline-flex: Aplica un diseño flexbox en línea.
+              items-center: Alinea los elementos hijos verticalmente en el centro.
+              justify-center: Alinea los elementos hijos horizontalmente en el centro.
+              whitespace-nowrap: Evita que el texto se divida en varias líneas.
+              rounded-md: Aplica bordes redondeados medianos.
+              text-sm: Aplica un tamaño de texto pequeño.
+              font-medium: Aplica un peso de fuente medio.
+              ring-offset-background: Aplica un color de fondo al anillo de enfoque.
+              transition-colors: Aplica una transición suave a los cambios de color.
+              focus-visible:outline-none: Elimina el contorno predeterminado al enfocar.
+              focus-visible:ring-2: Aplica un anillo de enfoque de 2px.
+              focus-visible:ring-ring: Aplica un color específico al anillo de enfoque.
+              focus-visible:ring-offset-2: Aplica un desplazamiento de 2px al anillo de enfoque.
+              disabled:pointer-events-none: Desactiva los eventos del puntero cuando el botón está deshabilitado.
+              disabled:opacity-50: Aplica una opacidad del 50% cuando el botón está deshabilitado.
+              hover:bg-accent: Cambia el fondo a un color de acento al pasar el cursor sobre el botón.
+              hover:text-accent-foreground: Cambia el color del texto a un color de acento al pasar el cursor sobre el botón.
+              h-10: Aplica una altura de 2.5rem (40px).
+              w-10: Aplica un ancho de 2.5rem (40px).
+              (click)="openEditModal(user)": Asocia el evento de clic con el método openEditModal(user) para abrir el modal de edición.
+              -->
               <button
                 class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-accent hover:text-accent-foreground h-10 w-10"
                 (click)="openEditModal(user)"
               >
+                <!--
+                Etiqueta <svg>: Define un contenedor para gráficos vectoriales escalables (SVG).
+                xmlns="http://www.w3.org/2000/svg": Especifica el espacio de nombres XML para SVG.
+                width="24": Define el ancho del SVG como 24 unidades.
+                height="24": Define la altura del SVG como 24 unidades.
+                viewBox="0 0 24 24": Define el sistema de coordenadas del SVG.
+                fill="none": Especifica que el SVG no tiene un color de relleno predeterminado.
+                -->
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="24"
@@ -76,20 +263,97 @@
                   stroke-linejoin="round"
                   class="h-4 w-4"
                 >
+                  <!--
+                    Etiqueta <path>: Define una forma en el SVG.
+                    d="M12 22h6a2 2 0 0 0 2-2V7l-5-5H6a2 2 0 0 0-2 2v10": Define los comandos de dibujo para la forma.
+                    M12 22: Mueve el cursor a las coordenadas (12, 22).
+                    h6: Dibuja una línea horizontal de 6 unidades hacia la derecha.
+                    a2 2 0 0 0 2-2: Dibuja un arco con un radio de 2 unidades (forma un borde redondeado en el extremo).
+                    V7: Dibuja una línea vertical hacia abajo hasta la coordenada Y=7.
+                    l-5-5: Dibuja una línea diagonal hacia el punto (-5, -5) desde la posición actual.
+                    H6: Dibuja una línea horizontal hacia la izquierda hasta la coordenada X=6.
+                    a2 2 0 0 0-2 2: Dibuja un arco con un radio de 2 unidades, creando un borde redondeado en la parte inferior.
+                    v10: Dibuja una línea vertical hacia abajo 10 unidades.
+                  -->
                   <path
                     d="M12 22h6a2 2 0 0 0 2-2V7l-5-5H6a2 2 0 0 0-2 2v10"
                   ></path>
+                  <!--
+                  Etiqueta <path>: Define una forma en el SVG.
+                  d="M14 2v4a2 2 0 0 0 2 2h4": Define los comandos de dibujo para la forma.
+                  M14 2: Mueve el cursor a las coordenadas (14, 2).
+                  v4: Dibuja una línea vertical de 4 unidades.
+                  a2 2 0 0 0 2 2: Dibuja un arco con un radio de 2 unidades en ambas direcciones.
+                  h4: Dibuja una línea horizontal de 4 unidades.
+                  -->
                   <path d="M14 2v4a2 2 0 0 0 2 2h4"></path>
+                  <!--
+                  Etiqueta <path>: Define una forma en el SVG.
+                  d="M10.4 12.6a2 2 0 1 1 3 3L8 21l-4 1 1-4Z": Define los comandos de dibujo para la forma.
+                  M10.4 12.6: Mueve el cursor a las coordenadas (10.4, 12.6).
+                  a2 2 0 1 1 3 3: Dibuja un arco con un radio de 2 unidades, creando un círculo.
+                  L8 21: Dibuja una línea desde el punto actual hasta las coordenadas (8, 21).
+                  l-4 1: Dibuja una línea relativa de -4 unidades en el eje x y 1 unidad en el eje y.
+                  1-4Z: Dibuja una línea relativa de 1 unidad en el eje x y -4 unidades en el eje y, y cierra la forma.
+                  -->
                   <path d="M10.4 12.6a2 2 0 1 1 3 3L8 21l-4 1 1-4Z"></path>
                 </svg>
+                <!--
+                Etiqueta <span>: Se utiliza para aplicar estilos en línea y agrupar contenido en línea.
+                class="sr-only": Aplica una clase de CSS que generalmente se utiliza para ocultar el texto visualmente, pero lo mantiene accesible para lectores de pantalla.
+                -->
                 <span class="sr-only">Edit</span>
               </button>
 
+              <!--
+              Etiqueta <button>: Define un botón que puede ser interactivo en una interfaz.
+              class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-accent hover:text-accent-foreground h-10 w-10":
+              Aplica varios estilos y comportamientos al botón:
+
+              - inline-flex: Hace que el botón use un contenedor flex en línea, permitiendo la alineación de elementos dentro de él.
+              - items-center: Alinea verticalmente los elementos dentro del botón.
+              - justify-center: Centra horizontalmente el contenido del botón.
+              - whitespace-nowrap: Evita que el texto se divida en varias líneas.
+              - rounded-md: Aplica bordes redondeados de tamaño medio al botón.
+              - text-sm: Define un tamaño de texto pequeño.
+              - font-medium: Aplica un grosor de fuente medio.
+              - ring-offset-background: Establece un color de fondo para el anillo de enfoque.
+              - transition-colors: Habilita una transición suave en los cambios de color.
+              - focus-visible:outline-none: Elimina el contorno predeterminado cuando el botón recibe el foco, pero solo si es visible.
+              - focus-visible:ring-2: Aplica un anillo de 2 píxeles de grosor al botón cuando es enfocado.
+              - focus-visible:ring-ring: Define el color del anillo de enfoque.
+              - focus-visible:ring-offset-2: Establece un espacio entre el botón y el anillo de enfoque.
+              - disabled:pointer-events-none: Desactiva los eventos de puntero cuando el botón está deshabilitado.
+              - disabled:opacity-50: Aplica una opacidad del 50% cuando el botón está deshabilitado.
+              - hover:bg-accent: Cambia el color de fondo al color de acento al pasar el ratón.
+              - hover:text-accent-foreground: Cambia el color del texto al color de primer plano de acento al pasar el ratón.
+              - h-10: Define una altura de 10 unidades.
+              - w-10: Define un ancho de 10 unidades.
+
+              (click)="toggleActive(user)": Define un evento que se activa al hacer clic en el botón, llamando a la función toggleActive con el parámetro user.
+            -->
               <button
                 class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-accent hover:text-accent-foreground h-10 w-10"
                 (click)="toggleActive(user)"
               >
+                <!--
+                Condicional que permite validar si el usurio esta activo muestra el
+                icono para suspender de lo contario muestra el icono para reactivar
+                -->
                 @if (user.isActive) {
+                <!--
+                  Etiqueta <svg>: Define un contenedor para gráficos vectoriales escalables (SVG).
+                  xmlns="http://www.w3.org/2000/svg": Especifica el espacio de nombres XML para el SVG, necesario para la validez del documento.
+                  width="24": Establece el ancho del SVG en 24 unidades.
+                  height="24": Establece la altura del SVG en 24 unidades.
+                  viewBox="0 0 24 24": Define el área visible del SVG, permitiendo escalado y ajuste. En este caso, se establece un cuadro de vista de 24 por 24 unidades.
+                  fill="none": Establece que el interior de las formas dentro del SVG no estará relleno.
+                  stroke="currentColor": Define el color del contorno (stroke) utilizando el color actual del texto o del contenedor padre, permitiendo que el SVG se adapte al esquema de colores del contexto.
+                  stroke-width="2": Establece el grosor del contorno en 2 unidades.
+                  stroke-linecap="round": Aplica un estilo de extremo redondeado a las líneas del contorno.
+                  stroke-linejoin="round": Aplica un estilo de unión redondeada a los puntos donde se conectan las líneas del contorno.
+                  class="h-4 w-4": Aplica estilos de altura y anchura de 4 unidades, permitiendo ajustar el tamaño del SVG según las necesidades del diseño.
+                -->
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="24"
@@ -102,11 +366,48 @@
                   stroke-linejoin="round"
                   class="h-4 w-4"
                 >
+                  <!--
+                    Etiqueta <rect>: Define un rectángulo dentro de un SVG.
+                    x="14": Establece la posición horizontal del rectángulo, con la esquina superior izquierda en la coordenada X=14.
+                    y="4": Establece la posición vertical del rectángulo, con la esquina superior izquierda en la coordenada Y=4.
+                    width="4": Define el ancho del rectángulo en 4 unidades.
+                    height="16": Define la altura del rectángulo en 16 unidades.
+                    rx="1": Aplica un radio de curvatura de 1 unidad a las esquinas del rectángulo, creando bordes redondeados.
+
+                    Uso:
+                    La etiqueta <rect> es útil para crear formas rectangulares simples en gráficos SVG, y el atributo rx permite suavizar las esquinas para un diseño más estético.
+                  -->
                   <rect x="14" y="4" width="4" height="16" rx="1"></rect>
+                  <!--
+                  Etiqueta <rect>: Define un rectángulo dentro de un SVG.
+                  x="6": Establece la posición horizontal del rectángulo, con la esquina superior izquierda en la coordenada X=6.
+                  y="4": Establece la posición vertical del rectángulo, con la esquina superior izquierda en la coordenada Y=4.
+                  width="4": Define el ancho del rectángulo en 4 unidades.
+                  height="16": Define la altura del rectángulo en 16 unidades.
+                  rx="1": Aplica un radio de curvatura de 1 unidad a las esquinas del rectángulo, creando bordes redondeados.
+                  -->
                   <rect x="6" y="4" width="4" height="16" rx="1"></rect>
                 </svg>
+                <!--
+                  Etiqueta <span>: Se utiliza para aplicar estilos en línea y agrupar contenido en línea.
+                  class="sr-only": Aplica una clase de CSS que se usa comúnmente para ocultar el texto visualmente, pero lo mantiene accesible para los lectores de pantalla.
+                  Suspend: Texto que se muestra solo para tecnologías asistivas, indicando que la acción relacionada es suspender algo.
+                -->
                 <span class="sr-only">Suspend</span>
                 }@else {
+                <!--
+                  Etiqueta <svg>: Define un contenedor para gráficos vectoriales escalables (SVG).
+                  xmlns="http://www.w3.org/2000/svg": Especifica el espacio de nombres XML para el SVG, necesario para la validez del documento.
+                  width="24": Establece el ancho del SVG en 24 unidades.
+                  height="24": Establece la altura del SVG en 24 unidades.
+                  viewBox="0 0 24 24": Define el área visible del SVG, permitiendo escalado y ajuste. En este caso, se establece un cuadro de vista de 24 por 24 unidades.
+                  fill="none": Establece que el interior de las formas dentro del SVG no estará relleno.
+                  stroke="currentColor": Define el color del contorno (stroke) utilizando el color actual del texto o del contenedor padre.
+                  stroke-width="2": Establece el grosor del contorno en 2 unidades.
+                  stroke-linecap="round": Aplica un estilo de extremo redondeado a las líneas del contorno.
+                  stroke-linejoin="round": Aplica un estilo de unión redondeada a los puntos donde se conectan las líneas del contorno.
+                  class="h-4 w-4": Aplica estilos de altura y anchura de 4 unidades, permitiendo ajustar el tamaño del SVG según las necesidades del diseño.
+                -->
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="24"
@@ -119,16 +420,66 @@
                   stroke-linejoin="round"
                   class="h-4 w-4"
                 >
+                  <!--
+                    Etiqueta <polygon>: Define una forma poligonal en un SVG utilizando un conjunto de puntos.
+                    points="6 3 20 12 6 21 6 3": Establece las coordenadas de los vértices del polígono.
+                      - 6 3: Primer vértice en la posición (6, 3).
+                      - 20 12: Segundo vértice en la posición (20, 12).
+                      - 6 21: Tercer vértice en la posición (6, 21).
+                      - 6 3: Cierra el polígono volviendo al primer vértice.
+                  -->
                   <polygon points="6 3 20 12 6 21 6 3"></polygon>
                 </svg>
+                <!--
+                  Etiqueta <span>: Se utiliza para aplicar estilos en línea y agrupar contenido en línea.
+                  class="sr-only": Aplica una clase de CSS que se usa comúnmente para ocultar el texto visualmente, pero lo mantiene accesible para los lectores de pantalla.
+                  Suspend: Texto que se muestra solo para tecnologías asistivas, indicando que la acción relacionada es suspender algo.
+                -->
                 <span class="sr-only">Suspend</span>
                 }
               </button>
+              <!--
+                Etiqueta <button>: Define un botón que puede ser interactivo en una interfaz.
+                class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-accent hover:text-accent-foreground h-10 w-10":
+                - inline-flex: Hace que el botón use un contenedor flex en línea, permitiendo la alineación de elementos dentro de él.
+                - items-center: Alinea verticalmente los elementos dentro del botón.
+                - justify-center: Centra horizontalmente el contenido del botón.
+                - whitespace-nowrap: Evita que el texto se divida en varias líneas.
+                - rounded-md: Aplica bordes redondeados de tamaño medio al botón.
+                - text-sm: Define un tamaño de texto pequeño.
+                - font-medium: Aplica un grosor de fuente medio.
+                - ring-offset-background: Establece un color de fondo para el anillo de enfoque.
+                - transition-colors: Habilita una transición suave en los cambios de color.
+                - focus-visible:outline-none: Elimina el contorno predeterminado cuando el botón recibe el foco, pero solo si es visible.
+                - focus-visible:ring-2: Aplica un anillo de 2 píxeles de grosor al botón cuando es enfocado.
+                - focus-visible:ring-ring: Define el color del anillo de enfoque.
+                - focus-visible:ring-offset-2: Establece un espacio entre el botón y el anillo de enfoque.
+                - disabled:pointer-events-none: Desactiva los eventos de puntero cuando el botón está deshabilitado.
+                - disabled:opacity-50: Aplica una opacidad del 50% cuando el botón está deshabilitado.
+                - hover:bg-accent: Cambia el color de fondo al color de acento al pasar el ratón.
+                - hover:text-accent-foreground: Cambia el color del texto al color de primer plano de acento al pasar el ratón.
+                - h-10: Define una altura de 10 unidades.
+                - w-10: Define un ancho de 10 unidades.
 
+                (click)="deleteUser(user)": Define un evento que se activa al hacer clic en el botón, llamando a la función deleteUser con el parámetro user.
+              -->
               <button
                 class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-accent hover:text-accent-foreground h-10 w-10"
                 (click)="deleteUser(user)"
               >
+                <!--
+                  Etiqueta <svg>: Define un contenedor para gráficos vectoriales escalables (SVG).
+                  xmlns="http://www.w3.org/2000/svg": Especifica el espacio de nombres XML para el SVG, necesario para la validez del documento.
+                  width="24": Establece el ancho del SVG en 24 unidades.
+                  height="24": Establece la altura del SVG en 24 unidades.
+                  viewBox="0 0 24 24": Define el área visible del SVG, permitiendo escalado y ajuste. En este caso, se establece un cuadro de vista de 24 por 24 unidades.
+                  fill="none": Establece que el interior de las formas dentro del SVG no estará relleno.
+                  stroke="currentColor": Define el color del contorno (stroke) utilizando el color actual del texto o del contenedor padre.
+                  stroke-width="2": Establece el grosor del contorno en 2 unidades.
+                  stroke-linecap="round": Aplica un estilo de extremo redondeado a las líneas del contorno.
+                  stroke-linejoin="round": Aplica un estilo de unión redondeada a los puntos donde se conectan las líneas del contorno.
+                  class="h-4 w-4": Aplica estilos de altura y anchura de 4 unidades, permitiendo ajustar el tamaño del SVG según las necesidades del diseño.
+                -->
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="24"
@@ -141,10 +492,46 @@
                   stroke-linejoin="round"
                   class="h-4 w-4"
                 >
+                  <!--
+                    Etiqueta <path>: Define una forma en el SVG mediante comandos de dibujo.
+                    d="M3 6h18": Define los comandos para trazar el camino.
+                    - M3 6: Mueve el cursor a las coordenadas (3, 6) sin dibujar.
+                    - h18: Dibuja una línea horizontal de 18 unidades hacia la derecha desde la posición actual, terminando en (21, 6).
+
+                    Esta ruta dibuja una línea horizontal en el SVG.
+                  -->
                   <path d="M3 6h18"></path>
+                  <!--
+                    Etiqueta <path>: Define una forma en el SVG mediante comandos de dibujo.
+                    d="M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6": Define los comandos para trazar el camino.
+                    - M19 6: Mueve el cursor a las coordenadas (19, 6) sin dibujar.
+                    - v14: Dibuja una línea vertical de 14 unidades hacia abajo.
+                    - c0 1-1 2-2 2: Dibuja una curva con control hacia arriba, creando un borde redondeado hacia el extremo derecho.
+                    - H7: Dibuja una línea horizontal hacia la izquierda hasta la coordenada X=7.
+                    - c-1 0-2-1-2-2: Dibuja otra curva con control hacia abajo, formando el borde inferior.
+                    - V6: Dibuja una línea vertical de regreso a la posición Y=6.
+
+                    Esta ruta define un contorno rectangular con esquinas redondeadas.
+                  -->
                   <path d="M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6"></path>
+                  <!--
+                    Etiqueta <path>: Define una forma en el SVG mediante comandos de dibujo.
+                    d="M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2": Define los comandos para trazar el camino.
+                    - M8 6: Mueve el cursor a las coordenadas (8, 6) sin dibujar.
+                    - V4: Dibuja una línea vertical hacia arriba hasta la coordenada Y=4.
+                    - c0-1 1-2 2-2: Dibuja una curva con control hacia arriba, creando una forma de borde.
+                    - h4: Dibuja una línea horizontal de 4 unidades hacia la derecha.
+                    - c1 0 2 1 2 2: Dibuja otra curva hacia abajo, completando el contorno superior.
+                    - v2: Dibuja una línea vertical hacia abajo hasta la posición Y=6.
+
+                    Esta ruta define la parte superior de un contenedor o forma, con un contorno curvado.
+                  -->
                   <path d="M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2"></path>
-                </svg>
+                </svg><!--
+                  Etiqueta <span>: Se utiliza para aplicar estilos en línea y agrupar contenido en línea.
+                  class="sr-only": Aplica una clase de CSS que se usa comúnmente para ocultar el texto visualmente, pero lo mantiene accesible para los lectores de pantalla.
+                  Delete: Texto que se muestra solo para tecnologías asistivas, indicando que la acción relacionada es suspender algo.
+                -->
                 <span class="sr-only">Delete</span>
               </button>
             </div>
@@ -155,7 +542,24 @@
     </table>
   </div>
 </div>
+<!--
+  Condicional @if: Se utiliza para renderizar el componente solo si la condición se cumple.
+  (isModalOpen()):
+  - Método que retorna un valor booleano. Si es verdadero, se renderiza el componente <admin-edit-user>.
+  - Este patrón se utiliza comúnmente para mostrar o ocultar elementos de la interfaz basándose en el estado de la aplicación.
+-->
 @if (isModalOpen()) {
+<!--
+  Etiqueta <admin-edit-user>: Componente personalizado que se utiliza para editar la información de un usuario.
+  [user]="selectedUser!":
+  - Propiedad de entrada que recibe el objeto `selectedUser` (con un operador de aserción no nulo `!`), representando al usuario que se va a editar.
+
+  (closeModal)="closeEditModal()":
+  - Evento que se emite cuando se cierra el modal. Llama a la función `closeEditModal()` para manejar el cierre.
+
+  (saveUser)="updateUser($event)":
+  - Evento que se emite al guardar la información del usuario editado. Llama a la función `updateUser` con el evento `$event` como argumento.
+-->
 <admin-edit-user
   [user]="selectedUser!"
   (closeModal)="closeEditModal()"
