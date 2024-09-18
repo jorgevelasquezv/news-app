@@ -1,42 +1,156 @@
+<!-- Este archivo define la estructura y el estilo del formulario para crear un nuevo usuario en el sistema.
+A continuación se describe cada sección del archivo, incluyendo las etiquetas HTML y los estilos de
+Tailwind CSS utilizados. -->
+
+<!--
+Etiqueta <form>: Define un formulario HTML.
+Atributo class: Aplica clases de Tailwind CSS para estilizar el formulario.
+rounded-lg: Aplica bordes redondeados grandes.
+border: Aplica un borde alrededor del formulario.
+bg-card: Aplica un color de fondo específico para tarjetas.
+text-card-foreground: Aplica un color de texto específico para tarjetas.
+shadow-sm: Aplica una sombra pequeña al formulario.
+Atributo data-v0-t: Atributo de datos personalizado, posiblemente utilizado para pruebas o seguimiento.
+Atributo [formGroup]: Enlaza el formulario a un grupo de formularios de Angular (formCreateUser).
+Atributo (ngSubmit): Define una función (createUser()) que se ejecuta cuando se envía el formulario. -->
 <form
   class="rounded-lg border bg-card text-card-foreground shadow-sm"
   data-v0-t="card"
   [formGroup]="formCreateUser"
   (ngSubmit)="createUser()"
 >
+  <!--
+Etiqueta <div>: Contenedor para el encabezado del formulario.
+flex flex-col: Aplica un diseño flexbox en columna.
+space-y-1.5: Aplica un espacio vertical entre los elementos hijos.
+p-6: Aplica un padding de 1.5rem (24px) alrededor del contenedor.
+-->
   <div class="flex flex-col space-y-1.5 p-6">
+    <!--
+Etiqueta <h3>: Define un encabezado de nivel 3.
+whitespace-nowrap: Evita que el texto se divida en varias líneas.
+text-2xl: Aplica un tamaño de texto de 1.5rem (24px).
+font-semibold: Aplica un peso de fuente seminegrita.
+leading-none: Aplica un interlineado ajustado.
+tracking-tight: Reduce el espacio entre caracteres.
+-->
     <h3
       class="whitespace-nowrap text-2xl font-semibold leading-none tracking-tight"
     >
       Create User
     </h3>
+    <!--
+Etiqueta <p>: Define un párrafo.
+text-sm: Aplica un tamaño de texto pequeño.
+text-muted-foreground: Aplica un color de texto atenuado.
+-->
     <p class="text-sm text-muted-foreground">Add a new user to the system.</p>
   </div>
+  <!--
+Etiqueta <div>: Contenedor para los campos de entrada del formulario.
+p-6: Aplica un padding de 1.5rem (24px) alrededor del contenedor.
+space-y-4: Aplica un espacio vertical de 1rem (16px) entre los elementos hijos.
+-->
   <div class="p-6 space-y-4">
+    <!--
+Etiqueta <div>: Contenedor para el campo de entrada del nombre.
+space-y-2: Aplica un espacio vertical de 0.5rem (8px) entre los elementos hijos.
+-->
     <div class="space-y-2">
+      <!--
+      Etiqueta <label>: Define una etiqueta para el campo de entrada del nombre.
+      text-sm: Aplica un tamaño de texto pequeño.
+      font-medium: Aplica un peso de fuente medio.
+      leading-none: Aplica un interlineado ajustado.
+      peer-disabled:cursor-not-allowed: Cambia el cursor a "no permitido" cuando el campo está deshabilitado.
+      peer-disabled:opacity-70: Reduce la opacidad al 70% cuando el campo está deshabilitado.
+      for="name": Asocia la etiqueta con el campo de entrada con el ID "name".
+      -->
       <label
         class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
         for="name"
       >
         Name
       </label>
+      <!--
+      Etiqueta <input>: Define un campo de entrada para el nombre del usuario.
+      class: Aplica varias clases de Tailwind CSS para estilizar el campo de entrada.
+      flex: Aplica un diseño flexbox.
+      h-10: Aplica una altura de 2.5rem (40px).
+      w-full: Aplica un ancho del 100%.
+      rounded-md: Aplica bordes redondeados medianos.
+      border border-input: Aplica un borde alrededor del campo de entrada.
+      bg-background: Aplica un color de fondo específico.
+      px-3 py-2: Aplica un padding de 0.75rem (12px) horizontal y 0.5rem (8px) vertical.
+      text-sm: Aplica un tamaño de texto pequeño.
+      ring-offset-background: Aplica un color de fondo para el anillo de enfoque.
+      file:border-0 file:bg-transparent file:text-sm file:font-medium: Estilos específicos para archivos.
+      placeholder:text-muted-foreground: Aplica un color de texto atenuado para el placeholder.
+      focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2: Estilos para el estado de enfoque.
+      disabled:cursor-not-allowed disabled:opacity-50: Estilos para el estado deshabilitado.
+      id="name": Asigna un ID al campo de entrada.
+      placeholder="Enter user's name": Define un texto placeholder.
+      formControlName="fullName": Enlaza el campo de entrada a un control de formulario de Angular.
+      -->
       <input
         class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
         id="name"
         placeholder="Enter user's name"
         formControlName="fullName"
       />
+      <!--
+      Condiconal que evalua si el campo no cumple con las reglas de validación (fullNameInvalid).
+      Si la validación es fallida se muestra un mensaje de error en color rojo.
+      -->
       @if (fullNameInvalid) {
+      <!--
+        Etiqueta <span>: Muestra un mensaje de error si el nombre es inválido.
+        class="text-red-500": Aplica un color de texto rojo.
+        -->
       <span class="text-red-500">Nombre debe tener minimo 3 caracteres</span>
       }
     </div>
+    <!--
+    Etiqueta <div>: Contenedor para el campo de entrada del correo electrónico.
+    class="space-y-2": Aplica un espacio vertical de 0.5rem (8px) entre los elementos hijos.
+    -->
     <div class="space-y-2">
+      <!--
+    Etiqueta <label>: Define una etiqueta para el campo de entrada del correo electrónico.
+    class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70": Aplica varias clases de Tailwind CSS para estilizar la etiqueta.
+    text-sm: Aplica un tamaño de texto pequeño.
+    font-medium: Aplica un peso de fuente medio.
+    leading-none: Aplica un interlineado ajustado.
+    peer-disabled:cursor-not-allowed: Cambia el cursor a "no permitido" cuando el campo está deshabilitado.
+    peer-disabled:opacity-70: Reduce la opacidad al 70% cuando el campo está deshabilitado.
+    for="email": Asocia la etiqueta con el campo de entrada con el ID "email".
+    -->
       <label
         class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
         for="email"
       >
         Email
       </label>
+      <!--
+      Etiqueta <input>: Define un campo de entrada para el correo electrónico del usuario.
+      class: Aplica varias clases de Tailwind CSS para estilizar el campo de entrada.
+      flex: Aplica un diseño flexbox.
+      h-10: Aplica una altura de 2.5rem (40px).
+      w-full: Aplica un ancho del 100%.
+      rounded-md: Aplica bordes redondeados medianos.
+      border border-input: Aplica un borde alrededor del campo de entrada.
+      bg-background: Aplica un color de fondo específico.
+      px-3 py-2: Aplica un padding de 0.75rem (12px) horizontal y 0.5rem (8px) vertical.
+      text-sm: Aplica un tamaño de texto pequeño.
+      ring-offset-background: Aplica un color de fondo para el anillo de enfoque.
+      file:border-0 file:bg-transparent file:text-sm file:font-medium: Estilos específicos para archivos.
+      placeholder:text-muted-foreground: Aplica un color de texto atenuado para el placeholder.
+      focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2: Estilos para el estado de enfoque.
+      disabled:cursor-not-allowed disabled:opacity-50: Estilos para el estado deshabilitado.
+      id="email": Asigna un ID al campo de entrada.
+      placeholder="Enter user's email": Define un texto placeholder.
+      formControlName="email": Enlaza el campo de entrada a un control de formulario de Angular.
+      -->
       <input
         class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
         id="email"
@@ -44,17 +158,60 @@
         type="email"
         formControlName="email"
       />
+      <!--
+      Condiconal que evalua si el campo no cumple con las reglas de validación (emailInvalid).
+      Si la validación es fallida se muestra un mensaje de error en color rojo.
+      -->
       @if (emailInvalid) {
+      <!--
+        Etiqueta <span>: Muestra un mensaje de error si el nombre es inválido.
+        class="text-red-500": Aplica un color de texto rojo.
+        -->
       <span class="text-red-500">No es un correo valido</span>
       }
     </div>
+    <!--
+    Etiqueta <div>: Contenedor para el campo de entrada de la contraseña.
+    class="space-y-2": Aplica un espacio vertical de 0.5rem (8px) entre los elementos hijos.
+    -->
     <div class="space-y-2">
+      <!--
+    Etiqueta <label>: Define una etiqueta para el campo de entrada de la contraseña.
+    class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70": Aplica varias clases de Tailwind CSS para estilizar la etiqueta.
+    text-sm: Aplica un tamaño de texto pequeño.
+    font-medium: Aplica un peso de fuente medio.
+    leading-none: Aplica un interlineado ajustado.
+    peer-disabled:cursor-not-allowed: Cambia el cursor a "no permitido" cuando el campo está deshabilitado.
+    peer-disabled:opacity-70: Reduce la opacidad al 70% cuando el campo está deshabilitado.
+    for="password": Asocia la etiqueta con el campo de entrada con el ID "password".
+    -->
       <label
         class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
         for="password"
       >
         Password
       </label>
+      <!--
+      Etiqueta <input>: Define un campo de entrada para la contraseña del usuario.
+      class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50": Aplica varias clases de Tailwind CSS para estilizar el campo de entrada.
+      flex: Aplica un diseño flexbox.
+      h-10: Aplica una altura de 2.5rem (40px).
+      w-full: Aplica un ancho del 100%.
+      rounded-md: Aplica bordes redondeados medianos.
+      border border-input: Aplica un borde alrededor del campo de entrada.
+      bg-background: Aplica un color de fondo específico.
+      px-3 py-2: Aplica un padding de 0.75rem (12px) horizontal y 0.5rem (8px) vertical.
+      text-sm: Aplica un tamaño de texto pequeño.
+      ring-offset-background: Aplica un color de fondo para el anillo de enfoque.
+      file:border-0 file:bg-transparent file:text-sm file:font-medium: Estilos específicos para archivos.
+      placeholder:text-muted-foreground: Aplica un color de texto atenuado para el placeholder.
+      focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2: Estilos para el estado de enfoque.
+      disabled:cursor-not-allowed disabled:opacity-50: Estilos para el estado deshabilitado.
+      id="password": Asigna un ID al campo de entrada.
+      placeholder="Enter password": Define un texto placeholder.
+      type="password": Define el tipo de entrada como contraseña.
+      formControlName="password": Enlaza el campo de entrada a un control de formulario de Angular.
+      -->
       <input
         class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
         id="password"
@@ -62,17 +219,64 @@
         type="password"
         formControlName="password"
       />
+      <!--
+      Condiconal que evalua si el campo no cumple con las reglas de validación (passworInvalid).
+      Si la validación es fallida se muestra un mensaje de error en color rojo.
+      -->
       @if (passwordInvalid) {
+      <!--
+        Etiqueta <span>: Muestra un mensaje de error si el nombre es inválido.
+        class="text-red-500": Aplica un color de texto rojo.
+        -->
       <span class="text-red-500">Password debe tener minimo 6 caracteres</span>
       }
     </div>
+    <!--
+    Etiqueta <div>: Contenedor para el campo de selección del rol.
+    class="space-y-2": Aplica un espacio vertical de 0.5rem (8px) entre los elementos hijos.
+    -->
     <div class="space-y-2">
+      <!--
+    Etiqueta <label>: Define una etiqueta para el campo de selección del rol.
+    class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70": Aplica varias clases de Tailwind CSS para estilizar la etiqueta.
+    text-sm: Aplica un tamaño de texto pequeño.
+    font-medium: Aplica un peso de fuente medio.
+    leading-none: Aplica un interlineado ajustado.
+    peer-disabled:cursor-not-allowed: Cambia el cursor a "no permitido" cuando el campo está deshabilitado.
+    peer-disabled:opacity-70: Reduce la opacidad al 70% cuando el campo está deshabilitado.
+    for="role": Asocia la etiqueta con el campo de selección con el ID "role".
+    -->
       <label
         class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
         for="role"
       >
         Role
       </label>
+      <!--
+      Etiqueta <select>: Define un campo de selección para el rol del usuario.
+      type="button": Define el tipo de elemento como botón.
+      role="combobox": Define el rol del elemento como un cuadro combinado.
+      aria-controls="radix-:r1:": Asocia el elemento con un control de accesibilidad.
+      aria-expanded="false": Indica que el cuadro combinado no está expandido.
+      aria-autocomplete="none": Indica que no hay autocompletado.
+      dir="ltr": Define la dirección del texto como de izquierda a derecha.
+      data-state="closed": Indica que el estado del cuadro combinado está cerrado.
+      data-placeholder="": Define un placeholder de datos vacío.
+      class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50": Aplica varias clases de Tailwind CSS para estilizar el campo de selección.
+      flex: Aplica un diseño flexbox.
+      h-10: Aplica una altura de 2.5rem (40px).
+      w-full: Aplica un ancho del 100%.
+      rounded-md: Aplica bordes redondeados medianos.
+      border border-input: Aplica un borde alrededor del campo de selección.
+      bg-background: Aplica un color de fondo específico.
+      px-3 py-2: Aplica un padding de 0.75rem (12px) horizontal y 0.5rem (8px) vertical.
+      text-sm: Aplica un tamaño de texto pequeño.
+      ring-offset-background: Aplica un color de fondo para el anillo de enfoque.
+      focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2: Estilos para el estado de enfoque.
+      disabled:cursor-not-allowed disabled:opacity-50: Estilos para el estado deshabilitado.
+      id="role": Asigna un ID al campo de selección.
+      formControlName="role": Enlaza el campo de selección a un control de formulario de Angular.
+      -->
       <select
         type="button"
         role="combobox"
@@ -85,16 +289,64 @@
         class="flex h-10 w-full items-center justify-between rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
         formControlName="role"
       >
+        <!--
+      Etiqueta <option>: Define las opciones dentro del campo de selección.
+      <option value="" disabled selected>: Opción por defecto que indica al usuario que seleccione un rol.
+      <option value="admin">Admin</option>: Opción para seleccionar el rol de administrador.
+      <option value="user">User</option>: Opción para seleccionar el rol de usuario.
+      -->
         <option selected>Choose a role</option>
         <option value="user">User</option>
         <option value="admin">Admin</option>
       </select>
+      <!--
+      Condiconal que evalua si el campo no cumple con las reglas de validación (rolInvalid).
+      Si la validación es fallida se muestra un mensaje de error en color rojo.
+      -->
       @if (rolInvalid) {
+      <!--
+        Etiqueta <span>: Muestra un mensaje de error si el nombre es inválido.
+        class="text-red-500": Aplica un color de texto rojo.
+        -->
       <span class="text-red-500">El rol es requerido</span>
       }
     </div>
   </div>
+  <!--
+  Etiqueta <div>: Contenedor para el botón de envío del formulario.
+  class="flex items-center p-6": Aplica varias clases de Tailwind CSS para estilizar el contenedor.
+  flex: Aplica un diseño flexbox.
+  items-center: Alinea los elementos hijos verticalmente al centro.
+  p-6: Aplica un padding de 1.5rem (24px) alrededor del contenedor.
+  -->
   <div class="flex items-center p-6">
+    <!--
+  Etiqueta <button>: Define un botón para enviar el formulario.
+  type="submit": Define el tipo de botón como "submit", lo que envía el formulario cuando se hace clic.
+  [disabled]="!formCreateUser.valid": Deshabilita el botón si el formulario no es válido.
+  class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-10 px-4 py-2 ml-auto": Aplica varias clases de Tailwind CSS para estilizar el botón.
+  inline-flex: Aplica un diseño flexbox en línea.
+  items-center: Alinea los elementos hijos verticalmente al centro.
+  justify-center: Centra los elementos hijos horizontalmente.
+  whitespace-nowrap: Evita que el texto dentro del botón se divida en varias líneas.
+  rounded-md: Aplica bordes redondeados medianos.
+  text-sm: Aplica un tamaño de texto pequeño.
+  font-medium: Aplica un peso de fuente medio.
+  ring-offset-background: Aplica un color de fondo para el anillo de enfoque.
+  transition-colors: Aplica una transición suave para los cambios de color.
+  focus-visible:outline-none: Elimina el contorno predeterminado en el estado de enfoque.
+  focus-visible:ring-2: Aplica un anillo de enfoque de 2px.
+  focus-visible:ring-ring: Aplica un color específico al anillo de enfoque.
+  focus-visible:ring-offset-2: Aplica un desplazamiento de 2px al anillo de enfoque.
+  disabled:pointer-events-none: Deshabilita los eventos del puntero cuando el botón está deshabilitado.
+  disabled:opacity-50: Reduce la opacidad al 50% cuando el botón está deshabilitado.
+  bg-primary: Aplica un color de fondo primario.
+  text-primary-foreground: Aplica un color de texto primario.
+  hover:bg-primary/90: Aplica un color de fondo ligeramente más oscuro en el estado de hover.
+  h-10: Aplica una altura de 2.5rem (40px).
+  px-4 py-2: Aplica un padding de 1rem (16px) horizontal y 0.5rem (8px) vertical.
+  ml-auto: Aplica un margen izquierdo automático para alinear el botón a la derecha.
+  -->
     <button
       type="submit"
       [disabled]="!formCreateUser.valid"

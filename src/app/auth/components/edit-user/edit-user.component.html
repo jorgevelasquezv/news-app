@@ -1,31 +1,131 @@
+<!--
+Etiqueta <div>: Este es el contenedor principal del modal.
+class="fixed inset-0 flex items-center justify-center bg-gray-300 bg-opacity-75": Aplica varias clases de Tailwind CSS para estilizar el contenedor.
+fixed: Posiciona el contenedor de manera fija en la pantalla.
+inset-0: Hace que el contenedor ocupe todo el espacio disponible.
+flex: Aplica un diseño flexbox.
+items-center: Alinea los elementos hijos verticalmente al centro.
+justify-center: Alinea los elementos hijos horizontalmente al centro.
+bg-gray-300: Aplica un color de fondo gris claro.
+bg-opacity-75: Aplica una opacidad del 75% al fondo.
+-->
 <div
   class="fixed inset-0 flex items-center justify-center bg-gray-300 bg-opacity-75"
 >
+  <!--
+  Etiqueta <div>: Este es el contenedor del modal.
+  class="bg-white rounded-lg shadow-xl w-full max-w-lg": Aplica varias clases de Tailwind CSS para estilizar el contenedor del modal.
+  bg-white: Aplica un color de fondo blanco.
+  rounded-lg: Aplica bordes redondeados grandes.
+  shadow-xl: Aplica una sombra grande al contenedor.
+  w-full: Hace que el contenedor ocupe todo el ancho disponible.
+  max-w-lg: Limita el ancho máximo del contenedor a un tamaño grande.
+  -->
   <div class="bg-white rounded-lg shadow-xl w-full max-w-lg">
+    <!--
+    Etiqueta <div>: Este es el encabezado del modal.
+    class="bg-blue-500 text-white px-4 py-2 border-b border-gray-200 flex justify-between items-center": Aplica varias clases de Tailwind CSS para estilizar el encabezado del modal.
+    bg-blue-500: Aplica un color de fondo azul.
+    text-white: Aplica un color de texto blanco.
+    px-4 py-2: Aplica un padding de 1rem (16px) horizontal y 0.5rem (8px) vertical.
+    border-b border-gray-200: Aplica un borde inferior gris claro.
+    flex: Aplica un diseño flexbox.
+    justify-between: Distribuye el espacio entre los elementos hijos.
+    items-center: Alinea los elementos hijos verticalmente al centro.
+    -->
     <div
       class="bg-blue-500 text-white px-4 py-2 border-b border-gray-200 flex justify-between items-center"
     >
+      <!--
+      Etiqueta <h4>: Este es el título del modal.
+      class="text-lg font-medium": Aplica varias clases de Tailwind CSS para estilizar el título.
+      text-lg: Aplica un tamaño de texto grande.
+      font-medium: Aplica un peso de fuente medio.
+      -->
       <h4 class="text-lg font-medium">Editar Usuario</h4>
+      <!--
+      Etiqueta <button>: Este es el botón para cerrar el modal.
+      type="button": Define el tipo de botón como "button".
+      class="text-gray-300 hover:text-gray-50": Aplica varias clases de Tailwind CSS para estilizar el botón.
+      text-gray-300: Aplica un color de texto gris claro.
+      hover:text-gray-50: Cambia el color del texto a gris muy claro cuando se pasa el cursor sobre el botón.
+      (click)="close()": Asocia el evento de clic con el método close() para cerrar el modal.
+      -->
       <button
         type="button"
         class="text-gray-300 hover:text-gray-50"
         (click)="close()"
       >
+        <!--
+        Etiqueta <span>: Contiene el símbolo de cierre (×).
+        aria-hidden="true": Indica que el contenido es decorativo y no debe ser leído por los lectores de pantalla.
+        -->
         <span aria-hidden="true">&times;</span>
       </button>
     </div>
+    <!--
+    Etiqueta <div>: Contenedor para el contenido del modal.
+    class="p-4": Aplica un padding de 1rem (16px) alrededor del contenido.
+    -->
     <div class="p-4">
+      <!--
+      Etiqueta <form>: Define el formulario para editar el usuario.
+      -->
       <form>
-
-
+        <!--
+        Etiqueta <div>: Contenedor para los campos del formulario.
+        class="p-6 space-y-4": Aplica varias clases de Tailwind CSS para estilizar el contenedor.
+        p-6: Aplica un padding de 1.5rem (24px) alrededor del contenedor.
+        space-y-4: Aplica un margen inferior de 1rem (16px) entre los elementos hijos.
+        -->
         <div class="p-6 space-y-4">
+          <!--
+          Etiqueta <div>: Contenedor de los elementos del campo name
+          class="space-y-2": Aplica una clase de Tailwind CSS para estilizar el contenedor.
+          space-y-2: Aplica un margen inferior de 0.5rem (8px) entre los elementos
+          -->
           <div class="space-y-2">
+            <!--
+            Etiqueta <label>: Define la etiqueta para el campo de entrada.
+            class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70": Aplica varias clases de Tailwind CSS para estilizar la etiqueta.
+            text-sm: Aplica un tamaño de texto pequeño.
+            font-medium: Aplica un peso de fuente medio.
+            leading-none: Aplica un interlineado ajustado.
+            peer-disabled:cursor-not-allowed: Cambia el cursor a no permitido cuando el campo asociado está deshabilitado.
+            peer-disabled:opacity-70: Reduce la opacidad al 70% cuando el campo asociado está deshabilitado.
+            -->
             <label
               class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
               for="name"
             >
               Name
             </label>
+            <!--
+            Etiqueta <input>: Define el campo de entrada para el nombre.
+            class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50": Aplica varias clases de Tailwind CSS para estilizar el campo de entrada.
+            flex: Aplica un diseño flexible.
+            h-10: Aplica una altura de 2.5rem (40px).
+            w-full: Hace que el campo ocupe todo el ancho disponible.
+            rounded-md: Aplica bordes redondeados medianos.
+            border: Aplica un borde.
+            border-input: Aplica el color del borde definido para los inputs.
+            bg-background: Aplica el color de fondo definido.
+            px-3: Aplica un padding horizontal de 0.75rem (12px).
+            py-2: Aplica un padding vertical de 0.5rem (8px).
+            text-sm: Aplica un tamaño de texto pequeño.
+            ring-offset-background: Aplica el color de fondo definido para el offset del anillo.
+            file:border-0: Elimina el borde de los inputs de tipo archivo.
+            file:bg-transparent: Hace transparente el fondo de los inputs de tipo archivo.
+            file:text-sm: Aplica un tamaño de texto pequeño a los inputs de tipo archivo.
+            file:font-medium: Aplica un peso de fuente medio a los inputs de tipo archivo.
+            placeholder:text-muted-foreground: Aplica el color de texto definido para los placeholders.
+            focus-visible:outline-none: Elimina el contorno cuando el campo está enfocado.
+            focus-visible:ring-2: Aplica un anillo de 2px cuando el campo está enfocado.
+            focus-visible:ring-ring: Aplica el color del anillo definido cuando el campo está enfocado.
+            focus-visible:ring-offset-2: Aplica un offset de 2px al anillo cuando el campo está enfocado.
+            disabled:cursor-not-allowed: Cambia el cursor a no permitido cuando el campo está deshabilitado.
+            disabled:opacity-50: Reduce la opacidad al 50% cuando el campo está deshabilitado.
+            -->
             <input
               class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
               id="name"
@@ -34,13 +134,49 @@
               placeholder="Enter user's name"
             />
           </div>
+          <!--
+          Etiqueta <div>: Contenedor de los elementos del campo name
+          class="space-y-2": Aplica una clase de Tailwind CSS para estilizar el contenedor.
+          space-y-2: Aplica un margen inferior de 0.5rem (8px) entre los elementos
+          -->
           <div class="space-y-2">
+            <!--
+            Etiqueta <div>: Contenedor de los elementos del campo name
+            class="space-y-2": Aplica una clase de Tailwind CSS para estilizar el contenedor.
+            space-y-2: Aplica un margen inferior de 0.5rem (8px) entre los elementos
+            -->
             <label
               class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
               for="email"
             >
               Email
             </label>
+            <!--
+            Etiqueta <input>: Define el campo de entrada para el email.
+            class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50": Aplica varias clases de Tailwind CSS para estilizar el campo de entrada.
+            flex: Aplica un diseño flexible.
+            h-10: Aplica una altura de 2.5rem (40px).
+            w-full: Hace que el campo ocupe todo el ancho disponible.
+            rounded-md: Aplica bordes redondeados medianos.
+            border: Aplica un borde.
+            border-input: Aplica el color del borde definido para los inputs.
+            bg-background: Aplica el color de fondo definido.
+            px-3: Aplica un padding horizontal de 0.75rem (12px).
+            py-2: Aplica un padding vertical de 0.5rem (8px).
+            text-sm: Aplica un tamaño de texto pequeño.
+            ring-offset-background: Aplica el color de fondo definido para el offset del anillo.
+            file:border-0: Elimina el borde de los inputs de tipo archivo.
+            file:bg-transparent: Hace transparente el fondo de los inputs de tipo archivo.
+            file:text-sm: Aplica un tamaño de texto pequeño a los inputs de tipo archivo.
+            file:font-medium: Aplica un peso de fuente medio a los inputs de tipo archivo.
+            placeholder:text-muted-foreground: Aplica el color de texto definido para los placeholders.
+            focus-visible:outline-none: Elimina el contorno cuando el campo está enfocado.
+            focus-visible:ring-2: Aplica un anillo de 2px cuando el campo está enfocado.
+            focus-visible:ring-ring: Aplica el color del anillo definido cuando el campo está enfocado.
+            focus-visible:ring-offset-2: Aplica un offset de 2px al anillo cuando el campo está enfocado.
+            disabled:cursor-not-allowed: Cambia el cursor a no permitido cuando el campo está deshabilitado.
+            disabled:opacity-50: Reduce la opacidad al 50% cuando el campo está deshabilitado.
+            -->
             <input
               class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
               id="email"
@@ -51,13 +187,48 @@
             />
           </div>
 
+          <!--
+            Etiqueta <div>: Contenedor de los elementos del campo name
+            class="space-y-2": Aplica una clase de Tailwind CSS para estilizar el contenedor.
+            space-y-2: Aplica un margen inferior de 0.5rem (8px) entre los elementos
+            -->
           <div class="space-y-2">
+            <!--
+            Etiqueta <label>: Define la etiqueta para el campo de selección.
+            class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70": Aplica varias clases de Tailwind CSS para estilizar la etiqueta.
+            text-sm: Aplica un tamaño de texto pequeño.
+            font-medium: Aplica un peso de fuente medio.
+            leading-none: Aplica un interlineado ajustado.
+            peer-disabled:cursor-not-allowed: Cambia el cursor a no permitido cuando el campo asociado está deshabilitado.
+            peer-disabled:opacity-70: Reduce la opacidad al 70% cuando el campo asociado está deshabilitado.
+            -->
             <label
               class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
               for="role"
             >
               Role
             </label>
+            <!--
+            Etiqueta <select>: Define el campo de selección para el rol.
+            class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50": Aplica varias clases de Tailwind CSS para estilizar el campo de selección.
+            flex: Aplica un diseño flexible.
+            h-10: Aplica una altura de 2.5rem (40px).
+            w-full: Hace que el campo ocupe todo el ancho disponible.
+            rounded-md: Aplica bordes redondeados medianos.
+            border: Aplica un borde.
+            border-input: Aplica el color del borde definido para los inputs.
+            bg-background: Aplica el color de fondo definido.
+            px-3: Aplica un padding horizontal de 0.75rem (12px).
+            py-2: Aplica un padding vertical de 0.5rem (8px).
+            text-sm: Aplica un tamaño de texto pequeño.
+            ring-offset-background: Aplica el color de fondo definido para el offset del anillo.
+            focus-visible:outline-none: Elimina el contorno cuando el campo está enfocado.
+            focus-visible:ring-2: Aplica un anillo de 2px cuando el campo está enfocado.
+            focus-visible:ring-ring: Aplica el color del anillo definido cuando el campo está enfocado.
+            focus-visible:ring-offset-2: Aplica un offset de 2px al anillo cuando el campo está enfocado.
+            disabled:cursor-not-allowed: Cambia el cursor a no permitido cuando el campo está deshabilitado.
+            disabled:opacity-50: Reduce la opacidad al 50% cuando el campo está deshabilitado.
+            -->
             <select
               type="button"
               role="combobox"
@@ -78,7 +249,40 @@
         </div>
       </form>
     </div>
+    <!--
+    Etiqueta <select>: Define el campo de selección para el rol.
+    class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50": Aplica varias clases de Tailwind CSS para estilizar el campo de selección.
+    flex: Aplica un diseño flexible.
+    h-10: Aplica una altura de 2.5rem (40px).
+    w-full: Hace que el campo ocupe todo el ancho disponible.
+    rounded-md: Aplica bordes redondeados medianos.
+    border: Aplica un borde.
+    border-input: Aplica el color del borde definido para los inputs.
+    bg-background: Aplica el color de fondo definido.
+    px-3: Aplica un padding horizontal de 0.75rem (12px).
+    py-2: Aplica un padding vertical de 0.5rem (8px).
+    text-sm: Aplica un tamaño de texto pequeño.
+    ring-offset-background: Aplica el color de fondo definido para el offset del anillo.
+    focus-visible:outline-none: Elimina el contorno cuando el campo está enfocado.
+    focus-visible:ring-2: Aplica un anillo de 2px cuando el campo está enfocado.
+    focus-visible:ring-ring: Aplica el color del anillo definido cuando el campo está enfocado.
+    focus-visible:ring-offset-2: Aplica un offset de 2px al anillo cuando el campo está enfocado.
+    disabled:cursor-not-allowed: Cambia el cursor a no permitido cuando el campo está deshabilitado.
+    disabled:opacity-50: Reduce la opacidad al 50% cuando el campo está deshabilitado.
+    -->
     <div class="px-4 py-3 border-t border-gray-200 flex justify-end">
+      <!--
+      Etiqueta <button>: Define el botón para cancelar la edición.
+      type="button": Define el tipo de botón como "button".
+      class="bg-gray-500 text-white px-4 py-2 rounded-md mr-2": Aplica varias clases de Tailwind CSS para estilizar el botón.
+      bg-gray-500: Aplica un color de fondo gris.
+      text-white: Aplica un color de texto blanco.
+      px-4: Aplica un padding horizontal de 1rem (16px).
+      py-2: Aplica un padding vertical de 0.5rem (8px).
+      rounded-md: Aplica bordes redondeados medianos.
+      mr-2: Aplica un margen derecho de 0.5rem (8px).
+      (click)="close()": Asocia el evento de clic con el método close() para cerrar el modal.
+      -->
       <button
         type="button"
         class="bg-gray-500 text-white px-4 py-2 rounded-md mr-2"
@@ -86,6 +290,18 @@
       >
         Cancelar
       </button>
+      <!--
+      Etiqueta <button>: Define el botón para cancelar la edición.
+      type="button": Define el tipo de botón como "button".
+      class="bg-gray-500 text-white px-4 py-2 rounded-md mr-2": Aplica varias clases de Tailwind CSS para estilizar el botón.
+      bg-gray-500: Aplica un color de fondo gris.
+      text-white: Aplica un color de texto blanco.
+      px-4: Aplica un padding horizontal de 1rem (16px).
+      py-2: Aplica un padding vertical de 0.5rem (8px).
+      rounded-md: Aplica bordes redondeados medianos.
+      mr-2: Aplica un margen derecho de 0.5rem (8px).
+      (click)="close()": Asocia el evento de clic con el método close() para cerrar el modal.
+      -->
       <button
         type="button"
         class="bg-indigo-600 text-white px-4 py-2 rounded-md"
