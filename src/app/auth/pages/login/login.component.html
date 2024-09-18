@@ -1,47 +1,194 @@
+<!--
+  Etiqueta <div>: Define un contenedor genérico en HTML.
+  class="font-sans": Aplica una fuente sans-serif al contenido dentro de este div.
+-->
 <div class="font-sans">
+  <!--
+  Etiqueta <div>: Define un contenedor genérico en HTML.
+  class="relative min-h-screen flex flex-col sm:justify-center items-center bg-gray-100 py-8 sm:py-0":
+  - relative: Posiciona el elemento relativo a su posición normal.
+  - min-h-screen: Establece una altura mínima igual a la altura de la pantalla.
+  - flex: Aplica un diseño flexbox.
+  - flex-col: Organiza los elementos hijos en una columna.
+  - sm:justify-center: Centra los elementos en pantallas pequeñas y más grandes.
+  - items-center: Centra los elementos en el eje transversal (horizontal).
+  - bg-gray-100: Aplica un fondo gris claro.
+  - py-8: Aplica un padding vertical (py) de 8 unidades.
+  - sm:py-0: Elimina el padding vertical en pantallas pequeñas y más grandes.
+  -->
   <div
     class="relative min-h-screen flex flex-col sm:justify-center items-center bg-gray-100 py-8 sm:py-0"
   >
+    <!--
+      Etiqueta <div>: Define un contenedor genérico en HTML.
+      class="relative sm:max-w-sm sm:w-full":
+      - relative: Posiciona el elemento relativo a su posición normal.
+      - sm:max-w-sm: Establece un ancho máximo en pantallas pequeñas y más grandes.
+      - sm:w-full: Establece el ancho al 100% en pantallas pequeñas y más grandes.
+    -->
     <div class="relative sm:max-w-sm sm:w-full">
+      <!--
+        Etiqueta <div>: Define un contenedor genérico en HTML.
+        class="card bg-blue-400 shadow-lg w-full h-full rounded-3xl absolute transform -rotate-6":
+        - card: Clase personalizada para el estilo de la tarjeta.
+        - bg-blue-400: Aplica un fondo azul.
+        - shadow-lg: Aplica una sombra grande.
+        - w-full: Establece el ancho al 100%.
+        - h-full: Establece la altura al 100%.
+        - rounded-3xl: Aplica un borde redondeado grande.
+        - absolute: Posiciona el elemento de forma absoluta.
+        - transform -rotate-6: Aplica una transformación de rotación de -6 grados.
+      -->
       <div
         class="card bg-blue-400 shadow-lg w-full h-full rounded-3xl absolute transform -rotate-6"
       ></div>
+      <!--
+        Etiqueta <div>: Define un contenedor genérico en HTML.
+        class="card bg-red-400 shadow-lg w-full h-full rounded-3xl absolute transform rotate-6":
+        - card: Clase personalizada para el estilo de la tarjeta.
+        - bg-red-400: Aplica un fondo rojo.
+        - shadow-lg: Aplica una sombra grande.
+        - w-full: Establece el ancho al 100%.
+        - h-full: Establece la altura al 100%.
+        - rounded-3xl: Aplica un borde redondeado grande.
+        - absolute: Posiciona el elemento de forma absoluta.
+        - transform rotate-6: Aplica una transformación de rotación de 6 grados.
+      -->
       <div
         class="card bg-red-400 shadow-lg w-full h-full rounded-3xl absolute transform rotate-6"
       ></div>
+      <!--
+        Etiqueta <div>: Define un contenedor genérico en HTML.
+        class="relative w-full rounded-3xl px-6 py-4 bg-gray-100 shadow-md":
+        - relative: Posiciona el elemento relativo a su posición normal.
+        - w-full: Establece el ancho al 100%.
+        - rounded-3xl: Aplica un borde redondeado grande.
+        - px-6: Aplica padding horizontal (px) de 6 unidades.
+        - py-4: Aplica padding vertical (py) de 4 unidades.
+        - bg-gray-100: Aplica un fondo gris claro.
+        - shadow-md: Aplica una sombra media.
+      -->
       <div class="relative w-full rounded-3xl px-6 py-4 bg-gray-100 shadow-md">
+        <!--
+          Etiqueta <label>: Define una etiqueta para un elemento de formulario.
+          for="": Atributo que debería relacionarse con un input específico (debería tener un valor correspondiente).
+          class="block mt-3 text-2xl text-gray-500 text-center font-semibold":
+          - block: Hace que el elemento se comporte como un bloque.
+          - mt-3: Aplica un margen superior (mt) de 3 unidades.
+          - text-2xl: Establece un tamaño de fuente grande (2xl).
+          - text-gray-500: Aplica un color gris a la fuente.
+          - text-center: Centra el texto horizontalmente.
+          - font-semibold: Aplica un grosor de fuente seminegrita.
+        -->
         <label
           for=""
           class="block mt-3 text-2xl text-gray-500 text-center font-semibold"
         >
           Login
         </label>
+        <!--
+          Etiqueta <form>: Define un formulario HTML para la entrada de datos.
+          class="mt-10": Aplica un margen superior (mt) de 10 unidades.
+          [formGroup]="formLogin": Vincula el formulario a un grupo de formularios en Angular.
+          (ngSubmit)="login()": Maneja el evento de envío del formulario llamando a la función `login()`.
+        -->
         <form class="mt-10" [formGroup]="formLogin" (ngSubmit)="login()">
           <div>
+            <!--
+              Etiqueta <input>: Define un campo de entrada de datos.
+              type="email": Especifica que el campo es para ingresar un correo electrónico.
+              placeholder="Email": Texto de marcador de posición que se muestra cuando el campo está vacío.
+              formControlName="email": Vincula el campo al control `email` en el grupo de formularios.
+              class="mt-1 block w-full border-none bg-gray-100 h-11 rounded-xl shadow-lg hover:bg-blue-100 focus:bg-blue-100 focus:ring-0":
+              - mt-1: Aplica un margen superior (mt) de 1 unidad.
+              - block: Hace que el elemento se comporte como un bloque.
+              - w-full: Establece el ancho al 100%.
+              - border-none: Elimina el borde.
+              - bg-gray-100: Aplica un fondo gris claro.
+              - h-11: Establece una altura de 11 unidades.
+              - rounded-xl: Aplica un borde redondeado extra grande.
+              - shadow-lg: Aplica una sombra grande.
+              - hover:bg-blue-100: Cambia el fondo a azul claro al pasar el ratón.
+              - focus:bg-blue-100: Cambia el fondo a azul claro al enfocar.
+              - focus:ring-0: Elimina el efecto de anillo en el enfoque.
+            -->
             <input
               type="email"
               placeholder="Email"
               formControlName="email"
               class="mt-1 block w-full border-none bg-gray-100 h-11 rounded-xl shadow-lg hover:bg-blue-100 focus:bg-blue-100 focus:ring-0"
             />
+            <!--
+              Condicional @if: Se utiliza para mostrar un mensaje de error si la condición se cumple.
+              (emailInvalid): Variable que indica si el correo electrónico ingresado es inválido.
+            -->
             @if (emailInvalid) {
+            <!--
+                <span class="text-red-500">No es un correo valido</span>: Mensaje de error que se muestra en rojo si el correo no es válido.
+                class="text-red-500": Aplica un color rojo al texto.
+              -->
             <span class="text-red-500">No es un correo valido</span>
             }
           </div>
 
           <div class="mt-7">
+            <!--
+              Etiqueta <input>: Define un campo de entrada de datos.
+              type="password": Especifica que el campo es para ingresar una contraseña.
+              placeholder="Password": Texto de marcador de posición que se muestra cuando el campo está vacío.
+              formControlName="password": Vincula el campo al control `password` en el grupo de formularios.
+              class="mt-1 block w-full border-none bg-gray-100 h-11 rounded-xl shadow-lg hover:bg-blue-100 focus:bg-blue-100 focus:ring-0":
+              - mt-1: Aplica un margen superior (mt) de 1 unidad.
+              - block: Hace que el elemento se comporte como un bloque.
+              - w-full: Establece el ancho al 100%.
+              - border-none: Elimina el borde.
+              - bg-gray-100: Aplica un fondo gris claro.
+              - h-11: Establece una altura de 11 unidades.
+              - rounded-xl: Aplica un borde redondeado extra grande.
+              - shadow-lg: Aplica una sombra grande.
+              - hover:bg-blue-100: Cambia el fondo a azul claro al pasar el ratón.
+              - focus:bg-blue-100: Cambia el fondo a azul claro al enfocar.
+              - focus:ring-0: Elimina el efecto de anillo en el enfoque.
+            -->
             <input
               type="password"
               placeholder="Password"
               formControlName="password"
               class="mt-1 block w-full border-none bg-gray-100 h-11 rounded-xl shadow-lg hover:bg-blue-100 focus:bg-blue-100 focus:ring-0"
             />
+            <!--
+              Condicional @if: Se utiliza para mostrar un mensaje de error si la condición se cumple.
+              (passwordInvalid): Variable que indica si la contraseña ingresada es inválida.
+            -->
             @if (passwordInvalid) {
-            <span class="text-red-500">Contraseña debe tener minimo 6 caracteres</span>
+            <!--
+              <span class="text-red-500">Contraseña debe tener mínimo 6 caracteres</span>: Mensaje de error que se muestra en rojo si la contraseña no cumple con los requisitos.
+              class="text-red-500": Aplica un color rojo al texto.
+              -->
+            <span class="text-red-500"
+              >Contraseña debe tener minimo 6 caracteres</span
+            >
             }
           </div>
 
           <div class="mt-7">
+            <!--
+            Etiqueta <button>: Define un botón en el formulario.
+            type="submit": Especifica que el botón envía el formulario.
+            [disabled]="!formLogin.valid": Desactiva el botón si el formulario no es válido.
+            class="bg-blue-500 w-full py-3 rounded-xl text-white shadow-xl hover:shadow-inner focus:outline-none transition duration-500 ease-in-out transform hover:-translate-x hover:scale-105":
+            - bg-blue-500: Aplica un fondo azul.
+            - w-full: Establece el ancho al 100%.
+            - py-3: Aplica padding vertical (py) de 3 unidades.
+            - rounded-xl: Aplica un borde redondeado extra grande.
+            - text-white: Aplica un color de texto blanco.
+            - shadow-xl: Aplica una sombra extra grande.
+            - hover:shadow-inner: Cambia la sombra al pasar el ratón.
+            - focus:outline-none: Elimina el contorno en el enfoque.
+            - transition duration-500 ease-in-out: Aplica una transición suave de 500 ms.
+            - transform hover:-translate-x: Mueve el botón hacia la izquierda al pasar el ratón.
+            - hover:scale-105: Aumenta ligeramente el tamaño al pasar el ratón.
+          -->
             <button
               type="submit"
               [disabled]="!formLogin.valid"
@@ -51,22 +198,84 @@
             </button>
           </div>
 
+          <!--
+            Etiqueta <div>: Define un contenedor genérico en HTML.
+            class="flex mt-7 items-center text-center":
+            - flex: Aplica un diseño flexbox.
+            - mt-7: Aplica un margen superior (mt) de 7 unidades.
+            - items-center: Centra los elementos en el eje transversal (vertical).
+            - text-center: Centra el texto horizontalmente.
+          -->
           <div class="flex mt-7 items-center text-center">
+            <!--
+              Etiqueta <hr>: Define una línea horizontal que separa contenido.
+              class="border-gray-300 border-1 w-full rounded-md":
+              - border-gray-300: Aplica un color gris a la línea.
+              - border-1: Define el grosor de la línea.
+              - w-full: Establece el ancho al 100%.
+              - rounded-md: Aplica bordes redondeados medianos a la línea.
+            -->
             <hr class="border-gray-300 border-1 w-full rounded-md" />
-            <label class="block font-medium text-sm text-gray-600 w-full" for="">
+            <!--
+              Etiqueta <label>: Define una etiqueta para el contenido de texto.
+              class="block font-medium text-sm text-gray-600 w-full":
+              - block: Hace que el elemento se comporte como un bloque.
+              - font-medium: Aplica un grosor de fuente medio.
+              - text-sm: Establece un tamaño de fuente pequeño.
+              - text-gray-600: Aplica un color gris oscuro al texto.
+              - w-full: Establece el ancho al 100%.
+            -->
+            <label
+              class="block font-medium text-sm text-gray-600 w-full"
+              for=""
+            >
               Or login with
             </label>
             <hr class="border-gray-300 border-1 w-full rounded-md" />
           </div>
 
           <div class="flex mt-7 justify-center w-full">
+            <!--
+              Etiqueta <button>: Define un botón para iniciar sesión con Facebook.
+              type="button": Especifica que el botón no envía el formulario.
+              class="mr-5 bg-blue-500 border-none px-4 py-2 rounded-xl cursor-pointer text-white shadow-xl hover:shadow-inner transition duration-500 ease-in-out transform hover:-translate-x hover:scale-105":
+              - mr-5: Aplica un margen derecho (mr) de 5 unidades.
+              - bg-blue-500: Aplica un fondo azul.
+              - border-none: Elimina el borde.
+              - px-4: Aplica padding horizontal (px) de 4 unidades.
+              - py-2: Aplica padding vertical (py) de 2 unidades.
+              - rounded-xl: Aplica un borde redondeado extra grande.
+              - cursor-pointer: Cambia el cursor al pasar el ratón.
+              - text-white: Aplica un color de texto blanco.
+              - shadow-xl: Aplica una sombra extra grande.
+              - hover:shadow-inner: Cambia la sombra al pasar el ratón.
+              - transition duration-500 ease-in-out: Aplica una transición suave de 500 ms.
+              - transform hover:-translate-x: Mueve el botón hacia la izquierda al pasar el ratón.
+              - hover:scale-105: Aumenta ligeramente el tamaño al pasar el ratón.
+            -->
             <button
               type="button"
               class="mr-5 bg-blue-500 border-none px-4 py-2 rounded-xl cursor-pointer text-white shadow-xl hover:shadow-inner transition duration-500 ease-in-out transform hover:-translate-x hover:scale-105"
             >
               Facebook
             </button>
-
+            <!--
+              Etiqueta <button>: Define un botón para iniciar sesión con Google.
+              type="button": Especifica que el botón no envía el formulario.
+              class="bg-red-500 border-none px-4 py-2 rounded-xl cursor-pointer text-white shadow-xl hover:shadow-inner transition duration-500 ease-in-out transform hover:-translate-x hover:scale-105":
+              - bg-red-500: Aplica un fondo rojo.
+              - border-none: Elimina el borde.
+              - px-4: Aplica padding horizontal (px) de 4 unidades.
+              - py-2: Aplica padding vertical (py) de 2 unidades.
+              - rounded-xl: Aplica un borde redondeado extra grande.
+              - cursor-pointer: Cambia el cursor al pasar el ratón.
+              - text-white: Aplica un color de texto blanco.
+              - shadow-xl: Aplica una sombra extra grande.
+              - hover:shadow-inner: Cambia la sombra al pasar el ratón.
+              - transition duration-500 ease-in-out: Aplica una transición suave de 500 ms.
+              - transform hover:-translate-x: Mueve el botón hacia la izquierda al pasar el ratón.
+              - hover:scale-105: Aumenta ligeramente el tamaño al pasar el ratón.
+            -->
             <button
               type="button"
               class="bg-red-500 border-none px-4 py-2 rounded-xl cursor-pointer text-white shadow-xl hover:shadow-inner transition duration-500 ease-in-out transform hover:-translate-x hover:scale-105"
@@ -74,10 +283,35 @@
               Google
             </button>
           </div>
-
+            <!--
+              Etiqueta <div>: Define un contenedor genérico en HTML.
+              class="mt-7":
+              - mt-7: Aplica un margen superior (mt) de 7 unidades.
+            -->
           <div class="mt-7">
+            <!--
+              Etiqueta <div>: Define un contenedor genérico en HTML.
+              class="flex justify-center items-center":
+              - flex: Aplica un diseño flexbox.
+              - justify-center: Centra los elementos en el eje principal (horizontal).
+              - items-center: Centra los elementos en el eje transversal (vertical).
+            -->
             <div class="flex justify-center items-center">
+              <!--
+                Etiqueta <label>: Define una etiqueta para el contenido de texto.
+                class="mr-2":
+                - mr-2: Aplica un margen derecho (mr) de 2 unidades.
+              -->
               <label class="mr-2" for="">Don't have an account?</label>
+              <!--
+                Etiqueta <a>: Define un enlace en HTML.
+                href="#": URL a la que apunta el enlace (en este caso, un enlace ancla).
+                class="text-blue-500 transition duration-500 ease-in-out transform hover:-translate-x hover:scale-105":
+                - text-blue-500: Aplica un color azul al texto.
+                - transition duration-500 ease-in-out: Aplica una transición suave de 500 ms.
+                - transform hover:-translate-x: Mueve el enlace hacia la izquierda al pasar el ratón.
+                - hover:scale-105: Aumenta ligeramente el tamaño al pasar el ratón.
+              -->
               <a
                 href="#"
                 class="text-blue-500 transition duration-500 ease-in-out transform hover:-translate-x hover:scale-105"

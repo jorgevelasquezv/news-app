@@ -1,7 +1,35 @@
+<!--
+  Etiqueta <section>: Define una sección en el documento HTML que agrupa contenido relacionado.
+  class="my-3": Aplica un margen vertical (my) de 3 unidades, creando espacio alrededor de la sección.
+-->
 <section class="my-3">
+  <!--
+    Etiqueta <h3>: Define un encabezado de tercer nivel.
+    class="text-center text-4xl font-bold mb-3":
+    - text-center: Centra el texto horizontalmente.
+    - text-4xl: Establece un tamaño de fuente grande (4xl).
+    - font-bold: Aplica un grosor de fuente negrita.
+    - mb-3: Aplica un margen inferior (mb) de 3 unidades.
+  -->
   <h3 class="text-center text-4xl font-bold mb-3">Admin</h3>
+  <!--
+    Etiqueta <div>: Define un contenedor genérico en HTML.
+    class="grid md:grid-cols-[300px_1fr] gap-6 w-full max-w-6xl mx-auto":
+    - grid: Aplica un diseño de cuadrícula CSS.
+    - md:grid-cols-[300px_1fr]: Define columnas para pantallas medianas y más grandes, con una columna de 300px y otra que ocupa el espacio restante.
+    - gap-6: Establece un espacio de 6 unidades entre las celdas de la cuadrícula.
+    - w-full: Establece el ancho del contenedor al 100%.
+    - max-w-6xl: Define un ancho máximo de 6xl para el contenedor.
+    - mx-auto: Aplica un margen horizontal automático para centrar el contenedor.
+  -->
   <div class="grid md:grid-cols-[300px_1fr] gap-6 w-full max-w-6xl mx-auto">
+    <!--
+    Etiqueta <admin-create-user>: Componente personalizado que se utiliza para crear un nuevo usuario.
+    -->
     <admin-create-user />
+    <!--
+    Etiqueta <admin-table-users>: Componente personalizado que muestra una tabla con los usuarios existentes.
+    -->
     <admin-table-users />
   </div>
 </section>
