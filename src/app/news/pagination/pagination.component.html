@@ -1,52 +1,86 @@
 <nav>
+  <!-- Etiqueta <nav>: Define una sección de navegación en el documento. -->
   <ul class="flex">
+    <!-- Etiqueta <ul>: Lista desordenada para contener los elementos de navegación.
+         Clase 'flex': Aplica flexbox para alinear los elementos en fila. -->
+
     @if (currentPage() > 1) {
+    <!-- Condicional: Comprueba si la página actual es mayor que 1 para mostrar el botón de anterior. -->
     <li>
+      <!-- Etiqueta <li>: Representa un elemento de la lista. -->
       <button
         class="mx-1 flex h-9 w-9 items-center justify-center rounded-full border border-blue-gray-100 bg-transparent p-0 text-sm text-blue-gray-500 transition duration-150 ease-in-out hover:bg-light-300"
         aria-label="Previous"
         (click)="changePage(currentPage() - 1)"
       >
+        <!-- Clase 'mx-1': Aplica margen horizontal de 1 unidad. -->
+        <!-- Clase 'flex': Aplica flexbox al botón. -->
+        <!-- Clase 'h-9' y 'w-9': Define altura y anchura del botón. -->
+        <!-- Clase 'items-center justify-center': Alinea el contenido del botón al centro. -->
+        <!-- Clase 'rounded-full': Aplica esquinas redondeadas al botón. -->
+        <!-- Clase 'border': Añade un borde al botón. -->
+        <!-- Clase 'border-blue-gray-100': Define el color del borde. -->
+        <!-- Clase 'bg-transparent': Define un fondo transparente. -->
+        <!-- Clase 'p-0': Elimina el padding. -->
+        <!-- Clase 'text-sm': Define el tamaño del texto como pequeño. -->
+        <!-- Clase 'text-blue-gray-500': Define el color del texto. -->
+        <!-- Clase 'transition duration-150 ease-in-out': Aplica una transición suave de 150 ms. -->
+        <!-- Clase 'hover:bg-light-300': Cambia el fondo al pasar el mouse. -->
         <span class="material-icons text-sm"><</span>
+        <!-- Icono de material design para indicar el botón de anterior. -->
       </button>
     </li>
     }
+
     <li>
+      <!-- Botón para mostrar la página actual. -->
       <button
         class="mx-1 flex h-9 w-9 items-center justify-center rounded-full bg-gradient-to-tr from-red-500 to-red-400 p-0 text-sm text-white shadow-md shadow-red-500/20 transition duration-150 ease-in-out"
         (click)="changePage(currentPage())"
       >
         {{ currentPage() }}
+        <!-- Muestra el número de la página actual. -->
       </button>
     </li>
-    @if (currentPage() +1 < totalPages()) {
+
+    @if (currentPage() + 1 < totalPages()) {
     <li>
+      <!-- Condicional: Comprueba si la siguiente página está disponible. -->
       <button
         class="mx-1 flex h-9 w-9 items-center justify-center rounded-full border border-blue-gray-100 bg-transparent p-0 text-sm text-blue-gray-500 transition duration-150 ease-in-out hover:bg-light-300"
         href="#"
         (click)="changePage(currentPage() + 1)"
       >
         {{ currentPage() + 1 }}
+        <!-- Muestra el número de la siguiente página. -->
       </button>
     </li>
-    } @if (currentPage() + 2 < totalPages()) {
+    }
+
+    @if (currentPage() + 2 < totalPages()) {
     <li>
+      <!-- Condicional: Comprueba si la página siguiente a la siguiente está disponible. -->
       <button
         class="mx-1 flex h-9 w-9 items-center justify-center rounded-full border border-blue-gray-100 bg-transparent p-0 text-sm text-blue-gray-500 transition duration-150 ease-in-out hover:bg-light-300"
         href="#"
         (click)="changePage(currentPage() + 2)"
       >
         {{ currentPage() + 2 }}
+        <!-- Muestra el número de la página siguiente a la siguiente. -->
       </button>
     </li>
-    } @if (currentPage() < totalPages()) {
+    }
+
+    @if (currentPage() < totalPages()) {
     <li>
+      <!-- Condicional: Comprueba si hay una página siguiente disponible. -->
       <button
         class="mx-1 flex h-9 w-9 items-center justify-center rounded-full border border-blue-gray-100 bg-transparent p-0 text-sm text-blue-gray-500 transition duration-150 ease-in-out hover:bg-light-300"
         aria-label="Next"
         (click)="changePage(currentPage() + 1)"
       >
         <span class="material-icons text-sm">></span>
+        <!-- Icono de material design para indicar el botón de siguiente. -->
       </button>
     </li>
     }

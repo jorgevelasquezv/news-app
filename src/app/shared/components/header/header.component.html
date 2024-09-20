@@ -1,7 +1,57 @@
+<!--
+    Etiqueta <header>: Define la sección de encabezado de la página.
+    class="w-full bg-blue-400 text-white p-8 relative": Aplica clases de Tailwind CSS para el diseño y estilo del encabezado.
+    w-full: Establece el ancho completo del encabezado.
+    bg-blue-400: Aplica un color de fondo azul claro.
+    text-white: Establece el color del texto en blanco.
+    p-8: Aplica un padding de 8 unidades en todos los lados.
+    relative: Establece la posición como relativa para permitir posicionar elementos hijos.
+-->
 <header class="w-full bg-blue-400 text-white p-8 relative">
+
+  <!--
+      Etiqueta <div>: Contenedor para la imagen de fondo.
+      class="absolute inset-0 bg-cover bg-center opacity-60": Aplica clases para la imagen de fondo.
+      absolute: Posiciona el contenedor de manera absoluta respecto a su contenedor padre.
+      inset-0: Expande el contenedor a todos los bordes del padre (top, right, bottom, left).
+      bg-cover: Asegura que la imagen cubra completamente el contenedor.
+      bg-center: Centra la imagen de fondo.
+      opacity-60: Establece la opacidad al 60% para que el fondo sea semi-transparente.
+      style="background-image: url('/assets/news-banner-2.png');": Define la imagen de fondo directamente en el estilo.
+  -->
   <div class="absolute inset-0 bg-cover bg-center opacity-60" style="background-image: url('/assets/news-banner-2.png');"></div>
+
+  <!--
+      Etiqueta <div>: Contenedor para el contenido del encabezado.
+      class="container mx-auto flex flex-col items-center lg:flex-row lg:justify-between relative z-10": Aplica clases para el diseño y estilo.
+      container: Limita el ancho del contenedor según el tamaño de la pantalla.
+      mx-auto: Centra el contenedor horizontalmente.
+      flex: Establece un diseño flexbox.
+      flex-col: Organiza los elementos en columnas en pantallas pequeñas.
+      items-center: Alinea los elementos horizontalmente en el centro.
+      lg:flex-row: Cambia a organización en filas en pantallas grandes.
+      lg:justify-between: Distribuye el espacio entre elementos en pantallas grandes.
+      relative: Establece la posición como relativa para el z-index.
+      z-10: Establece un nivel de apilamiento alto para el contenido sobre el fondo.
+  -->
   <div class="container mx-auto flex flex-col items-center lg:flex-row lg:justify-between relative z-10">
+
+    <!--
+        Etiqueta <h1>: Título principal del encabezado.
+        class="text-6xl font-bold drop-shadow-lg": Aplica clases para el estilo del texto.
+        text-6xl: Establece un tamaño de texto muy grande.
+        font-bold: Aplica un peso de fuente negrita.
+        drop-shadow-lg: Añade una sombra grande al texto para mejorar la legibilidad.
+    -->
     <h1 class="text-6xl font-bold drop-shadow-lg">World up to date</h1>
+
+    <!--
+        Etiqueta <p>: Subtítulo del encabezado.
+        class="text-xl italic drop-shadow-lg": Aplica clases para el estilo del texto.
+        text-xl: Establece un tamaño de texto grande.
+        italic: Aplica estilo en cursiva al texto.
+        drop-shadow-lg: Añade una sombra grande al texto para mejorar la legibilidad.
+    -->
     <p class="text-xl italic drop-shadow-lg">Bringing the World to Your Fingertips</p>
   </div>
 </header>

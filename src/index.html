@@ -1,13 +1,59 @@
-<!doctype html>
+<!DOCTYPE html>
+<!--
+    Declaración del tipo de documento:
+    Indica que este archivo es un documento HTML5, lo que permite a los navegadores interpretar correctamente el contenido.
+-->
+
 <html lang="en">
-<head>
-  <meta charset="utf-8">
-  <title>NewsApp</title>
-  <base href="/">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
-</head>
-<body>
-  <app-root></app-root>
-</body>
+  <!--
+      Elemento raíz del documento HTML:
+      Define el lenguaje del contenido (en este caso, inglés) para mejorar la accesibilidad y la indexación por motores de búsqueda.
+  -->
+  <head>
+    <!--
+        Sección del encabezado del documento:
+        Contiene metadatos, enlaces a estilos y scripts que no son visibles directamente en el contenido de la página.
+    -->
+    <meta charset="utf-8" />
+    <!--
+        Define la codificación de caracteres del documento:
+        "utf-8" permite el uso de caracteres especiales y es una codificación estándar para la web.
+    -->
+
+    <title>NewsApp</title>
+    <!--
+        Título de la página:
+        Este texto se muestra en la pestaña del navegador y es importante para SEO.
+    -->
+
+    <base href="/" />
+    <!--
+        Define la URL base para todas las URLs relativas en el documento:
+        Facilita la navegación interna al establecer un punto de referencia para rutas relativas.
+    -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!--
+        Configuración de la vista para dispositivos móviles:
+        Asegura que la página se escale correctamente en diferentes tamaños de pantalla.
+    -->
+
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+    <!--
+        Enlace al icono de la página (favicon):
+        Se muestra en la pestaña del navegador y ayuda a identificar la página entre varias abiertas.
+    -->
+  </head>
+
+  <body>
+    <!--
+        Cuerpo del documento:
+        Contiene todo el contenido visible de la página web.
+    -->
+    <app-root></app-root>
+    <!--
+        Componente raíz de la aplicación Angular:
+        Este componente se carga y se encarga de renderizar la aplicación, actuando como el punto de entrada principal.
+    -->
+  </body>
 </html>

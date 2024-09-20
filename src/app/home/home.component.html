@@ -1,15 +1,74 @@
-<!-- Home Component -->
 <main class="flex flex-col lg:flex-row mx-auto lg:max-w-7xl mt-3">
+  <!--
+    Etiqueta <main>: Contenedor principal de la página.
+    Clases usadas:
+    - flex: Aplica el modelo de caja flexible para el layout.
+    - flex-col: Organiza los elementos hijos en una columna.
+    - lg:flex-row: En pantallas grandes, cambia la dirección a fila.
+    - mx-auto: Aplica márgenes automáticos a los lados para centrar el contenido.
+    - lg:max-w-7xl: Define un ancho máximo de 7xl en pantallas grandes.
+    - mt-3: Aplica un margen superior.
+  -->
+
   <section class="mx-auto lg:max-w-7xl mt-3 w-full lg:w-3/4">
+    <!--
+      Etiqueta <section>: Define una sección dentro del documento.
+      Clases usadas:
+      - mx-auto: Centra la sección horizontalmente.
+      - lg:max-w-7xl: Ancho máximo de 7xl en pantallas grandes.
+      - mt-3: Aplica un margen superior.
+      - w-full: Ancho completo en pantallas pequeñas.
+      - lg:w-3/4: En pantallas grandes, el ancho se ajusta a 3/4 del contenedor.
+    -->
+
     <div class="max-w-7xl mx-auto px-5 mb-3">
+      <!--
+        Etiqueta <div>: Contenedor para agrupar el contenido.
+        Clases usadas:
+        - max-w-7xl: Ancho máximo de 7xl.
+        - mx-auto: Centra el contenedor horizontalmente.
+        - px-5: Aplica un relleno horizontal de 5 unidades.
+        - mb-3: Aplica un margen inferior.
+      -->
+
       <div
         class="mt-6 grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-auto xl:gap-x-8"
       >
+        <!--
+          Etiqueta <div>: Contenedor que usa un grid para la disposición de elementos.
+          Clases usadas:
+          - mt-6: Aplica un margen superior.
+          - grid: Activa el layout de cuadrícula.
+          - grid-cols-1: Una columna en pantallas pequeñas.
+          - gap-y-10: Espacio vertical entre filas de 10 unidades.
+          - gap-x-6: Espacio horizontal entre columnas de 6 unidades.
+          - sm:grid-cols-2: Dos columnas en pantallas pequeñas.
+          - lg:grid-cols-auto: Número automático de columnas en pantallas grandes.
+          - xl:gap-x-8: Espacio horizontal de 8 unidades en pantallas extra grandes.
+        -->
+
         @for (news of newsList(); track $index) {
+        <!--
+          Directiva que itera sobre la lista de noticias (newsList) y genera un <news-card> para cada noticia.
+          - track $index: Permite seguir el índice de cada elemento para optimizar el rendering.
+        -->
+
         <news-card [news]="news" />
+        <!--
+          Etiqueta <news-card>: Componente que muestra los detalles de cada noticia.
+          - [news]="news": Enlaza la propiedad news del componente con el objeto actual de la iteración.
+        -->
         }
       </div>
     </div>
   </section>
+
   <shared-sidebar class="w-full lg:w-1/4 mt-9" />
+  <!--
+    Etiqueta <shared-sidebar>: Componente para la barra lateral compartida.
+    Clases usadas:
+    - w-full: Ancho completo en pantallas pequeñas.
+    - lg:w-1/4: En pantallas grandes, ancho de 1/4 del contenedor.
+    - mt-9: Aplica un margen superior.
+  -->
 </main>

@@ -1,3 +1,4 @@
+// Data para pruebas de la API de noticias
 import { Article } from '../domain/interfaces/api-news-response.interface';
 
 export const responseApiNewsTest: Article[] = [

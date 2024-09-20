@@ -1,161 +1,213 @@
+<!--
+    Etiqueta <div>: Contenedor principal para la sección de categorías.
+    class="rounded-lg p-4 space-y-4 border border-blue-300": Aplica clases para el diseño y estilo.
+    rounded-lg: Aplica esquinas redondeadas grandes.
+    p-4: Aplica padding de 4 unidades alrededor del contenido.
+    space-y-4: Añade un espacio vertical entre los elementos secundarios.
+    border: Añade un borde.
+    border-blue-300: Establece el color del borde en azul claro.
+-->
 <div class="rounded-lg p-4 space-y-4 border border-blue-300">
-      <h3 class="text-lg font-bold">Categories</h3>
-      <nav class="space-y-2">
-        <a
-          class="flex items-center gap-2 text-muted-foreground hover:text-foreground"
-          routerLink="/news/news"
-          rel="ugc"
-          (click)="verifityUser()"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            class="h-5 w-5"
-          >
-            <path
-              d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-2 2Zm0 0a2 2 0 0 1-2-2v-9c0-1.1.9-2 2-2h2"
-            ></path>
-            <path d="M18 14h-8"></path>
-            <path d="M15 18h-5"></path>
-            <path d="M10 6h8v4h-8V6Z"></path>
-          </svg>
-          News
-        </a>
-        <a
-          class="flex items-center gap-2 text-muted-foreground hover:text-foreground"
-          routerLink="/news/sports"
-          rel="ugc"
-          (click)="verifityUser()"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            class="h-5 w-5"
-          >
-            <path
-              d="M17.28 9.05a5.5 5.5 0 1 0-10.56 0A5.5 5.5 0 1 0 12 17.66a5.5 5.5 0 1 0 5.28-8.6Z"
-            ></path>
-            <path d="M12 17.66L12 22"></path>
-          </svg>
-          Sports
-        </a>
-        <a
-          class="flex items-center gap-2 text-muted-foreground hover:text-foreground"
-          routerLink="/news/business"
-          rel="ugc"
-          (click)="verifityUser()"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            class="h-5 w-5"
-          >
-            <path d="M8 6v6"></path>
-            <path d="M15 6v6"></path>
-            <path d="M2 12h19.6"></path>
-            <path
-              d="M18 18h3s.5-1.7.8-2.8c.1-.4.2-.8.2-1.2 0-.4-.1-.8-.2-1.2l-1.4-5C20.1 6.8 19.1 6 18 6H4a2 2 0 0 0-2 2v10h3"
-            ></path>
-            <circle cx="7" cy="18" r="2"></circle>
-            <path d="M9 18h5"></path>
-            <circle cx="16" cy="18" r="2"></circle>
-          </svg>
-          Business
-        </a>
-        <a
-          class="flex items-center gap-2 text-muted-foreground hover:text-foreground"
-          routerLink="/news/opinion"
-          rel="ugc"
-          (click)="verifityUser()"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            class="h-5 w-5"
-          >
-            <path d="m9 12 2 2 4-4"></path>
-            <path d="M5 7c0-1.1.9-2 2-2h10a2 2 0 0 1 2 2v12H5V7Z"></path>
-            <path d="M22 19H2"></path>
-          </svg>
-          Opinion
-        </a>
-        <a
-          class="flex items-center gap-2 text-muted-foreground hover:text-foreground"
-          routerLink="/news/entertainment"
-          rel="ugc"
-          (click)="verifityUser()"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            class="h-5 w-5"
-          >
-            <rect width="20" height="15" x="2" y="7" rx="2" ry="2"></rect>
-            <polyline points="17 2 12 7 7 2"></polyline>
-          </svg>
-          Entertainment
-        </a>
-        <a
-          class="flex items-center gap-2 text-muted-foreground hover:text-foreground"
-          routerLink="/news/lifestyle"
-          rel="ugc"
-          (click)="verifityUser()"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            class="h-5 w-5"
-          >
-            <line x1="8" x2="21" y1="6" y2="6"></line>
-            <line x1="8" x2="21" y1="12" y2="12"></line>
-            <line x1="8" x2="21" y1="18" y2="18"></line>
-            <line x1="3" x2="3.01" y1="6" y2="6"></line>
-            <line x1="3" x2="3.01" y1="12" y2="12"></line>
-            <line x1="3" x2="3.01" y1="18" y2="18"></line>
-          </svg>
-          Lifestyle
-        </a>
-      </nav>
-    </div>
+
+  <!--
+      Etiqueta <h3>: Título de la sección.
+      class="text-lg font-bold": Aplica clases para el diseño y estilo.
+      text-lg: Establece un tamaño de fuente grande.
+      font-bold: Aplica negrita al texto.
+  -->
+  <h3 class="text-lg font-bold">Categories</h3>
+
+  <!--
+      Etiqueta <nav>: Contenedor de navegación para las categorías.
+      class="space-y-2": Añade un espacio vertical entre los enlaces de navegación.
+  -->
+  <nav class="space-y-2">
+
+    <!--
+        Etiqueta <a>: Enlace a la categoría "News".
+        class="flex items-center gap-2 text-muted-foreground hover:text-foreground": Aplica clases para el diseño y estilo.
+        flex: Habilita un contenedor flexible.
+        items-center: Alinea verticalmente los elementos en el centro.
+        gap-2: Añade un espacio entre los elementos hijos.
+        text-muted-foreground: Establece un color de texto atenuado.
+        hover:text-foreground: Cambia el color del texto al pasar el cursor.
+        routerLink="/news/news": Define la ruta a la que se dirige el enlace.
+        rel="ugc": Indica que el enlace es generado por un usuario.
+        (click)="verifityUser()": Llama a la función `verifityUser` al hacer clic en el enlace.
+    -->
+    <a
+      class="flex items-center gap-2 text-muted-foreground hover:text-foreground"
+      routerLink="/news/news"
+      rel="ugc"
+      (click)="verifityUser()"
+    >
+      <!--
+          Etiqueta <svg>: Icono SVG que representa la categoría de noticias.
+          class="h-5 w-5": Aplica tamaño al icono.
+          xmlns, width, height, viewBox: Atributos necesarios para la definición del SVG.
+      -->
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        class="h-5 w-5"
+      >
+        <!--
+            Etiqueta <path>: Define la forma del icono de noticias.
+            d: Contiene las instrucciones para dibujar el icono.
+        -->
+        <path
+          d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-2 2Zm0 0a2 2 0 0 1-2-2v-9c0-1.1.9-2 2-2h2"
+        ></path>
+        <path d="M18 14h-8"></path>
+        <path d="M15 18h-5"></path>
+        <path d="M10 6h8v4h-8V6Z"></path>
+      </svg>
+      News
+    </a>
+
+    <!--
+        Repite el patrón anterior para las categorías de "Sports", "Business", "Opinion", "Entertainment", y "Lifestyle".
+        Cada enlace tiene su propio SVG representando la categoría correspondiente.
+    -->
+    <a
+      class="flex items-center gap-2 text-muted-foreground hover:text-foreground"
+      routerLink="/news/sports"
+      rel="ugc"
+      (click)="verifityUser()"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        class="h-5 w-5"
+      >
+        <path
+          d="M17.28 9.05a5.5 5.5 0 1 0-10.56 0A5.5 5.5 0 1 0 12 17.66a5.5 5.5 0 1 0 5.28-8.6Z"
+        ></path>
+        <path d="M12 17.66L12 22"></path>
+      </svg>
+      Sports
+    </a>
+
+    <a
+      class="flex items-center gap-2 text-muted-foreground hover:text-foreground"
+      routerLink="/news/business"
+      rel="ugc"
+      (click)="verifityUser()"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        class="h-5 w-5"
+      >
+        <path d="M8 6v6"></path>
+        <path d="M15 6v6"></path>
+        <path d="M2 12h19.6"></path>
+        <path
+          d="M18 18h3s.5-1.7.8-2.8c.1-.4.2-.8.2-1.2 0-.4-.1-.8-.2-1.2l-1.4-5C20.1 6.8 19.1 6 18 6H4a2 2 0 0 0-2 2v10h3"
+        ></path>
+        <circle cx="7" cy="18" r="2"></circle>
+        <path d="M9 18h5"></path>
+        <circle cx="16" cy="18" r="2"></circle>
+      </svg>
+      Business
+    </a>
+
+    <a
+      class="flex items-center gap-2 text-muted-foreground hover:text-foreground"
+      routerLink="/news/opinion"
+      rel="ugc"
+      (click)="verifityUser()"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        class="h-5 w-5"
+      >
+        <path d="m9 12 2 2 4-4"></path>
+        <path d="M5 7c0-1.1.9-2 2-2h10a2 2 0 0 1 2 2v12H5V7Z"></path>
+        <path d="M22 19H2"></path>
+      </svg>
+      Opinion
+    </a>
+
+    <a
+      class="flex items-center gap-2 text-muted-foreground hover:text-foreground"
+      routerLink="/news/entertainment"
+      rel="ugc"
+      (click)="verifityUser()"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        class="h-5 w-5"
+      >
+        <rect width="20" height="15" x="2" y="7" rx="2" ry="2"></rect>
+        <polyline points="17 2 12 7 7 2"></polyline>
+      </svg>
+      Entertainment
+    </a>
+
+    <a
+      class="flex items-center gap-2 text-muted-foreground hover:text-foreground"
+      routerLink="/news/lifestyle"
+      rel="ugc"
+      (click)="verifityUser()"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        class="h-5 w-5"
+      >
+        <line x1="8" x2="21" y1="6" y2="6"></line>
+        <line x1="8" x2="21" y1="12" y2="12"></line>
+        <line x1="8" x2="21" y1="18" y2="18"></line>
+        <line x1="3" x2="3.01" y1="6" y2="6"></line>
+        <line x1="3" x2="3.01" y1="12" y2="12"></line>
+        <line x1="3" x2="3.01" y1="18" y2="18"></line>
+      </svg>
+      Lifestyle
+    </a>
+  </nav>
+</div>

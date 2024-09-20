@@ -1,4 +1,31 @@
+<!--
+    Etiqueta <div>: Contenedor principal para el campo de búsqueda.
+    class="relative mx-auto text-gray-600 lg:block hidden": Aplica clases para el diseño y estilo.
+    relative: Posiciona el contenedor de forma relativa para que los elementos dentro se posicionen en relación a este.
+    mx-auto: Centra horizontalmente el contenedor en su elemento padre.
+    text-gray-600: Establece el color del texto en un tono gris oscuro.
+    lg:block: Muestra el contenedor como un bloque en pantallas grandes (lg).
+    hidden: Oculta el contenedor en pantallas más pequeñas.
+-->
 <div class="relative mx-auto text-gray-600 lg:block hidden">
+  <!--
+      Etiqueta <input>: Campo de entrada para la búsqueda.
+      #searchInput: Referencia local para acceder al campo desde el componente.
+      [(ngModel)]="query": Enlaza el valor del campo a la propiedad `query` del componente.
+      class="border-2 border-gray-300 bg-white h-10 pl-2 pr-8 rounded-lg text-sm focus:outline-none": Aplica clases para el diseño y estilo.
+      border-2: Establece un borde de 2 unidades de grosor.
+      border-gray-300: Establece el color del borde en gris claro.
+      bg-white: Establece el fondo del campo en blanco.
+      h-10: Establece la altura del campo en 10 unidades.
+      pl-2: Aplica un padding a la izquierda de 2 unidades.
+      pr-8: Aplica un padding a la derecha de 8 unidades.
+      rounded-lg: Aplica esquinas redondeadas grandes.
+      text-sm: Establece un tamaño de texto pequeño.
+      focus:outline-none: Elimina el contorno predeterminado al enfocar el campo.
+      type="search": Define el tipo de entrada como búsqueda.
+      name="search": Asigna un nombre al campo de entrada.
+      placeholder="Search": Texto que se muestra cuando el campo está vacío.
+  -->
   <input
     #searchInput
     [(ngModel)]="query"
@@ -7,7 +34,29 @@
     name="search"
     placeholder="Search"
   />
-  <button class="absolute right-0 top-0 mt-3 mr-2" (click)="searchNews(searchInput.value)">
+
+  <!--
+      Etiqueta <button>: Botón para realizar la búsqueda.
+      class="absolute right-0 top-0 mt-3 mr-2": Aplica clases para la posición y estilo.
+      absolute: Posiciona el botón de forma absoluta en relación al contenedor padre.
+      right-0: Alinea el botón al lado derecho del contenedor.
+      top-0: Alinea el botón en la parte superior del contenedor.
+      mt-3: Aplica un margen superior de 3 unidades.
+      mr-2: Aplica un margen derecho de 2 unidades.
+      (click)="searchNews(searchInput.value)": Evento que se activa al hacer clic, llamando a la función `searchNews` con el valor del campo de búsqueda.
+  -->
+  <button
+    class="absolute right-0 top-0 mt-3 mr-2"
+    (click)="searchNews(searchInput.value)"
+  >
+    <!--
+        Etiqueta <svg>: Icono SVG que representa la acción de búsqueda.
+        class="text-gray-600 h-4 w-4 fill-current": Aplica clases para el estilo.
+        text-gray-600: Establece el color del icono en gris oscuro.
+        h-4: Establece la altura del icono en 4 unidades.
+        w-4: Establece el ancho del icono en 4 unidades.
+        xmlns, version, id, x, y, viewBox: Atributos necesarios para la definición del SVG.
+    -->
     <svg
       class="text-gray-600 h-4 w-4 fill-current"
       xmlns="http://www.w3.org/2000/svg"
@@ -21,6 +70,10 @@
       width="512px"
       height="512px"
     >
+      <!--
+          Etiqueta <path>: Define la forma del icono de búsqueda.
+          d: Contiene las instrucciones para dibujar el icono.
+      -->
       <path
         d="M55.146,51.887L41.588,37.786c3.486-4.144,5.396-9.358,5.396-14.786c0-12.682-10.318-23-23-23s-23,10.318-23,23  s10.318,23,23,23c4.761,0,9.298-1.436,13.177-4.162l13.661,14.208c0.571,0.593,1.339,0.92,2.162,0.92  c0.779,0,1.518-0.297,2.079-0.837C56.255,54.982,56.293,53.08,55.146,51.887z M23.984,6c9.374,0,17,7.626,17,17s-7.626,17-17,17  s-17-7.626-17-17S14.61,6,23.984,6z"
       />

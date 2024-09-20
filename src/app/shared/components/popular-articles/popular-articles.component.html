@@ -1,17 +1,84 @@
+<!--
+    Etiqueta <div>: Contenedor principal para los artículos populares.
+    class="grid gap-2 p-4 mt-3 border border-blue-300 rounded-lg": Aplica clases de Tailwind CSS para el diseño y estilo.
+    grid: Establece un diseño de cuadrícula.
+    gap-2: Aplica un espacio de 2 unidades entre los elementos de la cuadrícula.
+    p-4: Aplica un padding de 4 unidades alrededor del contenedor.
+    mt-3: Aplica un margen superior de 3 unidades.
+    border: Aplica un borde alrededor del contenedor.
+    border-blue-300: Establece el color del borde en azul claro.
+    rounded-lg: Aplica esquinas redondeadas grandes al contenedor.
+-->
 <div class="grid gap-2 p-4 mt-3 border border-blue-300 rounded-lg">
+  <!--
+      Etiqueta <h3>: Título de la sección de artículos populares.
+      class="text-xl font-bold": Aplica clases para el estilo del texto.
+      text-xl: Establece un tamaño de texto extra grande.
+      font-bold: Aplica un peso de fuente negrita.
+  -->
   <h3 class="text-xl font-bold">Popular Articles</h3>
+
+  <!--
+      Directiva @for: Itera sobre los artículos populares.
+      article: Representa cada artículo en la lista.
+      track $index: Mejora el rendimiento al rastrear el índice de los artículos.
+  -->
   @for (article of popularArticles(); track $index) {
+
+  <!--
+        Etiqueta <button>: Botón para cada artículo popular.
+        class="flex items-center shadow-md rounded-lg overflow-hidden w-full text-left": Aplica clases para el diseño y estilo.
+        flex: Establece un diseño flexible.
+        items-center: Alinea los elementos verticalmente en el centro.
+        shadow-md: Aplica una sombra media al botón.
+        rounded-lg: Aplica esquinas redondeadas grandes al botón.
+        overflow-hidden: Oculta el contenido que se desborda.
+        w-full: Establece el ancho del botón al 100%.
+        text-left: Alinea el texto a la izquierda.
+        (click)="openNewsDetail(article)": Evento que se activa al hacer clic, llamando a la función `openNewsDetail` con el artículo como argumento.
+    -->
   <button
     class="flex items-center shadow-md rounded-lg overflow-hidden w-full text-left"
     (click)="openNewsDetail(article)"
   >
+    <!--
+          Etiqueta <img>: Imagen representativa del artículo.
+          [src]: Enlaza la fuente de la imagen, utilizando una imagen predeterminada si no está disponible.
+          [alt]: Texto alternativo para la imagen, utilizando el título del artículo.
+          class="w-1/3 h-full object-cover": Aplica clases para el estilo.
+          w-1/3: Establece el ancho de la imagen en un tercio del contenedor.
+          h-full: Establece la altura de la imagen al 100% del contenedor.
+          object-cover: Hace que la imagen cubra el contenedor sin distorsionar la relación de aspecto.
+      -->
     <img
       [src]="article.urlToImage ?? '/assets/news.jpg'"
       [alt]="article.title"
       class="w-1/3 h-full object-cover"
     />
+
+    <!--
+          Etiqueta <div>: Contenedor para el contenido del artículo.
+          class="p-4 w-2/3": Aplica clases para el diseño y estilo.
+          p-4: Aplica un padding de 4 unidades.
+          w-2/3: Establece el ancho del contenedor al dos tercios.
+      -->
     <div class="p-4 w-2/3">
+      <!--
+            Etiqueta <h2>: Título del artículo.
+            class="text-sm font-bold mb-2": Aplica clases para el estilo.
+            text-sm: Establece un tamaño de texto pequeño.
+            font-bold: Aplica un peso de fuente negrita.
+            mb-2: Aplica un margen inferior de 2 unidades.
+        -->
       <h2 class="text-sm font-bold mb-2">{{ article.title }}</h2>
+
+      <!--
+            Etiqueta <p>: Descripción del artículo.
+            class="text-xs text-gray-700 line-clamp-3": Aplica clases para el estilo.
+            text-xs: Establece un tamaño de texto extra pequeño.
+            text-gray-700: Establece el color del texto en un tono gris oscuro.
+            line-clamp-3: Limita el texto a un máximo de 3 líneas y oculta el resto.
+        -->
       <p class="text-xs text-gray-700 line-clamp-3">
         {{ article.description }}
       </p>

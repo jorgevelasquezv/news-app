@@ -1,29 +1,84 @@
+<!--
+  Etiqueta <h1>: Define un encabezado principal.
+  class="text-4xl font-bold mb-4":
+  - text-4xl: Establece el tamaño de la fuente a 4xl (muy grande).
+  - font-bold: Aplica un estilo de fuente en negrita.
+  - mb-4: Agrega un margen inferior de 4 unidades.
+  {{ news().title }}: Muestra el título de la noticia usando interpolación Angular.
+-->
 <h1 class="text-4xl font-bold mb-4">{{ news().title }}</h1>
+
+<!--
+  Etiqueta <img>: Define una imagen.
+  class="w-full":
+  - w-full: Establece el ancho de la imagen al 100% del contenedor.
+  [src]="news().urlToImage ?? '/assets/news.jpg'":
+  - Usa el enlace de la imagen de la noticia; si no existe, muestra una imagen predeterminada.
+  [alt]="news().title":
+  - Establece el texto alternativo de la imagen al título de la noticia.
+-->
 <img
   class="w-full"
   [src]="news().urlToImage ?? '/assets/news.jpg'"
   [alt]="news().title"
 />
+
+<!--
+  Etiqueta <div>: Contenedor para agrupar los elementos de texto.
+  class="p-6":
+  - p-6: Aplica un padding de 6 unidades alrededor del contenido del div.
+-->
 <div class="p-6">
+  <!--
+    Etiqueta <p>: Define un párrafo.
+    class="text-gray-700 text-sm mb-2":
+    - text-gray-700: Aplica un color gris oscuro al texto.
+    - text-sm: Establece el tamaño del texto como pequeño.
+    - mb-2: Agrega un margen inferior de 2 unidades.
+  -->
   <p class="text-gray-700 text-sm mb-2">
+    <!--
+      Etiqueta <span>: Utilizada para aplicar estilo al texto dentro del párrafo.
+      class="font-semibold": Aplica un estilo de fuente en negrita.
+    -->
     <span class="font-semibold">Autor:</span>
-    {{ news().author ?? "Desconocido" }}
+    {{ news().author ?? "Desconocido" }} <!-- Muestra el autor de la noticia, o "Desconocido" si no hay autor. -->
   </p>
+
+  <!-- Repetición de párrafo para la fuente de la noticia -->
   <p class="text-gray-700 text-sm mb-2">
-    <span class="font-semibold">Fuente:</span> {{ news().source.name }}
+    <span class="font-semibold">Fuente:</span> {{ news().source.name }} <!-- Muestra la fuente de la noticia. -->
   </p>
+
+  <!-- Repetición de párrafo para la fecha de publicación -->
   <p class="text-gray-700 text-sm mb-2">
     <span class="font-semibold">Publicado:</span>
-    {{ news().publishedAt | date : "medium" }}
+    {{ news().publishedAt | date : "medium" }} <!-- Muestra la fecha de publicación formateada. -->
   </p>
+
+  <!-- Párrafo para la descripción de la noticia -->
   <p class="text-gray-700 mb-4">{{ news().description }}</p>
+
+  <!-- Párrafo para el contenido de la noticia -->
   <p class="text-gray-700">{{ news().content }}</p>
+
+  <!--
+    Etiqueta <a>: Define un enlace.
+    class="text-blue-500 hover:underline mt-4 block":
+    - text-blue-500: Aplica un color azul al texto del enlace.
+    - hover:underline: Agrega un subrayado al pasar el ratón.
+    - mt-4: Agrega un margen superior de 4 unidades.
+    - block: Hace que el enlace se comporte como un bloque, ocupando todo el ancho disponible.
+    [href]="news().url": Define la URL a la que apunta el enlace, que es la URL de la noticia.
+    target="_blank": Abre el enlace en una nueva pestaña.
+    rel="noopener noreferrer": Mejora la seguridad al abrir enlaces externos.
+  -->
   <a
     class="text-blue-500 hover:underline mt-4 block"
     [href]="news().url"
     target="_blank"
     rel="noopener noreferrer"
   >
-    Leer más
+    Leer más <!-- Texto del enlace que invita al usuario a leer más sobre la noticia. -->
   </a>
 </div>
