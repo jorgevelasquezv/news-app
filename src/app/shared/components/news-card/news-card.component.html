@@ -1,38 +1,140 @@
+<!--
+    Etiqueta <div>: Contenedor principal que establece el diseño del componente.
+    class="max-w-sm w-full lg:max-w-full lg:flex bg-gray-100": Aplica clases de Tailwind CSS para el diseño y el color de fondo.
+    max-w-sm: Establece un ancho máximo pequeño.
+    w-full: Establece un ancho completo.
+    lg:max-w-full: En pantallas grandes, establece el ancho máximo a completo.
+    lg:flex: Cambia a un diseño flex en pantallas grandes.
+    bg-gray-100: Aplica un color de fondo gris claro.
+-->
+
 <div class="max-w-sm w-full lg:max-w-full lg:flex bg-gray-100">
-  <div
-    class="border-r border-b border-l border-red-300 lg:border-l-0 lg:border-t lg:border-red-300 bg-gray-100 rounded-b lg:rounded-b-none lg:rounded-r p-4 flex flex-col justify-between leading-normal"
-  >
+  <!--
+      Etiqueta <div>: Contenedor interno que incluye bordes, fondo y estilo.
+      class="border-r border-b border-l border-red-300 lg:border-l-0 lg:border-t lg:border-red-300 bg-gray-100 rounded-b lg:rounded-b-none lg:rounded-r p-4 flex flex-col justify-between leading-normal": Aplica bordes, color de fondo y un diseño flexible.
+      border-r, border-b, border-l: Aplica bordes en los lados derecho, inferior e izquierdo.
+      border-red-300: Establece el color de los bordes en rojo claro.
+      lg:border-l-0: Elimina el borde izquierdo en pantallas grandes.
+      lg:border-t: Agrega borde superior en pantallas grandes.
+      bg-gray-100: Color de fondo gris claro.
+      rounded-b: Aplica esquinas redondeadas en la parte inferior.
+      lg:rounded-b-none: Elimina las esquinas redondeadas en la parte inferior en pantallas grandes.
+      lg:rounded-r: Aplica esquinas redondeadas a la derecha en pantallas grandes.
+      p-4: Aplica un padding de 4 unidades.
+      flex: Establece el contenedor como un flexbox.
+      flex-col: Organiza los elementos en una columna.
+      justify-between: Distribuye el espacio entre los elementos.
+      leading-normal: Establece un interlineado normal.
+  -->
+  <div class="border-r border-b border-l border-red-300 lg:border-l-0 lg:border-t lg:border-red-300 bg-gray-100 rounded-b lg:rounded-b-none lg:rounded-r p-4 flex flex-col justify-between leading-normal">
+
+    <!--
+        Etiqueta <a>: Enlace que rodea la imagen, permite hacer clic para ver más detalles.
+    -->
     <a href="#">
-      <img
-        class="w-full h-48 object-cover rounded-t-lg"
-        [src]="news().urlToImage ?? '/assets/news.jpg'"
-        [alt]="news().title"
-      />
+      <!--
+          Etiqueta <img>: Imagen de la noticia.
+          class="w-full h-48 object-cover rounded-t-lg": Establece el tamaño y estilo de la imagen.
+          w-full: Establece un ancho completo para la imagen.
+          h-48: Establece una altura fija de 48 unidades.
+          object-cover: Hace que la imagen cubra completamente el contenedor sin distorsionarse.
+          rounded-t-lg: Aplica esquinas redondeadas en la parte superior.
+          [src]: Vincula la fuente de la imagen a la URL de la noticia o una imagen predeterminada.
+          [alt]: Proporciona un texto alternativo basado en el título de la noticia.
+      -->
+      <img class="w-full h-48 object-cover rounded-t-lg" [src]="news().urlToImage ?? '/assets/news.jpg'" [alt]="news().title" />
     </a>
+
+    <!--
+        Etiqueta <div>: Contenedor para el contenido textual de la noticia.
+        class="p-5 flex flex-col flex-grow": Aplica padding y diseño flexible.
+        p-5: Aplica un padding de 5 unidades.
+        flex: Establece el contenedor como un flexbox.
+        flex-col: Organiza los elementos en una columna.
+        flex-grow: Permite que el contenedor crezca para ocupar espacio disponible.
+    -->
     <div class="p-5 flex flex-col flex-grow">
+
+      <!--
+          Etiqueta <a>: Enlace que rodea el título de la noticia.
+      -->
       <a href="#">
-        <h5
-          class="mb-2 text-2xl font-bold tracking-tight text-gray-900 flex-grow line-clamp-2 w-full h-24"
-        >
+        <!--
+            Etiqueta <h5>: Título de la noticia.
+            class="mb-2 text-2xl font-bold tracking-tight text-gray-900 flex-grow line-clamp-2 w-full h-24": Aplica estilo al título.
+            mb-2: Aplica un margen inferior de 2 unidades.
+            text-2xl: Establece un tamaño de texto grande.
+            font-bold: Aplica un peso de fuente negrita.
+            tracking-tight: Reduce el espacio entre caracteres.
+            text-gray-900: Establece el color del texto en gris oscuro.
+            flex-grow: Permite que el título crezca para ocupar espacio disponible.
+            line-clamp-2: Limita el texto a 2 líneas, truncando si es necesario.
+            w-full: Establece un ancho completo.
+            h-24: Establece una altura fija de 24 unidades.
+        -->
+        <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 flex-grow line-clamp-2 w-full h-24">
           {{ news().title }}
         </h5>
       </a>
-      <div
-        class="text-xs font-bold uppercase text-teal-700 mt-1 mb-2 w-full h-10"
-      >
+
+      <!--
+          Etiqueta <div>: Muestra el autor de la noticia.
+          class="text-xs font-bold uppercase text-teal-700 mt-1 mb-2 w-full h-10": Aplica estilo al autor.
+          text-xs: Establece un tamaño de texto pequeño.
+          font-bold: Aplica un peso de fuente negrita.
+          uppercase: Convierte el texto a mayúsculas.
+          text-teal-700: Establece el color del texto en un tono verde azulado.
+          mt-1: Aplica un margen superior de 1 unidad.
+          mb-2: Aplica un margen inferior de 2 unidades.
+          w-full: Establece un ancho completo.
+          h-10: Establece una altura fija de 10 unidades.
+      -->
+      <div class="text-xs font-bold uppercase text-teal-700 mt-1 mb-2 w-full h-10">
         {{ news().author }}
       </div>
-      <p
-        class="mb-3 font-normal text-gray-700 flex-grow line-clamp-2 w-full h-12"
-      >
+
+      <!--
+          Etiqueta <p>: Descripción de la noticia.
+          class="mb-3 font-normal text-gray-700 flex-grow line-clamp-2 w-full h-12": Aplica estilo a la descripción.
+          mb-3: Aplica un margen inferior de 3 unidades.
+          font-normal: Establece un peso de fuente normal.
+          text-gray-700: Establece el color del texto en gris.
+          flex-grow: Permite que la descripción crezca para ocupar espacio disponible.
+          line-clamp-2: Limita el texto a 2 líneas, truncando si es necesario.
+          w-full: Establece un ancho completo.
+          h-12: Establece una altura fija de 12 unidades.
+      -->
+      <p class="mb-3 font-normal text-gray-700 flex-grow line-clamp-2 w-full h-12">
         {{ news().description }}
       </p>
+
+      <!--
+          Etiqueta <div>: Contenedor para el botón de "Leer más".
+          class="flex items-center": Aplica diseño flex para alinear elementos.
+          flex: Establece el contenedor como un flexbox.
+          items-center: Alinea los elementos en el centro verticalmente.
+      -->
       <div class="flex items-center">
         <div class="text-sm">
-          <button
-            class="text-gray-50 bg-blue-400 hover:bg-blue-700 hover:text-white transition duration-500 ease-in-out transform hover:-translate-x hover:scale-105 px-4 py-2 rounded"
-            (click)="openNewsDetail()"
-          >
+          <!--
+              Etiqueta <button>: Botón para abrir los detalles de la noticia.
+              class="text-gray-50 bg-blue-400 hover:bg-blue-700 hover:text-white transition duration-500 ease-in-out transform hover:-translate-x hover:scale-105 px-4 py-2 rounded": Aplica estilo al botón.
+              text-gray-50: Establece el color del texto en blanco.
+              bg-blue-400: Establece el color de fondo en azul claro.
+              hover:bg-blue-700: Cambia el color de fondo a azul oscuro al pasar el mouse.
+              hover:text-white: Cambia el color del texto a blanco al pasar el mouse.
+              transition: Aplica una transición suave al cambiar estilos.
+              duration-500: Establece la duración de la transición en 500 ms.
+              ease-in-out: Aplica un efecto de transición suave.
+              transform: Permite aplicar transformaciones al botón.
+              hover:-translate-x: Mueve el botón ligeramente a la izquierda al pasar el mouse.
+              hover:scale-105: Escala el botón ligeramente al pasar el mouse.
+              px-4: Aplica un padding horizontal de 4 unidades.
+              py-2: Aplica un padding vertical de 2 unidades.
+              rounded: Aplica esquinas redondeadas al botón.
+              (click)="openNewsDetail()": Vincula la acción de clic a la función que abre los detalles de la noticia.
+          -->
+          <button class="text-gray-50 bg-blue-400 hover:bg-blue-700 hover:text-white transition duration-500 ease-in-out transform hover:-translate-x hover:scale-105 px-4 py-2 rounded" (click)="openNewsDetail()">
             Read more
           </button>
         </div>

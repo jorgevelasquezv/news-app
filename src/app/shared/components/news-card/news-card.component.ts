@@ -30,7 +30,7 @@ export class NewsCardComponent {
         position: 'center',
         icon: 'error',
         title: 'Oops...',
-        text: 'Debes iniciar sesión para ver los detalles de la noticia',
+        text: 'You must log in to view news details.',
       });
       return;
     }

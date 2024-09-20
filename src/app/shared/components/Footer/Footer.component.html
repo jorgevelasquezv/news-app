@@ -1,7 +1,42 @@
-<footer
-  class="footer bg-blue-400 text-gray-100 py-4 px-6 flex flex-col lg:flex-row items-center justify-between"
->
+<!--
+    Etiqueta <footer>: Define la sección del pie de página de la página web.
+    class="footer bg-blue-400 text-gray-100 py-4 px-6 flex flex-col lg:flex-row items-center justify-between": Aplica clases de Tailwind CSS para el diseño y estilo.
+    footer: Clase personalizada para el pie de página.
+    bg-blue-400: Establece un color de fondo azul claro.
+    text-gray-100: Establece el color del texto en un tono gris claro.
+    py-4: Aplica padding vertical de 4 unidades.
+    px-6: Aplica padding horizontal de 6 unidades.
+    flex: Establece un diseño flexbox.
+    flex-col: Organiza los elementos en columnas en pantallas pequeñas.
+    lg:flex-row: Cambia a organización en filas en pantallas grandes.
+    items-center: Alinea los elementos verticalmente en el centro.
+    justify-between: Distribuye el espacio entre los elementos.
+-->
+<footer class="footer bg-blue-400 text-gray-100 py-4 px-6 flex flex-col lg:flex-row items-center justify-between">
+
+  <!--
+      Etiqueta <div>: Contenedor para el logo y el título.
+      class="flex items-center gap-2 mb-4 lg:mb-0": Aplica clases para el diseño y espacio.
+      flex: Establece un diseño flexible.
+      items-center: Alinea los elementos verticalmente en el centro.
+      gap-2: Aplica un espacio de 2 unidades entre los elementos.
+      mb-4: Aplica un margen inferior de 4 unidades en pantallas pequeñas.
+      lg:mb-0: Elimina el margen inferior en pantallas grandes.
+  -->
   <div class="flex items-center gap-2 mb-4 lg:mb-0">
+
+    <!--
+        Etiqueta <svg>: Icono SVG que representa el logo de la aplicación.
+        xmlns: Espacio de nombres XML para SVG.
+        width y height: Definen las dimensiones del icono.
+        viewBox: Define el sistema de coordenadas del SVG.
+        fill: Propiedad para llenar el color (en este caso, none).
+        stroke: Establece el color del trazo en "currentColor", permitiendo heredar el color del texto.
+        stroke-width: Establece el grosor del trazo.
+        stroke-linecap: Define cómo terminan las líneas.
+        stroke-linejoin: Define cómo se unen las líneas.
+        class="h-6 w-6": Aplica tamaño de 6 unidades de altura y ancho.
+    -->
     <svg
       xmlns="http://www.w3.org/2000/svg"
       width="24"
@@ -14,25 +49,75 @@
       stroke-linejoin="round"
       class="h-6 w-6"
     >
+      <!--
+          Etiqueta <path>: Define una ruta dentro del SVG que compone el logo.
+      -->
       <path
         d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-2 2Zm0 0a2 2 0 0 1-2-2v-9c0-1.1.9-2 2-2h2"
       ></path>
       <path d="M18 14h-8"></path>
       <path d="M15 18h-5"></path>
       <path d="M10 6h8v4h-8V6Z"></path>
+      <!-- Rutas que componen el logo, utilizando líneas y formas. -->
     </svg>
+
+    <!--
+        Etiqueta <span>: Texto del título.
+        class="text-lg font-bold": Aplica clases para el estilo del texto.
+        text-lg: Establece un tamaño de texto grande.
+        font-bold: Aplica un peso de fuente negrita.
+    -->
     <span class="text-lg font-bold">World up to date</span>
+    <!-- Texto del título con tamaño de fuente grande y en negrita. -->
   </div>
+
+  <!--
+      Etiqueta <p>: Texto de derechos de autor.
+      class="text-sm": Aplica un tamaño de fuente pequeño.
+  -->
   <p class="text-sm">© 2024 World up to date</p>
+  <!-- Texto de derechos de autor con tamaño de fuente pequeño. -->
+
+  <!--
+      Etiqueta <nav>: Contenedor de navegación.
+      class="flex items-center gap-4": Aplica un diseño flexible y espacio entre enlaces.
+      flex: Establece un diseño flexible.
+      items-center: Alinea los elementos verticalmente en el centro.
+      gap-4: Aplica un espacio de 4 unidades entre los elementos.
+  -->
   <nav class="flex items-center gap-4">
+
+    <!--
+        Etiqueta <a>: Enlace a la sección de contacto.
+        class="hover:underline underline-offset-4": Aplica estilos al enlace.
+        hover:underline: Subraya el texto al pasar el cursor.
+        underline-offset-4: Establece un desplazamiento para el efecto de subrayado.
+        href="#": Dirección a la que vincula el enlace.
+        rel="ugc": Indica que el enlace es generado por el usuario.
+    -->
     <a class="hover:underline underline-offset-4" href="#" rel="ugc">
       Contact Us
+      <!-- Enlace a la sección de contacto que subraya al pasar el cursor. -->
     </a>
+
+    <!--
+        Etiqueta <a>: Enlace a la política de privacidad.
+        href="#": Dirección a la que vincula el enlace.
+        rel="ugc": Indica que el enlace es generado por el usuario.
+    -->
     <a class="hover:underline underline-offset-4" href="#" rel="ugc">
       Privacy Policy
+      <!-- Enlace a la política de privacidad. -->
     </a>
+
+    <!--
+        Etiqueta <a>: Enlace a los términos de uso.
+        href="#": Dirección a la que vincula el enlace.
+        rel="ugc": Indica que el enlace es generado por el usuario.
+    -->
     <a class="hover:underline underline-offset-4" href="#" rel="ugc">
       Terms of Use
+      <!-- Enlace a los términos de uso. -->
     </a>
   </nav>
 </footer>

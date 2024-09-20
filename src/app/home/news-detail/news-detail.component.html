@@ -1,13 +1,64 @@
-<!-- News Detail Component -->
+<!--
+  Etiqueta <main>: Define el contenido principal del documento.
+  class="flex flex-col lg:flex-row mx-auto lg:max-w-7xl mt-3":
+  - flex: Activa el modelo de caja flexible para alinear los hijos.
+  - flex-col: Organiza los hijos en una columna por defecto.
+  - lg:flex-row: Cambia a disposición en fila en pantallas grandes (lg).
+  - mx-auto: Aplica márgenes automáticos en los lados izquierdo y derecho, centrando el contenido.
+  - lg:max-w-7xl: Establece un ancho máximo de 7xl en pantallas grandes.
+  - mt-3: Agrega un margen superior de 3 unidades.
+-->
 <main class="flex flex-col lg:flex-row mx-auto lg:max-w-7xl mt-3">
+
+  <!--
+    Etiqueta <section>: Define una sección del documento.
+    class="mx-auto lg:max-w-7xl mt-3 w-full lg:w-3/4":
+    - mx-auto: Centra la sección horizontalmente.
+    - lg:max-w-7xl: Establece un ancho máximo de 7xl en pantallas grandes.
+    - mt-3: Agrega un margen superior de 3 unidades.
+    - w-full: Establece el ancho al 100% por defecto.
+    - lg:w-3/4: Cambia el ancho al 75% en pantallas grandes.
+  -->
   <section class="mx-auto lg:max-w-7xl mt-3 w-full lg:w-3/4">
+
+    <!--
+      Etiqueta <div>: Contenedor para agrupar otros elementos.
+      class="max-w-7xl mx-auto px-5 mb-3":
+      - max-w-7xl: Establece un ancho máximo de 7xl.
+      - mx-auto: Centra el div horizontalmente.
+      - px-5: Aplica un padding horizontal de 5 unidades.
+      - mb-3: Agrega un margen inferior de 3 unidades.
+    -->
     <div class="max-w-7xl mx-auto px-5 mb-3">
-      <div
-        class="mt-6 grid grid-cols-1 gap-y-10 gap-x-6"
-      >
-       <news-detail-card [news]="news" />
+
+      <!--
+        Etiqueta <div>: Contenedor para organizar el contenido en una cuadrícula.
+        class="mt-6 grid grid-cols-1 gap-y-10 gap-x-6":
+        - mt-6: Agrega un margen superior de 6 unidades.
+        - grid: Activa el modelo de cuadrícula.
+        - grid-cols-1: Define una columna en la cuadrícula por defecto.
+        - gap-y-10: Establece un espacio vertical de 10 unidades entre filas.
+        - gap-x-6: Establece un espacio horizontal de 6 unidades entre columnas.
+      -->
+      <div class="mt-6 grid grid-cols-1 gap-y-10 gap-x-6">
+
+        <!--
+          Etiqueta personalizada <news-detail-card>: Componente que muestra los detalles de una noticia.
+          [news]="news": Usa la propiedad "news" para pasar los datos de la noticia al componente.
+        -->
+        <news-detail-card [news]="news" />
+
       </div>
     </div>
   </section>
+
+  <!--
+    Etiqueta personalizada <shared-sidebar>: Componente que representa una barra lateral compartida.
+    class="w-full lg:w-1/4 mt-9":
+    - w-full: Establece el ancho al 100% por defecto.
+    - lg:w-1/4: Cambia el ancho al 25% en pantallas grandes.
+    - mt-9: Agrega un margen superior de 9 unidades.
+  -->
   <shared-sidebar class="w-full lg:w-1/4 mt-9" />
+
 </main>

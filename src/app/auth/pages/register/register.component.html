@@ -1,76 +1,204 @@
-<!-- component -->
+<!--
+  Etiqueta <div>: Define un contenedor genérico.
+  class="font-sans": Establece la fuente principal como sans-serif.
+-->
 <div class="font-sans">
-  <div
-    class="relative min-h-screen flex flex-col lg:justify-center items-center bg-gray-100 py-8 2xl:py-0"
-  >
+  <!--
+    Etiqueta <div>: Contenedor para el contenido del componente.
+    class="relative min-h-screen flex flex-col lg:justify-center items-center bg-gray-100 py-8 2xl:py-0":
+    - relative: Posicionamiento relativo.
+    - min-h-screen: Altura mínima igual a la altura de la pantalla.
+    - flex flex-col: Disposición en columna utilizando Flexbox.
+    - lg:justify-center: Centra los elementos en pantallas grandes.
+    - items-center: Centra los elementos horizontalmente.
+    - bg-gray-100: Fondo gris claro.
+    - py-8 2xl:py-0: Padding vertical (8) en pantallas pequeñas y sin padding en pantallas extra grandes.
+  -->
+  <div class="relative min-h-screen flex flex-col lg:justify-center items-center bg-gray-100 py-8 2xl:py-0">
+    <!--
+      Etiqueta <div>: Contenedor para el formulario.
+      class="relative sm:max-w-sm sm:w-full":
+      - relative: Posicionamiento relativo.
+      - sm:max-w-sm: Ancho máximo pequeño en pantallas pequeñas.
+      - sm:w-full: Ancho completo en pantallas pequeñas.
+    -->
     <div class="relative sm:max-w-sm sm:w-full">
-      <div
-        class="card bg-blue-400 shadow-lg w-full h-full rounded-3xl absolute transform -rotate-6"
-      ></div>
-      <div
-        class="card bg-red-400 shadow-lg w-full h-full rounded-3xl absolute transform rotate-6"
-      ></div>
+      <!--
+        Tarjeta de fondo azul.
+        class="card bg-blue-400 shadow-lg w-full h-full rounded-3xl absolute transform -rotate-6":
+        - bg-blue-400: Fondo azul.
+        - shadow-lg: Sombra grande.
+        - w-full h-full: Ancho y altura completos.
+        - rounded-3xl: Bordes redondeados grandes.
+        - absolute: Posición absoluta.
+        - transform -rotate-6: Aplica una rotación de -6 grados.
+      -->
+      <div class="card bg-blue-400 shadow-lg w-full h-full rounded-3xl absolute transform -rotate-6"></div>
+      <!--
+        Tarjeta de fondo rojo.
+        class="card bg-red-400 shadow-lg w-full h-full rounded-3xl absolute transform rotate-6":
+        - bg-red-400: Fondo rojo.
+        - shadow-lg: Sombra grande.
+        - w-full h-full: Ancho y altura completos.
+        - rounded-3xl: Bordes redondeados grandes.
+        - absolute: Posición absoluta.
+        - transform rotate-6: Aplica una rotación de 6 grados.
+      -->
+      <div class="card bg-red-400 shadow-lg w-full h-full rounded-3xl absolute transform rotate-6"></div>
+      <!--
+        Contenedor para el formulario.
+        class="relative w-full rounded-3xl px-6 py-4 bg-gray-100 shadow-md":
+        - relative: Posicionamiento relativo.
+        - w-full: Ancho completo.
+        - rounded-3xl: Bordes redondeados grandes.
+        - px-6: Padding horizontal (6).
+        - py-4: Padding vertical (4).
+        - bg-gray-100: Fondo gris claro.
+        - shadow-md: Sombra media.
+      -->
       <div class="relative w-full rounded-3xl px-6 py-4 bg-gray-100 shadow-md">
-        <label
-          for=""
-          class="block mt-3 text-2xl text-gray-500 text-center font-semibold"
-        >
+        <!--
+          Etiqueta <label>: Define una etiqueta para el título del formulario.
+          for="": No se asocia a un control en particular.
+          class="block mt-3 text-2xl text-gray-500 text-center font-semibold":
+          - block: Convierte el elemento en bloque.
+          - mt-3: Margen superior.
+          - text-2xl: Tamaño de texto grande.
+          - text-gray-500: Color de texto gris.
+          - text-center: Centra el texto.
+          - font-semibold: Estilo de fuente seminegrita.
+        -->
+        <label for="" class="block mt-3 text-2xl text-gray-500 text-center font-semibold">
           Register
         </label>
+        <!--
+          Etiqueta <form>: Define el formulario de registro.
+          class="mt-10": Margen superior.
+          [formGroup]="formRegister": Vincula el formulario a un grupo de formularios.
+          (ngSubmit)="register()": Llama a la función register() al enviar el formulario.
+        -->
         <form class="mt-10" [formGroup]="formRegister" (ngSubmit)="register()">
+          <!--
+            Contenedor para el campo de nombre.
+          -->
           <div>
+            <!--
+              Etiqueta <input>: Campo de entrada para el nombre completo.
+              type="text": Define el tipo de entrada como texto.
+              placeholder="Full Name": Texto que aparece como marcador de posición.
+              formControlName="fullName": Vincula el campo al control "fullName".
+              class="mt-1 block w-full border-none bg-gray-100 h-11 rounded-xl shadow-lg hover:bg-blue-100 focus:bg-blue-100 focus:ring-0":
+              - mt-1: Margen superior.
+              - block w-full: Estilo de bloque y ancho completo.
+              - border-none: Sin borde.
+              - bg-gray-100: Fondo gris claro.
+              - h-11: Altura del campo.
+              - rounded-xl: Bordes redondeados.
+              - shadow-lg: Sombra grande.
+              - hover:bg-blue-100: Cambia el fondo al pasar el cursor.
+              - focus:bg-blue-100: Cambia el fondo al enfocarse.
+              - focus:ring-0: Sin borde en el enfoque.
+            -->
             <input
               type="text"
               placeholder="Full Name"
               formControlName="fullName"
               class="mt-1 block w-full border-none bg-gray-100 h-11 rounded-xl shadow-lg hover:bg-blue-100 focus:bg-blue-100 focus:ring-0"
             />
+            <!--
+              Mensaje de error para nombre.
+              @if (fullNameInvalid): Muestra el mensaje si el campo es inválido.
+              class="text-red-500": Color de texto rojo.
+            -->
             @if (fullNameInvalid) {
-            <span class="text-red-500"
-              >Nombre debe tener minimo 3 caracteres</span
-            >
+              <span class="text-red-500">Nombre debe tener mínimo 3 caracteres</span>
             }
           </div>
-
+          <!--
+            Contenedor para el campo de email.
+          -->
           <div class="mt-7">
+            <!--
+              Etiqueta <input>: Campo de entrada para el email.
+              type="email": Define el tipo de entrada como email.
+              placeholder="Email": Texto que aparece como marcador de posición.
+              formControlName="email": Vincula el campo al control "email".
+              class="...": Clases similares al campo de nombre.
+            -->
             <input
               type="email"
               placeholder="Email"
               formControlName="email"
               class="mt-1 block w-full border-none bg-gray-100 h-11 rounded-xl shadow-lg hover:bg-blue-100 focus:bg-blue-100 focus:ring-0"
             />
+            <!--
+              Mensaje de error para email.
+              @if (emailInvalid): Muestra el mensaje si el campo es inválido.
+            -->
             @if (emailInvalid) {
-            <span class="text-red-500">No es un correo valido</span>
+              <span class="text-red-500">No es un correo válido</span>
             }
           </div>
-
+          <!--
+            Contenedor para el campo de contraseña.
+          -->
           <div class="mt-7">
+            <!--
+              Etiqueta <input>: Campo de entrada para la contraseña.
+              type="password": Define el tipo de entrada como contraseña.
+              placeholder="Password": Texto que aparece como marcador de posición.
+              formControlName="password": Vincula el campo al control "password".
+              class="...": Clases similares a los campos anteriores.
+            -->
             <input
               type="password"
               placeholder="Password"
               formControlName="password"
               class="mt-1 block w-full border-none bg-gray-100 h-11 rounded-xl shadow-lg hover:bg-blue-100 focus:bg-blue-100 focus:ring-0"
             />
+            <!--
+              Mensaje de error para contraseña.
+              @if (passwordInvalid): Muestra el mensaje si el campo es inválido.
+            -->
             @if (passwordInvalid) {
-            <span class="text-red-500"
-              >Password debe tener minimo 6 caracteres</span
-            >
+              <span class="text-red-500">Password debe tener mínimo 6 caracteres</span>
             }
           </div>
-
+          <!--
+            Contenedor para el campo de confirmación de contraseña.
+          -->
           <div class="mt-7">
+            <!--
+              Etiqueta <input>: Campo de entrada para confirmar la contraseña.
+              type="password": Define el tipo de entrada como contraseña.
+              placeholder="Confirm Password": Texto que aparece como marcador de posición.
+              formControlName="confirmPassword": Vincula el campo al control "confirmPassword".
+              class="...": Clases similares a los campos anteriores.
+            -->
             <input
               type="password"
               placeholder="Confirm Password"
               formControlName="confirmPassword"
               class="mt-1 block w-full border-none bg-gray-100 h-11 rounded-xl shadow-lg hover:bg-blue-100 focus:bg-blue-100 focus:ring-0"
             />
-             @if (confirmPasswordInvalid) {
-            <span class="text-red-500">Las contraseñas deben ser iguales</span>
+            <!--
+              Mensaje de error para confirmación de contraseña.
+              @if (confirmPasswordInvalid): Muestra el mensaje si el campo es inválido.
+            -->
+            @if (confirmPasswordInvalid) {
+              <span class="text-red-500">Las contraseñas deben ser iguales</span>
             }
           </div>
-
+          <!--
+            Contenedor para el botón de registro.
+          -->
           <div class="mt-7">
+            <!--
+              Etiqueta <button>: Botón para enviar el formulario.
+              type="submit": Define el tipo de botón como enviar.
+              [disabled]="!formRegister.valid": Desactiva el botón si el formulario no es válido.
+              class="...": Clases para estilo del botón.
+            -->
             <button
               type="submit"
               [disabled]="!formRegister.valid"
@@ -79,32 +207,86 @@
               Register
             </button>
           </div>
-
+          <!--
+            Contenedor para la separación entre métodos de registro.
+            class="flex mt-7 items-center text-center": Flexbox para centrar horizontalmente.
+          -->
           <div class="flex mt-7 items-center text-center">
+            <!--
+              Etiqueta <hr>: Línea horizontal para separar contenido.
+              class="border-gray-300 border-1 w-full rounded-md": Estilo de la línea.
+            -->
             <hr class="border-gray-300 border-1 w-full rounded-md" />
+            <!--
+              Etiqueta <label>: Texto que indica otros métodos de registro.
+              class="block font-medium text-sm text-gray-600 w-full": Estilo del texto.
+            -->
             <label class="block font-medium text-sm text-gray-600 w-full" for="">
               Register with
             </label>
             <hr class="border-gray-300 border-1 w-full rounded-md" />
           </div>
-
+          <!--
+            Contenedor para botones de redes sociales.
+            class="flex mt-7 justify-center w-full": Estilo para centrado.
+          -->
           <div class="flex mt-7 justify-center w-full">
+            <!--
+              Botón de Facebook.
+              class="mr-5 bg-blue-500 border-none px-4 py-2 rounded-xl cursor-pointer text-white shadow-xl hover:shadow-inner transition duration-500 ease-in-out transform hover:-translate-x hover:scale-105":
+              - mr-5: Margen a la derecha.
+              - bg-blue-500: Fondo azul.
+              - border-none: Sin borde.
+              - px-4 py-2: Padding horizontal y vertical.
+              - rounded-xl: Bordes redondeados.
+              - cursor-pointer: Cambia el cursor al pasar por encima.
+              - text-white: Color de texto blanco.
+              - shadow-xl: Sombra extra grande.
+              - hover:shadow-inner: Cambia la sombra al pasar el cursor.
+              - transition duration-500 ease-in-out: Transición suave de 500 ms.
+              - transform hover:-translate-x hover:scale-105: Efectos de transformación al pasar el cursor.
+            -->
             <button
               class="mr-5 bg-blue-500 border-none px-4 py-2 rounded-xl cursor-pointer text-white shadow-xl hover:shadow-inner transition duration-500 ease-in-out transform hover:-translate-x hover:scale-105"
             >
               Facebook
             </button>
-
+            <!--
+              Botón de Google.
+              class="bg-red-500 border-none px-4 py-2 rounded-xl cursor-pointer text-white shadow-xl hover:shadow-inner transition duration-500 ease-in-out transform hover:-translate-x hover:scale-105":
+              - bg-red-500: Fondo rojo.
+              - Otras clases similares al botón de Facebook.
+            -->
             <button
               class="bg-red-500 border-none px-4 py-2 rounded-xl cursor-pointer text-white shadow-xl hover:shadow-inner transition duration-500 ease-in-out transform hover:-translate-x hover:scale-105"
             >
               Google
             </button>
           </div>
-
+          <!--
+            Contenedor para el enlace de inicio de sesión.
+            class="mt-7": Margen superior.
+          -->
           <div class="mt-7">
+            <!--
+              Contenedor para el texto y enlace.
+              class="flex justify-center items-center": Estilo para centrar.
+            -->
             <div class="flex justify-center items-center">
+              <!--
+                Etiqueta <label>: Texto que indica si ya se tiene una cuenta.
+                class="mr-2": Margen a la derecha.
+              -->
               <label class="mr-2" for="">Already have an account?</label>
+              <!--
+                Etiqueta <a>: Enlace para iniciar sesión.
+                href="#": URL a la que apunta el enlace (en este caso, un enlace ancla).
+                class="text-blue-500 transition duration-500 ease-in-out transform hover:-translate-x hover:scale-105":
+                - text-blue-500: Aplica un color azul al texto.
+                - transition duration-500 ease-in-out: Aplica una transición suave de 500 ms.
+                - transform hover:-translate-x: Mueve el enlace hacia la izquierda al pasar el ratón.
+                - hover:scale-105: Aumenta ligeramente el tamaño al pasar el ratón.
+              -->
               <a
                 href="#"
                 class="text-blue-500 transition duration-500 ease-in-out transform hover:-translate-x hover:scale-105"

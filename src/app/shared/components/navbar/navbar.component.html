@@ -1,111 +1,254 @@
-<!-- component -->
-<nav
-  class="flex items-center justify-between flex-wrap bg-blue-400 py-4 lg:px-12 shadow"
->
-  <div
-    class="flex justify-between lg:w-auto w-full lg:border-b-0 pl-6 pr-2 border-solid border-b-2 border-gray-300 pb-5 lg:pb-0"
-  >
+<!--
+    Etiqueta <nav>: Define el menú de navegación.
+    class="flex items-center justify-between flex-wrap bg-blue-400 py-4 lg:px-12 shadow": Aplica clases de Tailwind CSS para el diseño y estilo.
+    flex: Establece un diseño flexbox para alinear los elementos.
+    items-center: Alinea los elementos verticalmente en el centro.
+    justify-between: Distribuye el espacio entre los elementos.
+    flex-wrap: Permite que los elementos se ajusten en varias líneas si es necesario.
+    bg-blue-400: Aplica un color de fondo azul claro.
+    py-4: Aplica padding vertical de 4 unidades.
+    lg:px-12: En pantallas grandes, aplica padding horizontal de 12 unidades.
+    shadow: Añade una sombra al contenedor para darle profundidad.
+-->
+<nav class="flex items-center justify-between flex-wrap bg-blue-400 py-4 lg:px-12 shadow">
+
+  <!--
+      Etiqueta <div>: Contenedor para el logo y el botón del menú.
+      class="flex justify-between lg:w-auto w-full lg:border-b-0 pl-6 pr-2 border-solid border-b-2 border-gray-300 pb-5 lg:pb-0": Establece el diseño y estilo del contenedor.
+      flex: Establece un diseño flexbox.
+      justify-between: Distribuye el espacio entre los elementos.
+      lg:w-auto: En pantallas grandes, el ancho es automático.
+      w-full: En pantallas pequeñas, ocupa el ancho completo.
+      lg:border-b-0: Elimina el borde inferior en pantallas grandes.
+      pl-6: Aplica padding izquierdo de 6 unidades.
+      pr-2: Aplica padding derecho de 2 unidades.
+      border-solid: Establece el estilo de borde como sólido.
+      border-b-2: Aplica un borde inferior de 2 unidades.
+      border-gray-300: Establece el color del borde en gris claro.
+      pb-5: Aplica padding inferior de 5 unidades en pantallas pequeñas.
+      lg:pb-0: Elimina el padding inferior en pantallas grandes.
+  -->
+  <div class="flex justify-between lg:w-auto w-full lg:border-b-0 pl-6 pr-2 border-solid border-b-2 border-gray-300 pb-5 lg:pb-0">
+
+    <!--
+        Etiqueta <div>: Contenedor para el logo.
+        class="flex items-center flex-shrink-0 text-gray-50 mr-16": Aplica estilo y disposición al contenedor del logo.
+        flex: Establece un diseño flexbox.
+        items-center: Alinea los elementos verticalmente en el centro.
+        flex-shrink-0: Evita que el contenedor se reduzca.
+        text-gray-50: Establece el color del texto en blanco.
+        mr-16: Aplica un margen derecho de 16 unidades.
+    -->
     <div class="flex items-center flex-shrink-0 text-gray-50 mr-16">
+      <!--
+          Etiqueta <span>: Texto del logo.
+          class="font-semibold text-xl tracking-tight": Aplica estilo al texto.
+          font-semibold: Aplica un peso de fuente semibold.
+          text-xl: Establece un tamaño de texto grande.
+          tracking-tight: Reduce el espacio entre caracteres.
+      -->
       <span class="font-semibold text-xl tracking-tight">World up to date</span>
     </div>
+
+    <!--
+        Etiqueta <div>: Contenedor para el botón de menú en pantallas pequeñas.
+        class="block lg:hidden": Muestra este contenedor solo en pantallas pequeñas.
+    -->
     <div class="block lg:hidden">
-      <button
-        id="nav"
-        class="flex items-center px-3 py-2 border-2 rounded text-gray-100 border-blue-700 hover:text-gray-100 hover:border-blue-700"
-      >
-        <svg
-          class="fill-current h-3 w-3"
-          viewBox="0 0 20 20"
-          xmlns="http://www.w3.org/2000/svg"
-        >
+      <!--
+          Etiqueta <button>: Botón para mostrar el menú en pantallas pequeñas.
+          id="nav": Asigna un ID al botón.
+          class="flex items-center px-3 py-2 border-2 rounded text-gray-100 border-blue-700 hover:text-gray-100 hover:border-blue-700": Aplica estilo al botón.
+          flex: Establece un diseño flexbox.
+          items-center: Alinea los elementos verticalmente en el centro.
+          px-3: Aplica padding horizontal de 3 unidades.
+          py-2: Aplica padding vertical de 2 unidades.
+          border-2: Aplica un borde de 2 unidades.
+          rounded: Aplica esquinas redondeadas.
+          text-gray-100: Establece el color del texto en un tono claro.
+          border-blue-700: Establece el color del borde en azul oscuro.
+          hover:text-gray-100: Cambia el color del texto al pasar el mouse.
+          hover:border-blue-700: Mantiene el borde azul oscuro al pasar el mouse.
+      -->
+      <button id="nav" class="flex items-center px-3 py-2 border-2 rounded text-gray-100 border-blue-700 hover:text-gray-100 hover:border-blue-700">
+        <!--
+            Etiqueta <svg>: Icono que representa el menú.
+            class="fill-current h-3 w-3": Establece el tamaño y el color del icono.
+            viewBox="0 0 20 20": Define el área de visualización del SVG.
+            xmlns: Especifica el espacio de nombres del SVG.
+        -->
+        <svg class="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
           <title>Menu</title>
+          <!--
+              Etiqueta <path>: Define la forma del icono del menú.
+              d: Atributo que describe la forma en el SVG.
+          -->
           <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" />
         </svg>
       </button>
     </div>
   </div>
 
-  <div
-    class="menu w-full flex-grow lg:flex lg:items-center lg:w-auto lg:px-3 px-8"
-  >
+  <!--
+      Etiqueta <div>: Contenedor del menú de navegación.
+      class="menu w-full flex-grow lg:flex lg:items-center lg:w-auto lg:px-3 px-8": Aplica un diseño flexible y responsivo al menú.
+      menu: Clase personalizada para el menú (no definida aquí).
+      w-full: Establece un ancho completo.
+      flex-grow: Permite que el menú crezca para ocupar el espacio disponible.
+      lg:flex: Activa el diseño flex en pantallas grandes.
+      lg:items-center: Alinea los elementos verticalmente en el centro en pantallas grandes.
+      lg:w-auto: Establece el ancho automático en pantallas grandes.
+      lg:px-3: Aplica padding horizontal de 3 unidades en pantallas grandes.
+      px-8: Aplica padding horizontal de 8 unidades en pantallas pequeñas.
+  -->
+  <div class="menu w-full flex-grow lg:flex lg:items-center lg:w-auto lg:px-3 px-8">
+
+    <!--
+        Etiqueta <div>: Contenedor para los enlaces del menú.
+        class="text-md font-bold text-gray-100 lg:flex-grow": Aplica estilo a los enlaces.
+        text-md: Establece un tamaño de texto mediano.
+        font-bold: Aplica un peso de fuente negrita.
+        text-gray-100: Establece el color del texto en un tono claro.
+        lg:flex-grow: Permite que el contenedor crezca en pantallas grandes.
+    -->
     <div class="text-md font-bold text-gray-100 lg:flex-grow">
-      <a
-        routerLink="/"
-        [routerLinkActiveOptions]="{ exact: true }"
-        routerLinkActive="text-white font-bold underline"
-        class="block mt-4 lg:inline-block lg:mt-0 hover:text-white px-4 py-2 rounded hover:bg-blue-600 mr-2"
-      >
+
+      <!--
+          Etiqueta <a>: Enlace a la página principal.
+          routerLink="/": Vincula a la ruta raíz de la aplicación.
+          [routerLinkActiveOptions]: Configuración para el enlace activo.
+          routerLinkActive="text-white font-bold underline": Clases aplicadas cuando el enlace está activo.
+          class="block mt-4 lg:inline-block lg:mt-0 hover:text-white px-4 py-2 rounded hover:bg-blue-600 mr-2": Estilo del enlace.
+          block: Establece que el enlace ocupa todo el ancho disponible.
+          mt-4: Aplica un margen superior de 4 unidades.
+          lg:inline-block: Cambia a inline-block en pantallas grandes.
+          lg:mt-0: Elimina el margen superior en pantallas grandes.
+          hover:text-white: Cambia el color del texto a blanco al pasar el mouse.
+          px-4: Aplica padding horizontal de 4 unidades.
+          py-2: Aplica padding vertical de 2 unidades.
+          rounded: Aplica esquinas redondeadas.
+          hover:bg-blue-600: Cambia el fondo a azul oscuro al pasar el mouse.
+          mr-2: Aplica un margen derecho de 2 unidades.
+      -->
+      <a routerLink="/" [routerLinkActiveOptions]="{ exact: true }" routerLinkActive="text-white font-bold underline" class="block mt-4 lg:inline-block lg:mt-0 hover:text-white px-4 py-2 rounded hover:bg-blue-600 mr-2">
         Home
       </a>
+      <!-- Enlace a la página principal -->
+
       @if (user()) {
-      <a
-        routerLink="/news/news"
-        routerLinkActive="text-white font-bold underline"
-        class="block mt-4 lg:inline-block lg:mt-0 hover:text-white px-4 py-2 rounded hover:bg-blue-600 mr-2"
-      >
+      <!-- Verifica si hay un usuario autenticado -->
+
+      <!--
+          Etiqueta <a>: Enlace a la sección de noticias.
+          routerLink="/news/news": Vincula a la ruta de noticias.
+          routerLinkActive="text-white font-bold underline": Clases aplicadas cuando el enlace está activo.
+          class="block mt-4 lg:inline-block lg:mt-0 hover:text-white px-4 py-2 rounded hover:bg-blue-600 mr-2": Estilo del enlace.
+      -->
+      <a routerLink="/news/news" routerLinkActive="text-white font-bold underline" class="block mt-4 lg:inline-block lg:mt-0 hover:text-white px-4 py-2 rounded hover:bg-blue-600 mr-2">
         News
       </a>
-      <a
-        routerLink="/news/sports"
-        routerLinkActive="text-white font-bold underline"
-        class="block mt-4 lg:inline-block lg:mt-0 hover:text-white px-4 py-2 rounded hover:bg-blue-600 mr-2"
-      >
+      <!-- Enlace a la sección de noticias -->
+
+      <!--
+          Etiqueta <a>: Enlace a la sección de deportes.
+          routerLink="/news/sports": Vincula a la ruta de deportes.
+      -->
+      <a routerLink="/news/sports" routerLinkActive="text-white font-bold underline" class="block mt-4 lg:inline-block lg:mt-0 hover:text-white px-4 py-2 rounded hover:bg-blue-600 mr-2">
         Sports
       </a>
-      <a
-        routerLink="/news/business"
-        routerLinkActive="text-white font-bold underline"
-        class="block mt-4 lg:inline-block lg:mt-0 hover:text-white px-4 py-2 rounded hover:bg-blue-600 mr-2"
-      >
+      <!-- Enlace a la sección de deportes -->
+
+      <!--
+          Etiqueta <a>: Enlace a la sección de negocios.
+          routerLink="/news/business": Vincula a la ruta de negocios.
+      -->
+      <a routerLink="/news/business" routerLinkActive="text-white font-bold underline" class="block mt-4 lg:inline-block lg:mt-0 hover:text-white px-4 py-2 rounded hover:bg-blue-600 mr-2">
         Business
       </a>
-      <a
-        routerLink="/news/opinion"
-        routerLinkActive="text-white font-bold underline"
-        class="block mt-4 lg:inline-block lg:mt-0 hover:text-white px-4 py-2 rounded hover:bg-blue-600 mr-2"
-      >
+      <!-- Enlace a la sección de negocios -->
+
+      <!--
+          Etiqueta <a>: Enlace a la sección de opinión.
+          routerLink="/news/opinion": Vincula a la ruta de opinión.
+      -->
+      <a routerLink="/news/opinion" routerLinkActive="text-white font-bold underline" class="block mt-4 lg:inline-block lg:mt-0 hover:text-white px-4 py-2 rounded hover:bg-blue-600 mr-2">
         Opinion
       </a>
+      <!-- Enlace a la sección de opinión -->
       }
-      <a
-        routerLink="/contact-us"
-        routerLinkActive="text-white font-bold underline"
-        class="block mt-4 lg:inline-block lg:mt-0 hover:text-white px-4 py-2 rounded hover:bg-blue-600 mr-2"
-      >
+
+      <!--
+          Etiqueta <a>: Enlace a la sección de contacto.
+          routerLink="/contact-us": Vincula a la ruta de contacto.
+      -->
+      <a routerLink="/contact-us" routerLinkActive="text-white font-bold underline" class="block mt-4 lg:inline-block lg:mt-0 hover:text-white px-4 py-2 rounded hover:bg-blue-600 mr-2">
         Contact us
       </a>
+      <!-- Enlace a la sección de contacto -->
+
       @if (isAdmin) {
-      <a
-        routerLink="/admin"
-        routerLinkActive="text-white font-bold underline"
-        class="block mt-4 lg:inline-block lg:mt-0 hover:text-white px-4 py-2 rounded hover:bg-blue-600 mr-2"
-      >
+      <!-- Verifica si el usuario es un administrador -->
+
+      <!--
+          Etiqueta <a>: Enlace a la sección de administración.
+          routerLink="/admin": Vincula a la ruta de administración.
+      -->
+      <a routerLink="/admin" routerLinkActive="text-white font-bold underline" class="block mt-4 lg:inline-block lg:mt-0 hover:text-white px-4 py-2 rounded hover:bg-blue-600 mr-2">
         Admin
       </a>
+      <!-- Enlace a la sección de administración -->
       }
     </div>
 
+    <!--
+        Componente <shared-search>: Componente de búsqueda compartido que se integra en el menú de navegación.
+    -->
     <shared-search />
 
+    <!--
+        Etiqueta <div>: Contenedor para los enlaces de usuario (logout, register, login).
+        class="flex": Establece un diseño flexbox.
+    -->
     <div class="flex">
       @if (user()) {
-      <a
-        class="block text-md px-4 ml-2 py-2 rounded text-gray-100 font-bold hover:text-white mt-4 hover:bg-blue-600 lg:mt-0"
-        (click)="logout()"
-        >Logout</a
-      >
-      }@else {
-      <a
-        routerLink="/register"
-        class="block text-md px-4 py-2 rounded text-gray-100 ml-2 font-bold hover:text-white mt-4 hover:bg-blue-600 lg:mt-0"
-        >Register</a
-      >
+      <!-- Verifica si hay un usuario autenticado -->
 
-      <a
-        routerLink="/login"
-        class="block text-md px-4 ml-2 py-2 rounded text-gray-100 font-bold hover:text-white mt-4 hover:bg-blue-600 lg:mt-0"
-        >Login</a
-      >
+      <!--
+          Etiqueta <a>: Enlace para cerrar sesión.
+          class="block text-md px-4 ml-2 py-2 rounded text-gray-100 font-bold hover:text-white mt-4 hover:bg-blue-600 lg:mt-0": Estilo del enlace.
+          block: Establece que el enlace ocupa todo el ancho disponible.
+          text-md: Establece un tamaño de texto mediano.
+          px-4: Aplica padding horizontal de 4 unidades.
+          ml-2: Aplica un margen izquierdo de 2 unidades.
+          py-2: Aplica padding vertical de 2 unidades.
+          rounded: Aplica esquinas redondeadas.
+          text-gray-100: Establece el color del texto en un tono claro.
+          font-bold: Aplica un peso de fuente negrita.
+          hover:text-white: Cambia el color del texto a blanco al pasar el mouse.
+          mt-4: Aplica un margen superior de 4 unidades.
+          hover:bg-blue-600: Cambia el fondo a azul oscuro al pasar el mouse.
+          lg:mt-0: Elimina el margen superior en pantallas grandes.
+          (click)="logout()": Vincula la acción de clic a la función que cierra sesión.
+      -->
+      <a class="block text-md px-4 ml-2 py-2 rounded text-gray-100 font-bold hover:text-white mt-4 hover:bg-blue-600 lg:mt-0" (click)="logout()">Logout</a>
+      <!-- Enlace para cerrar sesión -->
+      } @else {
+      <!-- Si el usuario no está autenticado -->
+
+      <!--
+          Etiqueta <a>: Enlace para registrarse.
+          routerLink="/register": Vincula a la ruta de registro.
+          class="block text-md px-4 py-2 rounded text-gray-100 ml-2 font-bold hover:text-white mt-4 hover:bg-blue-600 lg:mt-0": Estilo del enlace.
+      -->
+      <a routerLink="/register" class="block text-md px-4 py-2 rounded text-gray-100 ml-2 font-bold hover:text-white mt-4 hover:bg-blue-600 lg:mt-0">Register</a>
+      <!-- Enlace para registrarse -->
+
+      <!--
+          Etiqueta <a>: Enlace para iniciar sesión.
+          routerLink="/login": Vincula a la ruta de inicio de sesión.
+      -->
+      <a routerLink="/login" class="block text-md px-4 ml-2 py-2 rounded text-gray-100 font-bold hover:text-white mt-4 hover:bg-blue-600 lg:mt-0">Login</a>
+      <!-- Enlace para iniciar sesión -->
       }
     </div>
   </div>
