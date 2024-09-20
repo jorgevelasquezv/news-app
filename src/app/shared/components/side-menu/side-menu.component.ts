@@ -22,7 +22,7 @@ export class SideMenuComponent {
         position: 'center', // Posiciona la alerta en el centro de la pantalla.
         icon: 'error', // Tipo de alerta: error.
         title: 'Oops...', // Título de la alerta.
-        text: 'Debes iniciar sesión para ver esta sección', // Mensaje que informa al usuario que debe iniciar sesión.
+        text: 'You must log in to view this section', // Mensaje que informa al usuario que debe iniciar sesión.
       });
     }
   }

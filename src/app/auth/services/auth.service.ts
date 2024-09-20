@@ -74,11 +74,11 @@ export class AuthService implements OnDestroy {
       .pipe(
         map((user) => {
           // Mapea el usuario para realizar validaciones.
-          if (!user) throw new Error('Credenciales invalidas'); // Lanza error si no hay usuario.
-          if (!user.isActive) throw new Error('Usuario inactivo'); // Lanza error si el usuario está inactivo.
+          if (!user) throw new Error('Invalid Credentials'); // Lanza error si no hay usuario.
+          if (!user.isActive) throw new Error('User Inactive'); // Lanza error si el usuario está inactivo.
           if (user.password !== password)
             // Verifica si la contraseña es correcta.
-            throw new Error('Credenciales invalidas');
+            throw new Error('Invalid Credentials'); // Lanza error si la contraseña no es correcta.
           this.setAuthentication(user); // Establece la autenticación si es válido.
           return user; // Retorna el usuario autenticado.
         })

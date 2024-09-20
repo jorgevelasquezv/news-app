@@ -37,7 +37,7 @@ export class PopularArticlesComponent {
         position: 'center', // Posiciona la alerta en el centro.
         icon: 'error', // Tipo de alerta: error.
         title: 'Oops...', // Título de la alerta.
-        text: 'Debes iniciar sesión para ver los detalles de la noticia', // Mensaje de error.
+        text: 'You must log in to see the news details', // Mensaje de error.
       });
       return; // Sale del método si no hay usuario.
     }
