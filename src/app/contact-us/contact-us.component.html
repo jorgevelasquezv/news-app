@@ -1,41 +1,27 @@
 <!--
-  Etiqueta <div>: Contenedor para agrupar elementos.
-  class="flex items-center justify-center p-12":
-  - flex: Aplica un diseño flexible al contenedor.
-  - items-center: Alinea los elementos hijos verticalmente al centro.
-  - justify-center: Centra los elementos hijos horizontalmente.
-  - p-12: Aplica un padding de 12 unidades en todos los lados.
+    Etiqueta <div>: Crea un contenedor para alinear el contenido de la sección de contacto.
+    class="flex items-center justify-center p-12": Aplica clases de Tailwind CSS para crear un contenedor flexible, centrar su contenido, y aplicar un padding de 12.
 -->
 <div class="flex items-center justify-center p-12">
   <!--
-    Etiqueta <div>: Contenedor secundario para limitar el ancho.
-    class="mx-auto w-full max-w-[550px]":
-    - mx-auto: Centra el contenedor horizontalmente con márgenes automáticos.
-    - w-full: Establece el ancho al 100%.
-    - max-w-[550px]: Limita el ancho máximo a 550 píxeles.
+      Etiqueta <div>: Contenedor interno para limitar el ancho del formulario.
+      class="mx-auto w-full max-w-[550px]": Aplica márgenes automáticos a los lados, ocupa todo el ancho disponible, y establece un ancho máximo de 550 píxeles.
   -->
   <div class="mx-auto w-full max-w-[550px]">
     <!--
-      Etiqueta <h3>: Encabezado de tercer nivel para el título.
-      class="text-center text-4xl font-bold":
-      - text-center: Centra el texto horizontalmente.
-      - text-4xl: Establece un tamaño de fuente grande (4xl).
-      - font-bold: Aplica un estilo de fuente negrita.
+        Etiqueta <h3>: Define un encabezado de nivel 3 para el título de la sección.
+        class="text-center text-4xl font-bold": Aplica clases de Tailwind CSS para centrar el texto, establecer un tamaño de fuente grande (4xl) y un peso de fuente negrita.
     -->
     <h3 class="text-center text-4xl font-bold">Contact</h3>
 
     <!--
-      Etiqueta <div>: Contenedor para el texto descriptivo.
-      class="text-xl text-gray-500 mb-4":
-      - text-xl: Establece un tamaño de fuente extra grande (xl).
-      - text-gray-500: Aplica un color gris al texto.
-      - mb-4: Aplica un margen inferior de 4 unidades.
+        Etiqueta <div>: Contenedor para el texto descriptivo.
+        class="text-xl text-gray-500 mb-4": Aplica un tamaño de texto grande (xl), un color gris claro, y un margen inferior de 4.
     -->
     <div class="text-xl text-gray-500 mb-4">
       <!--
-        Etiqueta <p>: Párrafo de texto.
-        class="my-2":
-        - my-2: Aplica un margen vertical de 2 unidades (superior e inferior).
+          Etiqueta <p>: Define un párrafo para el texto de introducción.
+          class="my-2": Aplica márgenes verticales de 2.
       -->
       <p class="my-2">At World up to date we care about your point of view.</p>
       <p class="my-2">Your opinions, comments and suggestions are welcome.</p>
@@ -47,52 +33,63 @@
         as possible.
       </p>
     </div>
-
     <!--
-      Etiqueta <form>: Formulario para enviar datos.
-      action="https://formbold.com/s/FORM_ID": URL donde se enviarán los datos del formulario.
-      method="POST": Método HTTP que se usará para enviar los datos.
+        Etiqueta <form>: Define un formulario para la recolección de datos.
+        [formGroup]="contactForm": Vincula el formulario a un grupo de formularios de Angular.
+        (ngSubmit)="onSubmit()": Establece una función a llamar al enviar el formulario.
     -->
-    <form action="https://formbold.com/s/FORM_ID" method="POST">
+    <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
       <!--
-        Etiqueta <div>: Contenedor para cada campo del formulario.
-        class="mb-5": Aplica un margen inferior de 5 unidades.
+          Etiqueta <div>: Contenedor para el primer campo del formulario.
+          class="mb-5": Aplica un margen inferior de 5.
       -->
       <div class="mb-5">
         <!--
-          Etiqueta <label>: Etiqueta para el campo de entrada.
-          for="name": Asocia la etiqueta con el campo de entrada que tiene el mismo ID.
-          class="mb-3 block text-base font-medium text-[#07074D]":
-          - mb-3: Aplica un margen inferior de 3 unidades.
-          - block: Hace que la etiqueta ocupe el ancho completo disponible.
-          - text-base: Establece un tamaño de fuente base.
-          - font-medium: Aplica un peso de fuente medio.
-          - text-[#07074D]: Aplica un color personalizado al texto.
+            Etiqueta <label>: Define una etiqueta para el campo del nombre.
+            for="name": Asocia la etiqueta con el campo de entrada con el ID "name".
+            class="mb-3 block text-base font-medium text-[#07074D]": Aplica margen inferior de 3, hace que el bloque ocupe toda la línea, establece un tamaño de texto base, un peso de fuente medio, y un color personalizado.
         -->
-        <label for="name" class="mb-3 block text-base font-medium text-[#07074D]">
+        <label
+          for="name"
+          class="mb-3 block text-base font-medium text-[#07074D]"
+        >
           Full Name
         </label>
-
         <!--
-          Etiqueta <input>: Campo de entrada de texto.
-          type="text": Define el tipo de campo como texto.
-          name="name": Nombre del campo para enviar los datos.
-          id="name": Identificador único del campo.
-          placeholder="Full Name": Texto que se muestra como sugerencia dentro del campo.
-          class="...": Clases que aplican estilos específicos.
+            Etiqueta <input>: Campo de entrada para el nombre completo.
+            type="text": Especifica que es un campo de texto.
+            name="name": Define el nombre del campo.
+            id="name": Establece el ID del campo.
+            formControlName="name": Vincula el campo al control de formulario correspondiente.
+            placeholder="Full Name": Texto que aparece como sugerencia en el campo.
+            class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md": Aplica varias clases de Tailwind CSS para definir el ancho completo, bordes redondeados, borde gris claro, fondo blanco, padding vertical y horizontal, tamaño y peso de fuente, y estilos para el enfoque.
         -->
         <input
           type="text"
           name="name"
           id="name"
+          formControlName="name"
           placeholder="Full Name"
           class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
         />
+        <!--
+            Condicional para mostrar un mensaje de error si el campo es inválido.
+            class="text-red-500": Aplica un color rojo al texto del mensaje de error.
+        -->
+        @if (fieldInvalid('name')) {
+        <span class="text-red-500">Name should min 3 characters</span>
+        }
       </div>
 
-      <!-- Repetición del bloque anterior para el campo de email -->
+      <!--
+          Etiqueta <div>: Contenedor para el campo del correo electrónico.
+          class="mb-5": Aplica un margen inferior de 5.
+      -->
       <div class="mb-5">
-        <label for="email" class="mb-3 block text-base font-medium text-[#07074D]">
+        <label
+          for="email"
+          class="mb-3 block text-base font-medium text-[#07074D]"
+        >
           Email Address
         </label>
         <input
@@ -100,13 +97,23 @@
           name="email"
           id="email"
           placeholder="example@domain.com"
+          formControlName="email"
           class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
         />
+        @if (fieldInvalid('email')) {
+        <span class="text-red-500">Email Invalid</span>
+        }
       </div>
 
-      <!-- Repetición del bloque anterior para el campo de asunto -->
+      <!--
+          Etiqueta <div>: Contenedor para el campo del asunto.
+          class="mb-5": Aplica un margen inferior de 5.
+      -->
       <div class="mb-5">
-        <label for="subject" class="mb-3 block text-base font-medium text-[#07074D]">
+        <label
+          for="subject"
+          class="mb-3 block text-base font-medium text-[#07074D]"
+        >
           Subject
         </label>
         <input
@@ -114,13 +121,23 @@
           name="subject"
           id="subject"
           placeholder="Enter your subject"
+          formControlName="subject"
           class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
         />
+        @if (fieldInvalid('subject')) {
+        <span class="text-red-500">Subject should min 3 characters</span>
+        }
       </div>
 
-      <!-- Repetición del bloque anterior para el campo de mensaje -->
+      <!--
+          Etiqueta <div>: Contenedor para el campo del mensaje.
+          class="mb-5": Aplica un margen inferior de 5.
+      -->
       <div class="mb-5">
-        <label for="message" class="mb-3 block text-base font-medium text-[#07074D]">
+        <label
+          for="message"
+          class="mb-3 block text-base font-medium text-[#07074D]"
+        >
           Message
         </label>
         <textarea
@@ -128,19 +145,20 @@
           name="message"
           id="message"
           placeholder="Type your message"
+          formControlName="message"
           class="w-full resize-none rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
         ></textarea>
+        @if (fieldInvalid('message')) {
+        <span class="text-red-500">Message should min 10 characters</span>
+        }
       </div>
 
       <!--
-        Etiqueta <div>: Contenedor para el botón de envío.
+          Etiqueta <div>: Contenedor para el botón de envío.
       -->
       <div>
-        <!--
-          Etiqueta <button>: Botón para enviar el formulario.
-          class="...": Clases que aplican estilos específicos.
-        -->
         <button
+          type="submit"
           class="hover:shadow-form rounded-md bg-blue-400 py-3 px-8 text-base font-semibold text-white outline-none"
         >
           Submit
