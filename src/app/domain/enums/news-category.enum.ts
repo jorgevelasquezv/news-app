@@ -20,4 +20,13 @@ export enum NewsCategory {
 
   // Categoría para noticias sobre tecnología.
   technology = 'technology',
+
+  // Categoría para noticias de opinión.
+  opinion = 'opinion',
+
+  // Categoría para noticias populares
+  popular = 'popular',
+
+  // Categoría para noticias de estilo de vida.
+  lifestyle = 'lifestyle',
 }

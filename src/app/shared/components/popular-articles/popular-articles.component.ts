@@ -8,6 +8,7 @@ import { User } from '../../../domain/models/user.model'; // Importa la interfaz
 import { UserService } from '../../../services/user.service'; // Importa el servicio de usuario para acceder a datos y métodos del usuario.
 import Swal from 'sweetalert2'; // Importa SweetAlert2 para mostrar alertas personalizadas.
 import { Router } from '@angular/router'; // Importa el enrutador de Angular para navegar entre rutas.
+import { NewsCategory } from '../../../domain/enums/news-category.enum';
 
 @Component({
   selector: 'shared-popular-articles', // Define el selector del componente para su uso en plantillas.
@@ -24,7 +25,7 @@ export class PopularArticlesComponent {
   // Crea una señal que almacena los artículos populares, obtenidos del servicio de noticias.
   public popularArticles: Signal<Article[] | undefined> = toSignal(
     this.newsService
-      .getNewsBySearch('popular news') // Llama al método del servicio para buscar noticias populares.
+      .getNewsByCategory(NewsCategory.popular) // Llama al método del servicio para buscar noticias populares.
       .pipe(map((news) => news.slice(0, 4))) || [] // Toma solo los primeros 4 artículos y los convierte a señal.
   );
 
