@@ -26,6 +26,6 @@ jobs:
       - name: Build and push Docker image
         uses: docker/build-push-action@v2
         with:
-          context: ../json-server
+          context: ./json-server
           push: true
           tags: ${{ secrets.DOCKER_USERNAME }}/json-server-news:latest
