@@ -129,9 +129,9 @@ export class NewsService implements OnDestroy {
 
   getNewsByCategory(category: NewsCategory): Observable<Article[]> {
     // Método para obtener noticias por categoría.
-    return this.http.get<APINewsResponse>(`${this.URL}/${category}`).pipe(
+    return this.http.get<Article[]>(`${this.URL}/${category}`).pipe(
       map((response) => {
-        return response.articles.map((article) => {
+        return response.map((article) => {
           article.id = uuidv4();
           // Asigna un identificador único a cada artículo.
           return article;
@@ -142,13 +142,15 @@ export class NewsService implements OnDestroy {
 
   getNewsBySearch(search: string): Observable<Article[]> {
     // Método para buscar noticias usando un término de búsqueda.
+    const query = search.slice(6).trimStart();
+
     return this.http
-      .get<APINewsResponse>(`${this.URL_NEWS}`, {
-        params: { q: search, apiKey: this.API_KEY },
+      .get<Article[]>(`${this.URL}/search`, {
+        params: { title_like: query},
       })
       .pipe(
         map((response) => {
-          return response.articles.map((article) => {
+          return response.map((article) => {
             article.id = uuidv4();
             // Asigna un identificador único a cada artículo.
             return article;
